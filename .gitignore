@@ -1,0 +1,9 @@
+secrets/
+
+
+# Text Editor / IDE
+.idea
+*.iml
+.vscode
+*.sublime-*
+*.code-workspace
