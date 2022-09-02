@@ -46,7 +46,7 @@ If you are using an output template inside a Windows batch file then you must es
 
 ### File name too long
 
-Each OS and filesystem has a limit to the the length of a filename. If you are getting this error, then the filename you are trying to save has exceeded this limit. To fix this, use [output template](https://github.com/yt-dlp/yt-dlp#output-template) to set a smaller filename. The [Python string formatting operations](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting) will be helpful here. For example, `%(uploader).30B - %(title).200B.%(ext)s` will shorten the uploader name to 30 bytes and the title to 200 bytes. If you want this for all of your downloads, put the option into your [configuration file](#configuration).
+Each OS and filesystem has a limit to the the length of a filename. If you are getting this error, then the filename you are trying to save has exceeded this limit. To fix this, use [output template](https://github.com/yt-dlp/yt-dlp#output-template) to set a smaller filename. The [Python string formatting operations](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting) will be helpful here. For example, `%(uploader).30B - %(title).200B.%(ext)s` will shorten the uploader name to 30 bytes and the title to 200 bytes. If you want this for all of your downloads, put the option into your [configuration file](https://github.com/yt-dlp/yt-dlp#configuration).
 
 
 ### Downloading clips and cutting out Sponsor sections is inaccurate
@@ -56,9 +56,9 @@ Video files cannot be cut at exact timestamps without re-encoding. yt-dlp does n
 
 ### HTTP Error 429: Too Many Requests or 402: Payment Required
 
-These two error codes indicate that the service is blocking your IP address because of overuse. Usually this is a soft block meaning that you can gain access again after solving CAPTCHA. Just open a browser and solve a CAPTCHA the service suggests you and after that [pass cookies](#how-do-i-pass-cookies-to-yt-dlp) to yt-dlp. Note that if your machine has multiple external IPs then you should also pass exactly the same IP you've used for solving CAPTCHA with [`--source-address`](#network-options). Also you may need to pass a `User-Agent` HTTP header of your browser with [`--user-agent`](#workarounds).
+These two error codes indicate that the service is blocking your IP address because of overuse. Usually this is a soft block meaning that you can gain access again after solving CAPTCHA. Just open a browser and solve a CAPTCHA the service suggests you and after that [pass cookies](#how-do-i-pass-cookies-to-yt-dlp) to yt-dlp. Note that if your machine has multiple external IPs then you should also pass exactly the same IP you've used for solving CAPTCHA with [`--source-address`](https://github.com/yt-dlp/yt-dlp#network-options). Also you may need to pass a `User-Agent` HTTP header of your browser with [`--user-agent`](https://github.com/yt-dlp/yt-dlp#workarounds).
 
-If this is not the case (no CAPTCHA suggested to solve by the service) then you can contact the service and ask them to unblock your IP address, or - if you have acquired a whitelisted IP address already - use the [`--proxy` or `--source-address` options](#network-options) to select another IP address.
+If this is not the case (no CAPTCHA suggested to solve by the service) then you can contact the service and ask them to unblock your IP address, or - if you have acquired a whitelisted IP address already - use the [`--proxy` or `--source-address` options](https://github.com/yt-dlp/yt-dlp#network-options) to select another IP address.
 
 
 ### On Windows, how should I set up ffmpeg and yt-dlp? Where should I put the exe files?
@@ -72,7 +72,7 @@ From then on, after restarting your shell, you will be able to access both yt-dl
 
 ### How do I put downloads into a specific folder?
 
-Use the `-P "path/to/folder"` to specify a path and an `-o` to specify an [output template](#output-template). If you want this for all of your downloads, put the option into your [configuration file](#configuration).
+Use the `-P "path/to/folder"` to specify a path and an `-o` to specify an [output template](https://github.com/yt-dlp/yt-dlp#output-template). If you want this for all of your downloads, put the option into your [configuration file](https://github.com/yt-dlp/yt-dlp#configuration).
 
 
 ### How do I download a video starting with a `-`?
