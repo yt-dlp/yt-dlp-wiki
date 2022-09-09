@@ -15,17 +15,17 @@ In UNIX-like OSes (MacOS, Linux, BSD), you can also install the same in one of t
 
 ```bash
 sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
 ```
 
 ```bash
 sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
 ```
 
 ```bash
 sudo aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir /usr/local/bin -o yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
 ```
 
 To update, run: 
@@ -92,17 +92,17 @@ pacman -Syu yt-dlp
 ### [APT](https://en.wikipedia.org/wiki/APT_(software))
 
 You can download and install yt-dlp for Ubuntu and other related Debian-based distributions by adding the [stable PPA](https://launchpad.net/~yt-dlp/+archive/ubuntu/stable)
-```
-sudo add-apt-repository ppa:yt-dlp/stable
-sudo apt update
-sudo apt install yt-dlp
+```bash
+sudo add-apt-repository ppa:yt-dlp/stable    # Add ppa repo to apt
+sudo apt update                              # Update package list
+sudo apt install yt-dlp                      # Install yt-dlp
 ```
 
 If you wish to use pre-compiled bleeding edge daily snapshot packages, use the [unstable PPA](https://code.launchpad.net/~yt-dlp/+archive/ubuntu/unstable) instead:
-```
-sudo add-apt-repository ppa:yt-dlp/unstable
-sudo apt update
-sudo apt install yt-dlp
+```bash
+sudo add-apt-repository ppa:yt-dlp/unstable  # Add ppa repo to apt
+sudo apt update                              # Update package list
+sudo apt install yt-dlp                      # Install yt-dlp
 ```
 
 Your system's package manager will now automatically download the correct dependencies and keep the package updated with the rest of your system whenever you run:

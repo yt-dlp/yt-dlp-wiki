@@ -3,9 +3,9 @@
 See [this pinned issue](https://github.com/yt-dlp/yt-dlp/issues/3766) for a list of some important currently known issues and the [bugtracker](https://github.com/yt-dlp/yt-dlp/issues) for a full list of issues.
 
 
-### The yt-dlp in my Package Manager is outdated
+### The yt-dlp in my Package Manager is outdated/broken
 
-Unfortunately, there is nothing we can do if your distribution serves an outdated version. You should report this to the package maintainer or your distribution in their bugtracker or support forum.
+Unfortunately, there is nothing we can do if your distribution serves an outdated/broken version. You should report this to the package maintainer or your distribution in their bugtracker or support forum.
 
 As a last resort, you can also uninstall the version installed by your package manager and follow [our installation instructions](Installation) to install the latest version.
 
