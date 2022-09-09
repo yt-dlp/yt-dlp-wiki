@@ -159,3 +159,19 @@ To update, run:
 ```powershell
 winget upgrade yt-dlp
 ```
+
+## Android
+
+You can use yt-dlp on Android using [Termux](https://termux.dev). Once Termux is installed, open it and run the following commands:
+```bash
+termux-setup-storage       # Allow termux to download files into your phone's storage
+pkg update && pkg upgrade  # Update all packages
+pkg install python         # Install python
+pip install -U yt-dlp      # Install yt-dlp
+pkg install ffmpeg         # OPTIONAL: Install ffmpeg
+```
+
+To update, run:
+```bash
+pip install -U yt-dlp
+```
