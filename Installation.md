@@ -77,16 +77,16 @@ To update, run:
 brew upgrade yt-dlp
 ```
 
-### [AUR](https://aur.archlinux.org/packages/yt-dlp-git)
+### [pacman](https://archlinux.org/packages/community/any/yt-dlp/)
 
-Arch Linux users can install it from the AUR:
-```bash
-pacman -Sy yt-dlp
-```
-
-To update, run:
+Arch Linux users can install it from the official community repository:
 ```bash
 pacman -Syu yt-dlp
+```
+
+pacman will now automatically download the correct dependencies and keep the package up-to-date whenever you update your system with:
+```bash
+pacman -Syu
 ```
 
 ### [APT](https://en.wikipedia.org/wiki/APT_(software))
