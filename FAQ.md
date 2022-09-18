@@ -12,8 +12,7 @@ As a last resort, you can also uninstall the version installed by your package m
 
 ### Do I need any other programs?
 
-yt-dlp works reasonably well on its own on most sites. However, some sites - most notably YouTube - serve higher quality formats as separate audio and video. You will need [ffmpeg](https://www.ffmpeg.org/) to download and merge such formats. yt-dlp also uses many other optional dependencies for additional features. See [Dependencies](
-https://github.com/yt-dlp/yt-dlp#dependencies) for more information.
+yt-dlp works reasonably well on its own on most sites. However, some sites - most notably YouTube - serve higher quality formats as separate audio and video. You will need [ffmpeg](https://www.ffmpeg.org/) to download and merge such formats. yt-dlp also uses many other optional dependencies for additional features. See [Dependencies](https://github.com/yt-dlp/yt-dlp#dependencies) for more information.
 
 
 ### I extracted a video URL, but it does not play on another machine / in my web browser
