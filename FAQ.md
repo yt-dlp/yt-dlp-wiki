@@ -119,7 +119,7 @@ will download the complete `PLwiyx1dc3P2JR9N8gQaQN_BCvlSlap7re` playlist and cre
 
 ### How can I detect whether a given URL is supported by yt-dlp?
 
-For one, have a look at the [list of supported sites](https://github.com/yt-dlp/yt-dlp/supportedsites.md). Note that it can sometimes happen that the site changes its URL scheme (say, from https://example.com/video/1234567 to https://example.com/v/1234567) and yt-dlp reports an URL of a service in that list as unsupported. In that case, simply report a site-bug.
+For one, have a look at the [list of supported sites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md). Note that it can sometimes happen that the site changes its URL scheme (say, from https://example.com/video/1234567 to https://example.com/v/1234567) and yt-dlp reports an URL of a service in that list as unsupported. In that case, simply report a site-bug.
 
 It is *not* possible to detect whether a URL is supported or not. That's because yt-dlp contains a generic extractor which matches **all** URLs. You may be tempted to disable the generic extractor, but the generic extractor not only allows users to extract videos from lots of websites that embed a video from another service, but may also be used to extract video from a service that it's hosting itself. Therefore, we don't recommend disabling it. However, if you still wish to, you can disable it using `--ies default,-generic`.
 
