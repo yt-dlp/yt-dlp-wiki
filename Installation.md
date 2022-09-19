@@ -63,7 +63,9 @@ python3 -m pip install -U yt-dlp
 
 **Note**: These packages are manitained by third-parties and may not be up-to-date. Please report any issues to the respective package maintainers
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/yt-dlp.svg)](https://repology.org/project/yt-dlp/versions)
+<a href="https://repology.org/project/yt-dlp/versions">
+    <img src="https://repology.org/badge/vertical-allrepos/yt-dlp.svg" alt="Packaging status" align="right">
+</a>
 
 ## Linux/MacOS
 
