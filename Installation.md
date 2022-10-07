@@ -114,6 +114,7 @@ Your system's package manager will now automatically download the correct depend
 sudo apt update
 sudo apt install yt-dlp
 ```
+The [Debian package](https://salsa.debian.org/debian/yt-dlp) is upstream for the Ubuntu ppa.
 
 ### [MacPorts](https://ports.macports.org/port/yt-dlp/)
 
