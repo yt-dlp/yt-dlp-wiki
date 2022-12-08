@@ -144,3 +144,18 @@ First of all, please do report the issue [at our issue tracker](https://github.c
 Please make sure to read the [bug reporting instructions](https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md#opening-an-issue). A lot of bug reports lack the necessary information. At the time of writing this, over 25% of all issues have been closed as invalid/duplicates. A lot of developer time is wasted triaging and answering such issues.
 
 You are always welcome to take matters into your own hands and submit a pull request (or pay somebody else to do so). Make sure to read the [contributing guidelines](https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md#developer-instructions) when you do.
+
+
+### Why am I getting an `incorrect codec parameters` error from ffmpeg when downloading or postprocessing?
+
+The error message may also include:
+ * `Could not write header for output file #0`
+ * `Error number -22 occurred`
+ * `Invalid argument`
+
+Older versions of ffmpeg only have experimental support for Opus audio in an mp4 or webm container, and will throw this error if `-strict -2` is not passed as an argument.
+ 
+The best solution to this problem is to [update ffmpeg](https://github.com/yt-dlp/FFmpeg-Builds). If you cannot or do not want to update, you can add this to your yt-dlp command:
+```
+--postprocessor-args "ffmpeg:-strict -2"
+```
