@@ -157,5 +157,5 @@ Older versions of ffmpeg only have experimental support for Opus audio in an mp4
  
 The best solution to this problem is to [update ffmpeg](https://github.com/yt-dlp/FFmpeg-Builds). If you cannot or do not want to update, you can add this to your yt-dlp command:
 ```
---postprocessor-args "Merger:-strict -2"
+--postprocessor-args "ffmpeg:-strict -2"
 ```
