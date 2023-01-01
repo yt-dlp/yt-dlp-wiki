@@ -14,25 +14,24 @@ You can simply download the [correct binary file](https://github.com/yt-dlp/yt-d
 In UNIX-like OSes (MacOS, Linux, BSD), you can also install the same in one of the following ways:
 
 ```bash
-sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 ```
 
 ```bash
-sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O ~/.local/bin/yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 ```
 
 ```bash
-sudo aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir /usr/local/bin -o yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir ~/.local/bin -o yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 ```
 
 To update, run: 
 ```bash
-sudo yt-dlp -U
+yt-dlp -U
 ```
-
 
 # With [PIP](https://pypi.org/project/pip)
 
