@@ -33,6 +33,7 @@ To update, run:
 yt-dlp -U
 ```
 
+
 # With [PIP](https://pypi.org/project/pip)
 
 You can install the [PyPI package](https://pypi.org/project/yt-dlp) with:
