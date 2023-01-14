@@ -14,24 +14,42 @@ You can simply download the [correct binary file](https://github.com/yt-dlp/yt-d
 In UNIX-like OSes (MacOS, Linux, BSD), you can also install the same in one of the following ways:
 
 ```bash
-curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
-chmod a+rx ~/.local/bin/yt-dlp  # Make executable
+mkdir -p ~/bin
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/bin/yt-dlp
+chmod a+rx ~/bin/yt-dlp  # Make executable
 ```
 
 ```bash
-wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O ~/.local/bin/yt-dlp
-chmod a+rx ~/.local/bin/yt-dlp  # Make executable
+mkdir -p ~/bin
+wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O ~/bin/yt-dlp
+chmod a+rx ~/bin/yt-dlp  # Make executable
 ```
 
 ```bash
-aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir ~/.local/bin -o yt-dlp
-chmod a+rx ~/.local/bin/yt-dlp  # Make executable
+mkdir -p ~/bin
+aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir ~/bin -o yt-dlp
+chmod a+rx ~/bin/yt-dlp  # Make executable
+```
+
+If `~/bin` is not already in your path, you can add it
+###### Linux,BSD
+Edit your the appropriate file for your shell(i.e. `~/.bashrc`, `~/.zshrc`, etc) and add the following:
+```bash
+PATH=$PATH:~/bin
+export PATH
+```
+
+###### MacOS
+Create a file `/etc/path.d/80_bin` with the following contents
+```text
+~/bin
 ```
 
 To update, run: 
 ```bash
 yt-dlp -U
 ```
+
 
 
 # With [PIP](https://pypi.org/project/pip)
