@@ -87,7 +87,7 @@ Either prepend `https://www.youtube.com/watch?v=` or separate the ID from the op
 
 Passing cookies to yt-dlp is a good way to workaround login when a particular extractor does not implement it explicitly. Another use case is working around [CAPTCHA](https://en.wikipedia.org/wiki/CAPTCHA) some websites require you to solve in particular cases in order to get access (e.g. YouTube, CloudFlare).
 
-The easiest way to pass cookies is to let yt-dlp extract it from your browser (say, Chrome) using `--cookies-from-browser chrome`.
+The easiest way to pass cookies is to let yt-dlp extract it from your browser (say, Chrome) using `--cookies-from-browser chrome`. In Linux, this searches for config in location `~/.config/google-chrome`. In case you install Chrome using Flatpak, the config is located in `~/.var/app/com.google.Chrome`. To pass the cookies from this location use `--cookies-from-browser chrome:~/.var/app/com.google.Chrome/`
 
 If you wish to manually pass cookies, use the `--cookies` option, for example `--cookies /path/to/cookies/file.txt`.
 
