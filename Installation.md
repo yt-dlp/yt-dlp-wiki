@@ -1,5 +1,7 @@
 You can install yt-dlp either using one of the official releases, or with your favorite package manager
 
+> If you are unfamilar with the command line, you may use one of the many third-party GUIs available
+
 ---
 
 # Using the release binary
@@ -45,6 +47,8 @@ You can install without any of the optional dependencies using:
 ```bash
 python3 -m pip install --no-deps -U yt-dlp
 ```
+
+<a id="pip-master"/>
 
 If you want to be on the cutting edge, you can also install the master branch with:
 ```bash
