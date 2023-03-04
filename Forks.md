@@ -13,5 +13,6 @@
 ### Automated releases
 
 - [yt-dlp nightly](https://github.com/yt-dlp/yt-dlp-nightly-builds)
-- [yt-dlp daily](https://github.com/ytdl-patched/yt-dlp)
+- ~~[yt-dlp daily](https://github.com/ytdl-patched/yt-dlp)~~
+  - sunsetting on March 11 2023 - use nightly above
 - [youtube-dl daily](https://github.com/ytdl-patched/youtube-dl)
