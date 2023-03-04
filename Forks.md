@@ -10,7 +10,8 @@
 - [weeb-dl](https://github.com/animelover1984/youtube-dl) - [Mostly Merged](https://github.com/yt-dlp/yt-dlp/pull/31) into yt-dlp
 - [haruhi-dl](https://git.sakamoto.pl/laudom/haruhi-dl) - Partially merged into yt-dlp
 
-### Automated daily releases
+### Automated releases
 
-- [youtube-dl](https://github.com/ytdl-patched/youtube-dl)
-- [yt-dlp](https://github.com/ytdl-patched/yt-dlp)
+- [yt-dlp nightly](https://github.com/yt-dlp/yt-dlp-nightly-builds)
+- [yt-dlp daily](https://github.com/ytdl-patched/yt-dlp)
+- [youtube-dl daily](https://github.com/ytdl-patched/youtube-dl)
