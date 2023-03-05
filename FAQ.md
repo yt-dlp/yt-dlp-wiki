@@ -91,7 +91,7 @@ The easiest way to pass cookies is to let yt-dlp extract it from your browser (s
 
 If you wish to manually pass cookies, use the `--cookies` option, for example: `--cookies /path/to/cookies/file.txt`.
 
-The safest method for exporting your cookies to a text file is actually to use yt-dlp's `--cookies-from-browser` option in conjunction with the `--cookies` option, for example: `yt-dlp --cookies-from-browser chrome --cookies cookies.txt`. yt-dlp will extract the browser cookies and save them to the filepath specified after `--cookies`. The resulting text file can then be used with the `--cookies` option.
+You can export your cookies to a text file without any third-party software by using yt-dlp's `--cookies-from-browser` option in conjunction with the `--cookies` option, for example: `yt-dlp --cookies-from-browser chrome --cookies cookies.txt`. yt-dlp will extract the browser cookies and save them to the filepath specified after `--cookies`. The resulting text file can then be used with the `--cookies` option. Note though that this method exports your browser's cookies for ALL sites (even if you passed a URL to yt-dlp), so take care in not letting this text file fall into the wrong hands.
 
 You may also use a conforming browser extension for exporting cookies, such as [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/) for Firefox. As with any browser extension, be careful about what you install. (In particular, **beware of the `Get cookies.txt` extension for Chrome!** There are credible reports of it being malware.)
 
