@@ -89,9 +89,11 @@ Passing cookies to yt-dlp is a good way to workaround login when a particular ex
 
 The easiest way to pass cookies is to let yt-dlp extract it from your browser (say, Chrome) using `--cookies-from-browser chrome`. In Linux, this searches for config in location `~/.config/google-chrome`. In case you install Chrome using Flatpak, the config is located in `~/.var/app/com.google.Chrome`. To pass the cookies from this location use `--cookies-from-browser chrome:~/.var/app/com.google.Chrome/`
 
-If you wish to manually pass cookies, use the `--cookies` option, for example `--cookies /path/to/cookies/file.txt`.
+If you wish to manually pass cookies, use the `--cookies` option, for example: `--cookies /path/to/cookies/file.txt`.
 
-In order to extract cookies from browser use any conforming browser extension for exporting cookies. For example, [Get cookies.txt](https://chrome.google.com/webstore/detail/get-cookiestxt/bgaddhkoddajcdgocldbbfleckgcbcid/) (for Chrome) or [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/) (for Firefox).
+You can export your cookies to a text file without any third-party software by using yt-dlp's `--cookies-from-browser` option in conjunction with the `--cookies` option, for example: `yt-dlp --cookies-from-browser chrome --cookies cookies.txt`. yt-dlp will extract the browser cookies and save them to the filepath specified after `--cookies`. The resulting text file can then be used with the `--cookies` option. Note though that this method exports your browser's cookies for ALL sites (even if you passed a URL to yt-dlp), so take care in not letting this text file fall into the wrong hands.
+
+You may also use a conforming browser extension for exporting cookies, such as [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/) for Firefox. As with any browser extension, be careful about what you install. (In particular, **beware of the `Get cookies.txt` extension for Chrome!** There are credible reports of it being malware.)
 
 Note that the cookies file must be in Mozilla/Netscape format and the first line of the cookies file must be either `# HTTP Cookie File` or `# Netscape HTTP Cookie File`. Make sure you have correct [newline format](https://en.wikipedia.org/wiki/Newline) in the cookies file and convert newlines if necessary to correspond with your OS, namely `CRLF` (`\r\n`) for Windows and `LF` (`\n`) for Unix and Unix-like systems (Linux, macOS, etc.). `HTTP Error 400: Bad Request` when using `--cookies` is a good sign of invalid newline format.
 
