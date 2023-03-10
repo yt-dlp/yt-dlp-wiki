@@ -6,6 +6,8 @@
     - Bypasses YouTube age-gate using [account proxy](https://youtube-proxy.zerody.one) by [zerodytrash](https://github.com/zerodytrash)
 - [YouTube nsig Proxy](https://github.com/pukkandan/yt-dlp-YTNSigProxy) by [pukkandan](https://github.com/pukkandan)
     - Uses an online solver for decrypting YouTube nsig (based on [nparams/decrypt](https://github.com/Lesmiscore/bookish-octo-barnacle/blob/master/api/youtube/nparams/decrypt.js) by [Lesmiscore](https://github.com/Lesmiscore))
+- [YouTube nsig Deno](https://github.com/sakura4919/yt-dlp-YTNSigDeno) by [sakura4919](https://github.com/sakura4919)
+    - Uses [Deno](https://deno.land) for decrypting YouTube nsig
 
 ### Postprocessor
 
