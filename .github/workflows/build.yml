@@ -10,17 +10,11 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Install SSH private key
-      if: "env.TOKEN != ''"
-      env:
-        TOKEN: ${{ secrets.TOKEN }}
-      uses: yt-dlp/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ env.TOKEN }}
+        ssh-key: ${{ secrets.TOKEN }}
     - name: Push to wiki
-      if: "env.TOKEN != ''"
       env:
         TOKEN: ${{ secrets.TOKEN }}
+      if: env.TOKEN != ''
       run: |
         git remote add upstream git@github.com:yt-dlp/yt-dlp.wiki
         git fetch upstream
