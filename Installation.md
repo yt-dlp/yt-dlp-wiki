@@ -100,27 +100,17 @@ sudo pacman -Syu
 
 ### [APT](https://en.wikipedia.org/wiki/APT_(software))
 
-You can download and install yt-dlp for Ubuntu and other related Debian-based distributions by adding the [stable PPA](https://launchpad.net/~yt-dlp/+archive/ubuntu/stable)
+You can download and install yt-dlp for recent Ubuntu and other related Debian-based distributions by adding the [this PPA](https://launchpad.net/~tomtomtom/+archive/ubuntu/yt-dlp)
 ```bash
-sudo add-apt-repository ppa:yt-dlp/stable    # Add ppa repo to apt
-sudo apt update                              # Update package list
-sudo apt install yt-dlp                      # Install yt-dlp
+sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
+sudo apt update                                 # Update package list
+sudo apt install yt-dlp                         # Install yt-dlp
 ```
-
-If you wish to use pre-compiled bleeding edge daily snapshot packages, use the [unstable PPA](https://code.launchpad.net/~yt-dlp/+archive/ubuntu/unstable) instead:
-```bash
-sudo add-apt-repository ppa:yt-dlp/unstable  # Add ppa repo to apt
-sudo apt update                              # Update package list
-sudo apt install yt-dlp                      # Install yt-dlp
-```
-
 Your system's package manager will now automatically download the correct dependencies and keep the package updated with the rest of your system whenever you run:
 ```bash
 sudo apt update
 sudo apt install yt-dlp
 ```
-The [Debian package](https://salsa.debian.org/debian/yt-dlp) is upstream for the Ubuntu ppa.
-
 ### [MacPorts](https://ports.macports.org/port/yt-dlp/)
 
 You can install yt-dlp on macOS using MacPorts:
