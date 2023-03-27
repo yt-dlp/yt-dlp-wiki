@@ -106,14 +106,11 @@ sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
 sudo apt update                                 # Update package list
 sudo apt install yt-dlp                         # Install yt-dlp
 ```
-
 Your system's package manager will now automatically download the correct dependencies and keep the package updated with the rest of your system whenever you run:
 ```bash
 sudo apt update
 sudo apt install yt-dlp
 ```
-The [Debian package](https://salsa.debian.org/debian/yt-dlp) is upstream for the Ubuntu ppa.
-
 ### [MacPorts](https://ports.macports.org/port/yt-dlp/)
 
 You can install yt-dlp on macOS using MacPorts:
