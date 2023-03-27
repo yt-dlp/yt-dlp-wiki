@@ -107,13 +107,6 @@ sudo apt update                                 # Update package list
 sudo apt install yt-dlp                         # Install yt-dlp
 ```
 
-If you wish to use pre-compiled bleeding edge daily snapshot packages, use the [unstable PPA](https://code.launchpad.net/~yt-dlp/+archive/ubuntu/unstable) instead:
-```bash
-sudo add-apt-repository ppa:yt-dlp/unstable  # Add ppa repo to apt
-sudo apt update                              # Update package list
-sudo apt install yt-dlp                      # Install yt-dlp
-```
-
 Your system's package manager will now automatically download the correct dependencies and keep the package updated with the rest of your system whenever you run:
 ```bash
 sudo apt update
