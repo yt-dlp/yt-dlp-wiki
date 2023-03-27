@@ -100,11 +100,11 @@ sudo pacman -Syu
 
 ### [APT](https://en.wikipedia.org/wiki/APT_(software))
 
-You can download and install yt-dlp for Ubuntu and other related Debian-based distributions by adding the [stable PPA](https://launchpad.net/~yt-dlp/+archive/ubuntu/stable)
+You can download and install yt-dlp for recent Ubuntu and other related Debian-based distributions by adding the [this PPA](https://launchpad.net/~tomtomtom/+archive/ubuntu/yt-dlp)
 ```bash
-sudo add-apt-repository ppa:yt-dlp/stable    # Add ppa repo to apt
-sudo apt update                              # Update package list
-sudo apt install yt-dlp                      # Install yt-dlp
+sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
+sudo apt update                                 # Update package list
+sudo apt install yt-dlp                         # Install yt-dlp
 ```
 
 If you wish to use pre-compiled bleeding edge daily snapshot packages, use the [unstable PPA](https://code.launchpad.net/~yt-dlp/+archive/ubuntu/unstable) instead:
