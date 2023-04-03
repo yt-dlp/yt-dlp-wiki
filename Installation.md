@@ -124,6 +124,30 @@ sudo port selfupdate
 sudo port upgrade yt-dlp
 ```
 
+### [Alpine Linux](https://alpinelinux.org/)
+
+Make sure you're on the latest version (or edge) - older versions don't receive updates for community repo.
+
+To install yt-dlp on Alpine Linux:
+```sh
+doas apk -U add yt-dlp
+```
+Or alternatively, without any optional dependencies:
+```sh
+doas apk -U add yt-dlp-core
+```
+
+yt-dlp should upgrade with your system. If you want to do that explicitly:
+```sh
+doas apk -U upgrade yt-dlp
+```
+
+To uninstall:
+```sh
+doas apk del yt-dlp
+```
+
+On [postmarketOS](https://postmarketos.org/) you might have to use `sudo` instead of `doas`.
 
 ## Windows
 
