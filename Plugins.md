@@ -8,11 +8,17 @@
     - Uses an online solver for decrypting YouTube nsig (based on [nparams/decrypt](https://github.com/Lesmiscore/bookish-octo-barnacle/blob/master/api/youtube/nparams/decrypt.js) by [Lesmiscore](https://github.com/Lesmiscore))
 - [YouTube nsig Deno](https://github.com/cute-sakura/yt-dlp-YTNSigDeno) by [cute-sakura](https://github.com/cute-sakura)
     - Uses [Deno](https://deno.land) for decrypting YouTube nsig
+- [TTUser](https://github.com/bashonly/yt-dlp-TTUser) by [bashonly](https://github.com/bashonly/yt-dlp-TTUser) and [redraskal](https://github.com/redraskal)
+    - Uses [playwright](https://playwright.dev) to download all videos posted by a TikTok user
 
 ### Postprocessor
 
 - [Return Youtube Dislikes](https://github.com/pukkandan/yt-dlp-returnyoutubedislike) by [pukkandan](https://github.com/pukkandan)
     - Add dislike count from [returnyoutubedislike](https://returnyoutubedislike.com) to Youtube video metadata
+- [srt fixer](https://github.com/bindestriche/srt_fix) by [bindestriche](https://github.com/bindestriche)
+    - Fix [duplicate lines](https://github.com/yt-dlp/yt-dlp/issues/1734) in Youtube's `--auto-subs` when converted to `srt`
+- [FixupMtime](https://github.com/bradenhilton/yt-dlp-FixupMtime) by [bradenhilton](https://github.com/bradenhilton)
+    - Sets the mtime of all files to a given datetime value by key
 
 ### Other
 
