@@ -35,6 +35,7 @@ To update, run:
 sudo yt-dlp -U
 ```
 
+To use shell completion (autocomplete), look for the completion files in the [source tarball](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz). It comes with bash, fish & zsh support.
 
 # With [pip](https://pypi.org/project/pip)
 
