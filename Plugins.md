@@ -19,6 +19,8 @@
     - Fix [duplicate lines](https://github.com/yt-dlp/yt-dlp/issues/1734) in Youtube's `--auto-subs` when converted to `srt`
 - [FixupMtime](https://github.com/bradenhilton/yt-dlp-FixupMtime) by [bradenhilton](https://github.com/bradenhilton)
     - Sets the mtime of all files to a given datetime value by key
+- [yt-dlp-replaygain](https://github.com/Eboreg/yt-dlp-replaygain) by [Eboreg](https://github.com/Eboreg)
+    - Applies track and (optionally) album replaygain to downloaded audio playlists or songs
 
 ### Other
 
