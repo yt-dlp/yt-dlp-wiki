@@ -1,6 +1,6 @@
 You can install yt-dlp either using one of the official releases, or with your favorite package manager
 
-> If you are unfamilar with the command line, you may use one of the many third-party GUIs available
+> If you are unfamiliar with the command line, you may use one of the many third-party GUIs available
 
 ---
 
@@ -67,7 +67,7 @@ python3 -m pip install -U yt-dlp
 
 # Third-party package managers
 
-**Note**: These packages are manitained by third-parties and may not be up-to-date. Please report any issues to the respective package maintainers
+**Note**: These packages are maintained by third-parties and may not be up-to-date. Please report any issues to the respective package maintainers
 
 <a href="https://repology.org/project/yt-dlp/versions">
     <img src="https://repology.org/badge/vertical-allrepos/yt-dlp.svg" alt="Packaging status" align="right">
