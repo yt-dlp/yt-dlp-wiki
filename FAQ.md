@@ -161,3 +161,24 @@ The best solution to this problem is to [update ffmpeg](https://github.com/yt-dl
 ```
 --postprocessor-args "ffmpeg:-strict -2"
 ```
+
+
+### I'm getting HTTP Error 403 and the site has an open issue on the tracker that's labeled "Cloudflare-related". What can I do?
+
+The 403 errors are coming from Cloudflare; their anti-bot fingerprinting is determining that yt-dlp is not a web browser and blocking yt-dlp's requests to the site you are trying to download from.
+
+There is a workaround for this. It requires cookies from a browser with the same IP address that you will be using with yt-dlp. Follow these steps:
+
+1. Refresh your cookies in browser by navigating to the site you are trying to download from. If you have not done this within the past 30 minutes, you will need to do it again
+
+2. Find your browser's User-Agent string; you need the *entire* string (starting with `Mozilla/5.0`) and it needs to be up-to-date (i.e. if your browser updates, you'll need to get its new UA string with the current version)
+     - the simplest way is to type "my user-agent" into duckduckgo, google, etc. 
+     - for Firefox browsers, you can find the user-agent by navigating to `about:support`
+     - for Chromium-based browsers, you can find it in `chrome://version` (or your vendor prefix like `brave://version`, etc)
+
+3. Pass your browser's user-agent to yt-dlp with `--user-agent "USERAGENT"` along with `--cookies-from-browser firefox`
+     - replace `USERAGENT` with your actual full user-agent string you got from step 2
+     - replace `firefox` with the browser that you are using to browse the site
+     - Or, if you'd rather use a cookies file instead of having yt-dlp extract cookies from your browser, you can use the `--cookies` option, e.g. `--cookies cookies.txt`. Note that the cookies need to be exported from a fresh browser session (see step 1) *within the past 30 minutes*. [More info on exporting cookies](#how-do-i-pass-cookies-to-yt-dlp)
+
+NOTE: This method reportedly works best with Firefox, and some users have reported problems getting it to work with Edge.
