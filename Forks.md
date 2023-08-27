@@ -2,7 +2,6 @@
 
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl) - The original project
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) - This project!
-- [ytdl-patched](https://github.com/ytdl-patched/ytdl-patched) - A fork of yt-dlp
 
 ### Inactive
     
@@ -13,4 +12,4 @@
 ### Automated releases
 
 - [yt-dlp nightly](https://github.com/yt-dlp/yt-dlp-nightly-builds)
-- [youtube-dl daily](https://github.com/ytdl-patched/youtube-dl)
+- [youtube-dl nightly](https://github.com/ytdl-org/ytdl-nightly)
