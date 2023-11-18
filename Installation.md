@@ -91,7 +91,7 @@ brew upgrade yt-dlp
 
 Arch Linux users can install it from the official community repository:
 ```bash
-sudo pacman -Syu yt-dlp
+sudo pacman -S yt-dlp
 ```
 
 pacman will now automatically download the correct dependencies and keep the package up-to-date whenever you update your system with:
