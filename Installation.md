@@ -112,6 +112,10 @@ Your system's package manager will now automatically download the correct depend
 sudo apt update
 sudo apt install yt-dlp
 ```
+or by doing
+```bash
+sudo apt install yt-dlp
+```
 ### [MacPorts](https://ports.macports.org/port/yt-dlp/)
 
 You can install yt-dlp on macOS using MacPorts:
