@@ -94,10 +94,7 @@ Arch Linux users can install it from the official community repository:
 sudo pacman -S yt-dlp
 ```
 
-pacman will now automatically download the correct dependencies and keep the package up-to-date whenever you update your system with:
-```bash
-sudo pacman -Syu
-```
+
 
 ### [APT](https://en.wikipedia.org/wiki/APT_(software))
 
@@ -107,15 +104,16 @@ sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
 sudo apt update                                 # Update package list
 sudo apt install yt-dlp                         # Install yt-dlp
 ```
+or by doing
+```bash
+sudo apt install yt-dlp
+```
 Your system's package manager will now automatically download the correct dependencies and keep the package updated with the rest of your system whenever you run:
 ```bash
 sudo apt update
 sudo apt install yt-dlp
 ```
-or by doing
-```bash
-sudo apt install yt-dlp
-```
+
 ### [MacPorts](https://ports.macports.org/port/yt-dlp/)
 
 You can install yt-dlp on macOS using MacPorts:
