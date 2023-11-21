@@ -87,7 +87,7 @@ To update, run:
 brew upgrade yt-dlp
 ```
 
-### [pacman](https://archlinux.org/packages/community/any/yt-dlp/)
+### [pacman](https://archlinux.org/packages/extra/any/yt-dlp/)
 
 Arch Linux users can install it from the official community repository:
 ```bash
