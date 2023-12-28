@@ -21,6 +21,8 @@
     - Sets the mtime of all files to a given datetime value by key
 - [yt-dlp-replaygain](https://github.com/Eboreg/yt-dlp-replaygain) by [Eboreg](https://github.com/Eboreg)
     - Applies track and (optionally) album replaygain to downloaded audio playlists or songs
+- [yt-dlp-dearrow](https://github.com/QuantumWarpCode/yt-dlp-dearrow) by [QuantumWarpCode](https://github.com/QuantumWarpCode)
+    - Applies DeArrow community titles to YouTube content
 
 ### Other
 
