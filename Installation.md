@@ -101,7 +101,7 @@ sudo pacman -Syu
 
 ### [APT](https://en.wikipedia.org/wiki/APT_(software))
 
-You can download and install yt-dlp for recent Ubuntu and other related Debian-based distributions by adding the [this PPA](https://launchpad.net/~tomtomtom/+archive/ubuntu/yt-dlp)
+You can download and install yt-dlp for recent Ubuntu and other related Debian-based distributions by adding [this PPA](https://launchpad.net/~tomtomtom/+archive/ubuntu/yt-dlp)
 ```bash
 sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
 sudo apt update                                 # Update package list
