@@ -26,6 +26,9 @@
 
 ### Other
 
+- [yt-dlp-ChromeCookieUnlock](https://github.com/seproDev/yt-dlp-ChromeCookieUnlock) by [seproDev](https://github.com/seproDev) and [csm10495](https://github.com/csm10495)
+    - Unlocks the cookie database for chromium based browsers
+
 Extensions that don't use the official plugin system
 
 - [Plugin manager](https://github.com/flashdagger/ytdlp-plugins) by [flashdagger](https://github.com/flashdagger)
