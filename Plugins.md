@@ -6,7 +6,7 @@
     - Bypasses YouTube age-gate using [account proxy](https://youtube-proxy.zerody.one) by [zerodytrash](https://github.com/zerodytrash)
 - [YouTube nsig Proxy](https://github.com/pukkandan/yt-dlp-YTNSigProxy) by [pukkandan](https://github.com/pukkandan)
     - Uses an online solver for decrypting YouTube nsig (based on [nparams/decrypt](https://github.com/Lesmiscore/bookish-octo-barnacle/blob/master/api/youtube/nparams/decrypt.js) by [Lesmiscore](https://github.com/Lesmiscore))
-- [YouTube nsig Deno](https://github.com/cute-sakura/yt-dlp-YTNSigDeno) by [cute-sakura](https://github.com/cute-sakura)
+- [YouTube nsig Deno](https://github.com/bashonly/yt-dlp-YTNSigDeno) by cute-sakura
     - Uses [Deno](https://deno.land) for decrypting YouTube nsig
 - [TTUser](https://github.com/bashonly/yt-dlp-TTUser) by [bashonly](https://github.com/bashonly/yt-dlp-TTUser) and [redraskal](https://github.com/redraskal)
     - Uses [playwright](https://playwright.dev) to download all videos posted by a TikTok user
