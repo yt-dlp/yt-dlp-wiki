@@ -13,26 +13,26 @@ You can simply download the [correct binary file](https://github.com/yt-dlp/yt-d
 [![MacOS](https://img.shields.io/badge/-MacOS-lightblue.svg?style=for-the-badge&logo=apple)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos)
 [![Other variants](https://img.shields.io/badge/-Other-grey.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp#release-files)
 
-In UNIX-like OSes (MacOS, Linux, BSD), you can also install the same in one of the following ways:
+In UNIX-like OSes (MacOS, Linux, BSD), you can also install the application into a location in your `$PATH`, such as `~/.local/bin`, in one of the following ways:
 
 ```bash
-sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 ```
 
 ```bash
-sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O ~/.local/bin/yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 ```
 
 ```bash
-sudo aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir /usr/local/bin -o yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp  # Make executable
+aria2c https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp --dir ~/.local/bin -o yt-dlp
+chmod a+rx ~/.local/bin/yt-dlp  # Make executable
 ```
 
 To update, run: 
 ```bash
-sudo yt-dlp -U
+yt-dlp -U
 ```
 
 To use shell completion (autocomplete), look for the completion files in the [source tarball](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz). It comes with bash, fish & zsh support.
