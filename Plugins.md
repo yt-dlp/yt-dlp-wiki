@@ -28,6 +28,8 @@
 
 - [yt-dlp-ChromeCookieUnlock](https://github.com/seproDev/yt-dlp-ChromeCookieUnlock) by [seproDev](https://github.com/seproDev) and [csm10495](https://github.com/csm10495)
     - Unlocks the cookie database for chromium based browsers
+- [yt-dont-lock-p](https://github.com/Grub4K/yt-dont-lock-p) by [Grub4K](https://github.com/Grub4K)
+    - Apply a system wake lock during yt-dlp execution
 
 Extensions that don't use the official plugin system
 
