@@ -11,7 +11,7 @@ You can simply download the [correct binary file](https://github.com/yt-dlp/yt-d
 [![MacOS](https://img.shields.io/badge/-MacOS-lightblue.svg?style=for-the-badge&logo=apple)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos)
 [![Other variants](https://img.shields.io/badge/-Other-grey.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp#release-files)
 
-In UNIX-like OSes (MacOS, Linux, BSD), you can also install the application into a location in your path.  For example, you can install into `~/.local/bin` in one of the following ways:
+In UNIX-like OSes (MacOS, Linux, BSD), you can also install the application into a location in your `$PATH`, such as `~/.local/bin`, in one of the following ways:
 
 ```bash
 curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
