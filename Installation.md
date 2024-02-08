@@ -48,12 +48,18 @@ You can install without any of the optional dependencies using:
 ```bash
 python3 -m pip install --no-deps -U yt-dlp
 ```
+<a id="pip-nightly"></a>
 
-<a id="pip-master"/>
+You can also install the nightly version of yt-dlp with:
+```bash
+python3 -m pip install -U --pre yt-dlp
+```
+
+<a id="pip-master"></a>
 
 If you want to be on the cutting edge, you can also install the master branch with:
 ```bash
-python3 -m pip install -U pip setuptools wheel
+python3 -m pip install -U pip hatchling wheel
 python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
 ```
 
