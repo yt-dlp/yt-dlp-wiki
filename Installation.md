@@ -41,7 +41,7 @@ To use shell completion (autocomplete), look for the completion files in the [so
 
 You can install the [PyPI package](https://pypi.org/project/yt-dlp) with:
 ```bash
-python3 -m pip install -U yt-dlp
+python3 -m pip install -U yt-dlp[default]
 ```
 
 You can install without any of the optional dependencies using:
@@ -52,7 +52,7 @@ python3 -m pip install --no-deps -U yt-dlp
 
 You can also install the nightly version of yt-dlp with:
 ```bash
-python3 -m pip install -U --pre yt-dlp
+python3 -m pip install -U --pre yt-dlp[default]
 ```
 
 <a id="pip-master"></a>
@@ -60,14 +60,14 @@ python3 -m pip install -U --pre yt-dlp
 If you want to be on the bleeding edge, you can also install the master branch with:
 ```bash
 python3 -m pip install -U pip hatchling wheel
-python3 -m pip install --force-reinstall https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz
+python3 -m pip install --force-reinstall "yt-dlp[default] @ https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz"
 ```
 
 On some systems, you may need to use `py` or `python` instead of `python3`
 
 To update, run:
 ```bash
-python3 -m pip install -U yt-dlp
+python3 -m pip install -U yt-dlp[default]
 ```
 
 
@@ -198,11 +198,11 @@ You can use yt-dlp on Android using [Termux](https://termux.dev). Once Termux is
 termux-setup-storage                 # Allow termux to download files into your phone's storage
 pkg update && pkg upgrade            # Update all packages
 pkg install libexpat openssl python  # Install python
-pip install -U yt-dlp                # Install yt-dlp
+pip install -U yt-dlp[default]       # Install yt-dlp with default dependencies
 pkg install ffmpeg                   # OPTIONAL: Install ffmpeg
 ```
 
 To update, run:
 ```bash
-pip install -U yt-dlp
+pip install -U yt-dlp[default]
 ```
