@@ -10,7 +10,7 @@ The PO Token is linked to a visitor ID, which appears to represent a session on 
 
 ### Manually acquiring a PO Token from a browser
 
-this process goes through manually obtaining a PO token generated on YouTube in a web browser, and then manually passing that to yt-dlp via extractor arguments. It is best to leave yt-dlp to handle the visitor ID/visitorData through cookies.
+This process goes through manually obtaining a PO Token generated on YouTube in a web browser, and then manually passing that to yt-dlp via extractor arguments. It is best to leave yt-dlp to handle the visitor ID/visitorData through cookies.
 
 #### If logged out
 
@@ -19,7 +19,7 @@ this process goes through manually obtaining a PO token generated on YouTube in 
 3. Click the video to play and a player request will appear in the network tab
 4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value. This is the PO Token.
 5. Export cookies from the browser
-6. Pass the PO Token to yt-dlp with `--extractor-args youtube:player-client=web,default;potoken=PO_TOKEN_VALUE_HERE`, cookies with `--cookies COOKIES_FILE` (or `--cookies-from-browser`)
+6. Pass the PO Token to yt-dlp with `--extractor-args youtube:player-client=web,default;po_token=web:PO_TOKEN_VALUE_HERE`, cookies with `--cookies COOKIES_FILE` (or `--cookies-from-browser`)
 
 #### If logged in
 
