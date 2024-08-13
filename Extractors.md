@@ -18,11 +18,11 @@ This process goes through manually obtaining a PO Token generated on YouTube in 
 
 Steps:
 
-1. Open a browser and go to any video on YouTube Music or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ).
+1. Open a browser and go to any video on YouTube Music or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ). **Make sure you are not logged in to any account!**
 2. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
-3. Click the video to play and a player request will appear in the network tab.
-4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value.
-5. Export cookies from the browser.
+3. Click the video to play and a player request will appear in the network tab
+4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value
+5. Export cookies from the browser
 6. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web:PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE`)
 
 Addendum:
@@ -34,7 +34,7 @@ Addendum:
 
 In some cases, you may not want to use cookies and instead just use the `visitor_data` extracted for Innertube API requests. 
 
-> Note: This method is  **not recommend** for most cases. It requires skipping webpage requests so the `VISITOR_INFO1_LIVE` cookies does not interfere, which will mean more requests, and less stable extraction.
+> Note: This method is  **not recommend** for most cases. It requires skipping webpage requests so the `VISITOR_INFO1_LIVE` cookie does not interfere, which will mean more requests, and less stable extraction.
 
 You can do this with:
 
@@ -49,11 +49,10 @@ This works with either cookies or [OAuth](https://github.com/coletdjnz/yt-dlp-yo
 
 Steps:
 
-1. Open a browser and go to YouTube Music
-2. Log in to the user you are using with yt-dlp
-3. Open any video on YouTube Music
-4. Follow steps 2-4 [above](#if-using-yt-dlp-without-an-account)
-5. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web:PO_TOKEN_VALUE_HERE"` with your method of auth (cookies or OAuth).
+1. Open YouTube Music in a browser, and log in with the user you are using with yt-dlp
+2. Open any video on YouTube Music
+3. Follow steps 2-4 [above](#if-using-yt-dlp-without-an-account)
+4. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web:PO_TOKEN_VALUE_HERE"` with your method of auth (cookies or OAuth)
 
 If you are using cookies, see [Exporting YouTube Cookies](#exporting-youtube-cookies) on how to export cookies without them being invalidated.
 
