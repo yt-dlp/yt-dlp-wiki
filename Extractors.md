@@ -54,6 +54,13 @@ If you are using cookies, see [Exporting YouTube Cookies](#exporting-youtube-coo
 
 > As of writing, it appears that when logged in, YouTube Embedded *does not* bind the PO Token to the Data Sync ID. This will mean PO Tokens from it will not work with the `web` client when using auth, which requires it is bound to the Data Sync ID. We can use YouTube Music instead to fetch the PO Token which does this.
 
+
+### Other methods of acquiring a PO Token
+
+#### Plugins
+- [yt-dlp-get-pot](https://github.com/coletdjnz/yt-dlp-get-pot) by [coletdjnz](https://github.com/coletdjnz)
+  - A simple plugin framework for yt-dlp to support fetching PO Tokens from external providers 
+
 ## Exporting YouTube cookies
 
 YouTube rotates cookies frequently on open YouTube browser tabs as a security measure.
