@@ -59,7 +59,7 @@ If you are using cookies, see [Exporting YouTube Cookies](#exporting-youtube-coo
 
 #### Plugins
 - [yt-dlp-get-pot](https://github.com/coletdjnz/yt-dlp-get-pot) by [coletdjnz](https://github.com/coletdjnz)
-  - A simple plugin framework for yt-dlp to support fetching PO Tokens from external providers 
+  - A plugin framework for yt-dlp to support fetching PO Tokens from external providers
 
 ## Exporting YouTube cookies
 
