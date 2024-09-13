@@ -32,7 +32,7 @@ Addendum:
 In some cases, you may not want to use cookies and instead pass Visitor Data to use in Innertube API requests. 
 
 > [!WARNING]
-> This method is **not recommend** for most cases. It requires skipping webpage requests so the `VISITOR_INFO1_LIVE` cookie does not interfere, which will mean more requests, and less stable extraction.
+> This method is **not recommended** for most cases. It requires skipping webpage requests so that the `VISITOR_INFO1_LIVE` cookie does not interfere. This results in more requests needing to be sent as well as less stable extraction.
 
 You can do this with:
 
