@@ -24,7 +24,7 @@ Steps:
 6. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE`)
 
 Addendum:
-- You can also get the PO Token from any of the `videoplayback` urls (it is the `pot` query parameter).
+- You can also get the PO Token from any of the `videoplayback` URLs (it is the `pot` query parameter).
 - You can also use `--cookies-from-browser` if that is pointed to the browser session with the same logged-out session you extracted the PO Token from.
 
 #### Passing Visitor Data without cookies
