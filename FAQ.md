@@ -7,7 +7,7 @@ See [this pinned issue](https://github.com/yt-dlp/yt-dlp/issues/3766) for a list
 
 Unfortunately, there is nothing we can do if your distribution serves an outdated/broken version. You should report this to the package maintainer or your distribution in their bugtracker or support forum.
 
-As a last resort, you can also uninstall the version installed by your package manager and follow [our installation instructions](Installation) to install the latest version.
+As a last resort, you can also uninstall the version installed by your package manager and follow [our installation instructions](https://github.com/yt-dlp/yt-dlp-wiki/blob/master/Installation.md) to install the latest version.
 
 
 ### Do I need any other programs?
