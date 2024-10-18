@@ -78,7 +78,7 @@ One way to do this is through a private browsing/incognito window:
 
 An alternative to using cookies is to log in with OAuth. This method avoids the need to export cookies.
 
-Enable logging in with OAuth with `--username=oauth --password="`. You can add this to your [yt-dlp config file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration)
+Enable logging in with OAuth with `--username=oauth --password=""`. You can add this to your [yt-dlp config file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration)
 
 Alternatively, if you only want to apply this for the YouTube extractors, you can add the following to a [.netrc file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#authentication-with-netrc):
  ```
