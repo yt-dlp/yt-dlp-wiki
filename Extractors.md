@@ -87,6 +87,8 @@ machine youtube login oauth password ""
 
 You can optionally supply a custom profile to save account credentials to with `--username=oauth+MY_PROFILE`. This allows you to switch accounts logged in. Otherwise, the default profile is used.
 
+A refresh token can optionally be supplied as the password. This may be useful if cache is disabled, or you want to initialize the cache from the refresh token.
+
 ### Logging in 
 
 On first run you will be prompted to authorize yt-dlp to access your YouTube account.
