@@ -41,7 +41,7 @@ You can do this with:
 
 ### Manually acquiring a PO Token from a browser for use when logged in
 
-The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either cookies or [OAuth](https://github.com/coletdjnz/yt-dlp-youtube-oauth2).
+The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either cookies or [OAuth](#logging-in-with-oauth2).
 
 Steps:
 
@@ -70,3 +70,32 @@ One way to do this is through a private browsing/incognito window:
 1. Open a new private browsing/incognito window and log into YouTube
 2. Open a new tab and **close the YouTube tab**
 3. Export cookies from the browser then **close the private browsing/incognito window** so the session is never opened in the browser again.
+
+## Logging in with OAuth
+
+> [!CAUTION]
+> Only use one method of authentication at a time. Using both cookies and OAuth at the same time may cause issues.
+
+An alternative to using cookies is to log in with OAuth. This method avoids the need to export cookies.
+
+Enable logging in with OAuth with `--username=oauth --password="`. You can add this to your [yt-dlp config file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration)
+
+Alternatively, if you only want to apply this for the YouTube extractors, you can add the following to a [.netrc file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#authentication-with-netrc):
+ ```
+machine youtube login oauth password ""
+```
+
+You can optionally supply a custom profile to save account credentials to with `--username=oauth+MY_PROFILE`. This allows you to switch accounts logged in. Otherwise, the default profile is used.
+
+### Logging in 
+
+On first run you will be prompted to authorize yt-dlp to access your YouTube account.
+> [youtube] oauth: Initializing authorization flow
+> 
+> [youtube] oauth: To give yt-dlp access to your account, go to  https://www.google.com/device  and enter code  XXX-YYY-ZZZ
+
+Open the link in your browser and enter the code. It will say the request is for YouTube on TV - this is normal, as we are using the YouTube on TV client for oauth ;)
+
+The token data is saved in the yt-dlp cache (you can specify a custom cache location with `--cache-dir`).
+
+If you encounter issues, run yt-dlp with verbose logging (`-v`). If you see `oauth: Logged in using profile "XXX"`, then it should be trying to use oauth.
