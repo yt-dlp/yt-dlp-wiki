@@ -41,7 +41,7 @@ You can do this with:
 
 ### Manually acquiring a PO Token from a browser for use when logged in
 
-The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either cookies or [OAuth](#logging-in-with-oauth2).
+The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either cookies or [OAuth](#logging-in-with-oauth).
 
 Steps:
 
