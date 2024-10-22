@@ -16,7 +16,7 @@ This process goes through manually obtaining a PO Token generated on YouTube in 
 
 Steps:
 
-1. Open a browser and go to any video on YouTube Music or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ). **Make sure you are not logged in to any account!**
+1. Open a browser and go to any video on [YouTube Music](https://music.youtube.com). **Make sure you are not logged in to any account!**
 2. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
 3. Click the video to play and a player request will appear in the network tab
 4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value
