@@ -41,18 +41,19 @@ You can do this with:
 
 ### Manually acquiring a PO Token from a browser for use when logged in
 
-The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either cookies or [OAuth](#logging-in-with-oauth).
+The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either [cookies](#exporting-youtube-cookies) or [OAuth](#logging-in-with-oauth).
 
 Steps:
 
-1. Open YouTube Music in a browser, and log in with the user you are using with yt-dlp
+1. Open [YouTube Music](https://music.youtube.com) in a browser, and log in with the user you are using with yt-dlp
 2. Open any video on YouTube Music
 3. Follow steps 2-4 [above](#manually-acquiring-a-po-token-from-a-browser-for-use-when-logged-out)
-4. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web+PO_TOKEN_VALUE_HERE"` with your method of auth (cookies or OAuth)
+4. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web;po_token=web+PO_TOKEN_VALUE_HERE"` with your method of auth (cookies or OAuth)
+
+Note only the `web` client is used above example (instead of `web` and `default`). When logged in, it is **recommended** to explicitly supply a PO token to all clients used to help avoid getting your account blocked.
+- If you want to use another client such as `mweb`, you should append `mweb+PO_TOKEN_VALUE_HERE` to the `po_token` argument and append `mweb` to the `player-client` argument.
 
 If you are using cookies, see [Exporting YouTube Cookies](#exporting-youtube-cookies) on how to export cookies without them being invalidated.
-
-> As of writing, it appears that when logged in, YouTube Embedded *does not* bind the PO Token to the Data Sync ID. This will mean PO Tokens from it will not work with the `web` client when using auth, which requires it is bound to the Data Sync ID. We can use YouTube Music instead to fetch the PO Token which does this.
 
 
 ### Other methods of acquiring a PO Token
