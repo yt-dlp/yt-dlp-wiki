@@ -188,7 +188,7 @@ NOTE: This method reportedly works best with Firefox, and some users have report
 
 The short answer is that supporting piracy sites would in all likelihood result in the project being shut down.
 In the past, other similar projects have been shut down due to supporting piracy sites.
-The yt-dlp maintainers are of the position that supporting these sites would be of no benefit to the project, but rather that doing so would only put the project's continued existence at risk.
+The yt-dlp maintainers are of the position that supporting such sites is not worth the risk.
 
 
 ### What does "sites primarily used for piracy" mean?
