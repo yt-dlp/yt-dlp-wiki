@@ -118,6 +118,18 @@ Your system's package manager will now automatically download the correct depend
 sudo apt update
 sudo apt install yt-dlp
 ```
+
+### [snap](https://snapcraft.io/yt-dlp)
+
+You can install yt-dlp using snap on Linux:
+```bash
+sudo snap install yt-dlp
+```
+To uninstall it:
+```bash
+sudo snap remove yt-dlp
+```
+
 ### [MacPorts](https://ports.macports.org/port/yt-dlp/)
 
 You can install yt-dlp on macOS using MacPorts:
