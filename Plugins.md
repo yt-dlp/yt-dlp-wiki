@@ -8,8 +8,8 @@
     - Uses an online solver for decrypting YouTube nsig (based on [nparams/decrypt](https://github.com/Lesmiscore/bookish-octo-barnacle/blob/master/api/youtube/nparams/decrypt.js) by [Lesmiscore](https://github.com/Lesmiscore))
 - [YouTube nsig Deno](https://github.com/bashonly/yt-dlp-YTNSigDeno) by cute-sakura
     - Uses [Deno](https://deno.land) for decrypting YouTube nsig
-- [TTUser](https://github.com/bashonly/yt-dlp-TTUser) by [bashonly](https://github.com/bashonly/yt-dlp-TTUser) and [redraskal](https://github.com/redraskal)
-    - Uses [playwright](https://playwright.dev) to download all videos posted by a TikTok user
+- [YouTube PO Token Framework](https://github.com/coletdjnz/yt-dlp-get-pot) by [coletdjnz](https://github.com/coletdjnz)
+    - A plugin framework for yt-dlp to support fetching [PO Tokens](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#po-token-guide) from external providers 
 
 ### Postprocessor
 
@@ -33,9 +33,7 @@
 
 Extensions that don't use the official plugin system
 
-- [Plugin manager](https://github.com/flashdagger/ytdlp-plugins) by [flashdagger](https://github.com/flashdagger)
-    - Extends the possibilities of yt-dlp by allowing to install new extractors from python packages
 - [dl-plus](https://github.com/un-def/dl-plus) by [un-def](https://github.com/un-def)
     - A youtube-dl/yt-dlp extension with pluggable extractors
     
-### [More](https://github.com/topics/yt-dlp-plugins)
+### [Check out the yt-dlp-plugins GitHub topic for more](https://github.com/topics/yt-dlp-plugins)
