@@ -119,15 +119,16 @@ sudo apt update
 sudo apt install yt-dlp
 ```
 
-### [snap](https://snapcraft.io/yt-dlp)
+### [Snap](https://snapcraft.io/yt-dlp)
 
-You can install yt-dlp using snap on Linux:
+You can install yt-dlp on Linux using Snap:
 ```bash
 sudo snap install yt-dlp --channel=latest/edge
 ```
-To uninstall it:
+
+To update, run:
 ```bash
-sudo snap remove yt-dlp
+sudo snap refresh yt-dlp --channel=latest/edge
 ```
 
 ### [MacPorts](https://ports.macports.org/port/yt-dlp/)
