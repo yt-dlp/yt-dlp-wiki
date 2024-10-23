@@ -126,7 +126,7 @@ You can install yt-dlp on Linux using Snap:
 sudo snap install yt-dlp --channel=latest/edge
 ```
 
-To update, run:
+To manually update, run:
 ```bash
 sudo snap refresh yt-dlp --channel=latest/edge
 ```
