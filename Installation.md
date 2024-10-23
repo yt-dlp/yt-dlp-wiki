@@ -123,7 +123,7 @@ sudo apt install yt-dlp
 
 You can install yt-dlp using snap on Linux:
 ```bash
-sudo snap install yt-dlp
+sudo snap install yt-dlp --channel=latest/edge
 ```
 To uninstall it:
 ```bash
