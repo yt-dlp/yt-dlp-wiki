@@ -182,3 +182,22 @@ There is a workaround for this. It requires cookies from a browser with the same
      - Or, if you'd rather use a cookies file instead of having yt-dlp extract cookies from your browser, you can use the `--cookies` option, e.g. `--cookies cookies.txt`. Note that the cookies need to be exported from a fresh browser session (see step 1) *within the past 30 minutes*. [More info on exporting cookies](#how-do-i-pass-cookies-to-yt-dlp)
 
 NOTE: This method reportedly works best with Firefox, and some users have reported problems getting it to work with Edge.
+
+
+### Why is there a rule against websites "primarily used for piracy"?
+
+The short answer is that supporting piracy sites would in all likelihood result in the project being shut down.
+In the past, other similar projects have been shut down due to supporting piracy sites.
+The yt-dlp maintainers are of the position that supporting such sites is not worth the risk.
+
+
+### What does "sites primarily used for piracy" mean?
+
+There is no clear-cut definition here, as any site that hosts user-generated content can be used for piracy.
+However, common grounds for exclusion from yt-dlp are:
+- It is difficult to find a single non-pirated video on the site
+- The site is being discussed as a safe haven for pirated content in online forums
+- The site's operators are completely anonymous or unknown
+
+Any of these reasons are enough for a site to be excluded from yt-dlp.
+This list is not exhaustive. It is up to the discretion of the maintainers as to whether or not a site will be included in yt-dlp.
