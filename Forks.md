@@ -2,6 +2,7 @@
 
 - [youtube-dl](https://github.com/ytdl-org/youtube-dl) - The original project
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) - This project!
+- [nicolaasjan/yt-dlp](https://github.com/nicolaasjan/yt-dlp) - Unofficial yt-dlp builds for Windows 7/XP
 
 ### Inactive
     
