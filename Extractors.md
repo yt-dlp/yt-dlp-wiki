@@ -16,12 +16,13 @@ This process goes through manually obtaining a PO Token generated on YouTube in 
 
 Steps:
 
-1. Open a browser and go to any video on YouTube Music or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ). **Make sure you are not logged in to any account!**
-2. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
-3. Click the video to play and a player request will appear in the network tab
-4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value
-5. Export cookies from the browser
-6. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE`)
+1. Open [YouTube Music](https://music.youtube.com) or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ) in a browser.  **Make sure you are not logged in to any account!**
+2. Open any video
+3. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
+4. Click the video to play and a player request will appear in the network tab
+5. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value
+6. Export cookies from the browser
+7. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE`)
 
 Addendum:
 - You can also get the PO Token from any of the `videoplayback` URLs (it is the `pot` query parameter).
@@ -41,18 +42,19 @@ You can do this with:
 
 ### Manually acquiring a PO Token from a browser for use when logged in
 
-The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either cookies or [OAuth](#logging-in-with-oauth).
+The process for obtaining a PO Token for use when yt-dlp is logged into an account is similar to the above. The PO Token obtained should work with either [cookies](#exporting-youtube-cookies) or [OAuth](#logging-in-with-oauth).
 
 Steps:
 
-1. Open YouTube Music in a browser, and log in with the user you are using with yt-dlp
-2. Open any video on YouTube Music
-3. Follow steps 2-4 [above](#manually-acquiring-a-po-token-from-a-browser-for-use-when-logged-out)
-4. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web,default;po_token=web+PO_TOKEN_VALUE_HERE"` with your method of auth (cookies or OAuth)
+1. Open [YouTube Music](https://music.youtube.com) in a browser, and log in with the user you are using with yt-dlp
+2. Open any video
+3. Follow steps 3-5 [above](#manually-acquiring-a-po-token-from-a-browser-for-use-when-logged-out)
+4. Pass the PO Token to yt-dlp using `--extractor-args "youtube:player-client=web;po_token=web+PO_TOKEN_VALUE_HERE"` with your method of auth (cookies or OAuth)
+
+Note only the `web` client is used above example (instead of `web` and `default`). When logged in, it is **recommended** to explicitly supply a PO token to all clients used to help avoid getting your account blocked.
+- If you want to use another client such as `mweb`, you should append `mweb+PO_TOKEN_VALUE_HERE` to the `po_token` argument and append `mweb` to the `player-client` argument.
 
 If you are using cookies, see [Exporting YouTube Cookies](#exporting-youtube-cookies) on how to export cookies without them being invalidated.
-
-> As of writing, it appears that when logged in, YouTube Embedded *does not* bind the PO Token to the Data Sync ID. This will mean PO Tokens from it will not work with the `web` client when using auth, which requires it is bound to the Data Sync ID. We can use YouTube Music instead to fetch the PO Token which does this.
 
 
 ### Other methods of acquiring a PO Token
