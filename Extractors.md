@@ -16,7 +16,7 @@ This process goes through manually obtaining a PO Token generated on YouTube in 
 
 Steps:
 
-1. Open [YouTube Music](https://music.youtube.com) in a browser.  **Make sure you are not logged in to any account!**
+1. Open [YouTube Music](https://music.youtube.com) or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ) in a browser.  **Make sure you are not logged in to any account!**
 2. Open any video
 3. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
 4. Click the video to play and a player request will appear in the network tab
