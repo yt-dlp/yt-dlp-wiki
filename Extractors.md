@@ -75,8 +75,6 @@ One way to do this is through a private browsing/incognito window:
 2. Open a new tab and **close the YouTube tab**
 3. Export cookies from the browser then **close the private browsing/incognito window** so the session is never opened in the browser again.
 
-For general guidance on exporting cookies for yt-dlp, see [How do I pass cookies to yt-dlp?](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
-
 ## Logging in with OAuth
 
 > [!CAUTION]
