@@ -65,6 +65,8 @@ If you are using cookies, see [Exporting YouTube Cookies](#exporting-youtube-coo
 
 ## Exporting YouTube cookies
 
+If you are unfamiliar with the basics of exporting cookies and passing them to yt-dlp, then first see [How do I pass cookies to yt-dlp?](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
+
 YouTube rotates cookies frequently on open YouTube browser tabs as a security measure.
 To export cookies that will remain working with yt-dlp, you will need to export cookies in such a way that they are never rotated. 
 
@@ -78,4 +80,4 @@ For general guidance on exporting cookies for yt-dlp, see [How do I pass cookies
 ## Logging in with OAuth
 
 > [!CAUTION]
-> Due to new restrictions by YouTube, logging in with OAuth is no longer works for yt-dlp. [You should use cookies instead.](#exporting-youtube-cookies)
+> Due to new restrictions enacted by YouTube, logging in with OAuth is no longer works for yt-dlp. [You should use cookies instead.](#exporting-youtube-cookies)
