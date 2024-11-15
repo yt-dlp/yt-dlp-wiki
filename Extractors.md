@@ -78,4 +78,4 @@ One way to do this is through a private browsing/incognito window:
 ## Logging in with OAuth
 
 > [!CAUTION]
-> Due to new restrictions enacted by YouTube, logging in with OAuth is no longer works for yt-dlp. [You should use cookies instead.](#exporting-youtube-cookies)
+> Due to new restrictions enacted by YouTube, logging in with OAuth no longer works with yt-dlp. [You should use cookies instead.](#exporting-youtube-cookies)
