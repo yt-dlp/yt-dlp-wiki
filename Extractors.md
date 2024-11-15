@@ -73,32 +73,9 @@ One way to do this is through a private browsing/incognito window:
 2. Open a new tab and **close the YouTube tab**
 3. Export cookies from the browser then **close the private browsing/incognito window** so the session is never opened in the browser again.
 
+For general guidance on exporting cookies for yt-dlp, see [How do I pass cookies to yt-dlp?](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
+
 ## Logging in with OAuth
 
-An alternative to using cookies is to log in with OAuth. This method avoids the need to export cookies.
-
 > [!CAUTION]
-> Only use one method of authentication at a time. Using both cookies and OAuth at the same time may cause issues.
-
-Enable logging in with OAuth by passing `--username=oauth --password=""` to yt-dlp. You can add this to your [yt-dlp config file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration), but this will result in yt-dlp trying to use this username/password combination for all sites. If you only want to apply this for the YouTube extractors, you can add the following to a [.netrc file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#authentication-with-netrc):
-
- ```
-machine youtube login oauth password ""
-```
-
-You can optionally supply a custom profile name that the account credentials will be saved under with `--username=oauth+MY_PROFILE`. This allows you to switch between multiple accounts. Otherwise, the default profile is used.
-
-A refresh token can optionally be supplied as the password. This may be useful if cache is disabled, or you want to initialize the cache from the refresh token.
-
-### Logging in 
-
-On first run you will be prompted to authorize yt-dlp to access your YouTube account.
-> [youtube] oauth: Initializing authorization flow
-> 
-> [youtube] oauth: To give yt-dlp access to your account, go to  https://www.google.com/device  and enter code  XXX-YYY-ZZZ
-
-Open the link in your browser and enter the code. It will say the request is for YouTube on TV -- this is expected, since we are using the YouTube on TV client for oauth.
-
-The token data is saved in the yt-dlp cache (you can specify a custom cache location with `--cache-dir`).
-
-If you encounter issues, run yt-dlp with verbose logging (`-v`). If you see `oauth: Logged in using profile "XXX"`, then yt-dlp is attempting to use oauth.
+> Due to new restrictions by YouTube, logging in with OAuth is no longer works for yt-dlp. [You should use cookies instead.](#exporting-youtube-cookies)
