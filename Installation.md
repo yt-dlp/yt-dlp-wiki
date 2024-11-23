@@ -4,7 +4,7 @@ You can install yt-dlp either using one of the official releases, or with your f
 
 ---
 
-# Using the release binary
+# Installing the release binary
 
 You can simply download the [correct binary file](https://github.com/yt-dlp/yt-dlp#release-files) for your OS
 
