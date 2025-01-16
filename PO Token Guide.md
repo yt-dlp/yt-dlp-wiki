@@ -60,8 +60,8 @@ You can select what client to use with the [`player_client` extractor argument](
 This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser **for use with the `web` client**, and manually passing it to yt-dlp via the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube). The same PO Token(s) may work with other web browser-based clients too.
 
 > [!TIP]
-> When supplying multiple po tokens, use the same --extractor-args option and comma-separate the PO Token configurations. For example:
->   --extractor-args "youtube:po_token=web.gvs+GVS_PO_TOKEN_VALUE_HERE,web.player+PLAYER_PO_TOKEN_VALUE_HERE"
+> When supplying multiple PO Tokens, use the same extractor args option and comma-separate the PO Token configurations. For example:
+>   `--extractor-args "youtube:po_token=web.gvs+GVS_PO_TOKEN_VALUE_HERE,web.player+PLAYER_PO_TOKEN_VALUE_HERE"`
 
 
 ### GVS PO Token
