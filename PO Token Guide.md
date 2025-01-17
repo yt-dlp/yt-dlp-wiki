@@ -43,7 +43,7 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 | `web`          | Yes                       | No                           |                               |
 | `mweb`         | Yes                       | No                           |                               |
 | `tv`           | No                        | No                           |                               |
-| `tv_embedded`  | No                        | No                           |                               |
+| `tv_embedded`  | No                        | No                           | Requires account cookies      |
 | `web_embedded` | No                        | No                           |                               |
 | `web_music`    | Yes                       | No                           |                               |
 | `web_creator`  | Yes                       | No                           | Requires account cookies      |
@@ -51,7 +51,7 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 | `android_vr`   | No                        | No                           |                               |
 | `ios`          | Yes                       | ?                            | Account cookies not supported |
 
-Note: HLS Formats do not require PO Token for GVS at this time.
+Note: HLS (m3u8) formats do not require PO Token for GVS at this time.
 
 You can select what client to use with the [`player_client` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube).
 
