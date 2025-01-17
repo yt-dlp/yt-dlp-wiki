@@ -2,6 +2,12 @@
 
 # YouTube PO Token Guide
 
+> [!TIP]
+> TL;DR recommended setup: `web` client with a [PO Token for GVS](#po-token-for-gvs).
+> 
+> See the notice in the [YouTube Extractor Wiki](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#youtube) for more information on the current state of downloading videos from YouTube.
+
+
 <!-- TOC -->
 * [YouTube PO Token Guide](#youtube-po-token-guide)
     * [Background](#background)
@@ -21,11 +27,6 @@
 Proof of Origin (PO) Token is a parameter that YouTube requires to be sent with requests from some clients. Without it, requests for the affected clients' format URLs may return HTTP Error 403, or result in your account or IP address being blocked.
 
 For yt-dlp, you can provide PO Token(s) using the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube), or you can install a plugin that hooks into the YouTube extractor to handle fetching a PO Token.
-
-> [!TIP]
-> Recommended setup: `web` client with a [PO Token for GVS](#po-token-for-gvs).
-> 
-> See the notice in the [YouTube Extractor Wiki](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#youtube) for more information on the current state of downloading videos from YouTube.
 
 ### Background
 
