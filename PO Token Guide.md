@@ -12,7 +12,7 @@
 * [YouTube PO Token Guide](#youtube-po-token-guide)
     * [Background](#background)
   * [Current PO Token enforcement](#current-po-token-enforcement)
-  * [Providing a PO Token manually](#providing-a-po-token-manually)
+  * [Providing a PO Token manually (for web client)](#providing-a-po-token-manually-for-web-client)
     * [PO Token for GVS](#po-token-for-gvs)
       * [No account](#no-account)
       * [With an account](#with-an-account)
@@ -62,9 +62,9 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 
 You can select what client to use with the [`player_client` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube).
 
-## Providing a PO Token manually
+## Providing a PO Token manually (for web client)
 
-This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser **for use with the `web` client**, and manually passing it to yt-dlp via the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube). The same PO Token(s) may work with other web browser-based clients too.
+This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser **for use with the `web` client**, and manually passing it to yt-dlp via the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube). The same PO Token extraction method may work with other web browser-based clients too.
 
 > [!TIP]
 > When supplying multiple PO Tokens, use the same extractor args option and comma-separate the PO Token configurations. For example:
@@ -73,7 +73,7 @@ This section provides a basic guide on extracting PO Token(s) manually from YouT
 
 ### PO Token for GVS
 
-The PO Token used for GVS is tied to your YouTube session. It generated differently depending on if you are logged in to yt-dlp or not.
+The PO Token used for `web` GVS requests is tied to your YouTube session. It generated differently depending on if you are logged in to yt-dlp or not.
 
 #### No account
 
@@ -82,8 +82,7 @@ The PO Token used for GVS is tied to your YouTube session. It generated differen
 3. Open the developer console (F12), then go to the "Network" tab and filter by `googlevideo`
 4. Click the video and play for a few seconds - requests to `googlevideo.com` should appear in the network tab
 5. From the most recent `googlevideo.com` request, extract the `pot` query parameter value from the URL
-6. [Export cookies from the browser](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
-7. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
+6. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
 Although not recommended, you may also provide visitor data instead of cookies. Refer to [Passing Visitor Data without cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#passing-visitor-data-without-cookies).
 
@@ -92,7 +91,7 @@ Although not recommended, you may also provide visitor data instead of cookies. 
 1. Open [YouTube Music](https://music.youtube.com) in a browser, and log in with the user you are using with yt-dlp
 2. Open any video
 3. Follow steps 3-5 above
-4. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` with your account cookies
+4. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` [with your account cookies ](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
 Addendum:
 - If there is no `pot` parameter in the `googlevideo.com` URL, wait a few seconds for more requests to be made and check them. 
@@ -102,7 +101,7 @@ Addendum:
 
 ### PO Token for Player
 
-The PO Token for Player requests is tied to the Video ID. This means you must generate a new PO Token for each video.
+The PO Token for `web` Player requests is tied to the Video ID. This means you must generate a new PO Token for each video.
 
 > [!NOTE]
 > If you are using the `web` client and have not disabled the `webpage` request, providing this PO Token is not necessary.
