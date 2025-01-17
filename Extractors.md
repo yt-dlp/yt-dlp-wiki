@@ -1,6 +1,11 @@
 # YouTube
 
-<!-- general section of status of downloading from youtube and what you need to do, pointing to the below sections -->
+> [!IMPORTANT]
+> YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them, so they must be provided.
+> 
+> By default, yt-dlp will attempt to download videos using [clients](#clients) that do not currently require a PO Token. However, some formats and features may not be available.
+> 
+> At this time, it is **recommended** to use the `web` client with a PO Token for GVS. Refer to the [PO Token Guide](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) on how to set up yt-dlp for this.
 
 ## Clients
 
