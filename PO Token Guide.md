@@ -39,10 +39,10 @@ For more technical details on these tokens, refer to the [technical details sect
 ## Cases where a PO Token is required
 
 There are currently two cases yt-dlp may require PO Tokens for video downloads, [depending on the client used](#current-po-token-enforcement):
-- GVS: Google Video Server requests, which use a PO Token bound to the user session.
-- Player: Innertube `player` requests, which use a PO Token bound to the video ID.
+- GVS: Google Video Server requests
+- Player: Innertube `player` requests
 
-These may not be interchangeable, and you will need to provide both if you are using a client that requires both.
+The PO Tokens may be generated differently for each of these cases, depending on the client.
 
 ### Current PO Token enforcement
 
