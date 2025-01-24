@@ -36,7 +36,7 @@ In some cases, you may not want to use cookies and instead pass Visitor Data to 
 
 You can do this with:
 
-    --extractor-args "youtube:visitor_data=VISITOR_DATA_VALUE_HERE"
+    --extractor-args "youtubetab:skip=webpage" --extractor-args "youtube:player_skip=webpage,configs;visitor_data=VISITOR_DATA_VALUE_HERE"
 
 
 ## PO Token Guide
