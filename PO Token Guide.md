@@ -3,7 +3,7 @@
 # YouTube PO Token Guide
 
 > [!TIP]
-> TL;DR recommended setup: `web` client with a [PO Token for GVS](#po-token-for-gvs).
+> TL;DR recommended setup: Either use a [plugin](#plugins), or [manual extraction](#guide-providing-a-po-token-manually-for-use-with-web-client), to provide the `web` client with a [PO Token for GVS requests](#cases-where-a-po-token-is-required).
 > 
 > See the notice in the [YouTube Extractor Wiki](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#youtube) for more information on the current state of downloading videos from YouTube.
 
@@ -110,7 +110,7 @@ Addendum:
 The PO Token for `web` Player requests is tied to the Video ID. This means you must generate a new PO Token for each video.
 
 > [!NOTE]
-> If you are using the `web` client and have not disabled the `webpage` request, providing this PO Token is not necessary.
+> If you are using the `web` client and have not disabled the `webpage` request, providing this PO Token is not necessary at this time.
 
 1. Open [YouTube Web](https://www.youtube.com) in a browser.
 2. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
