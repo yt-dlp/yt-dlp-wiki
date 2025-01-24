@@ -10,7 +10,7 @@
 ## Exporting YouTube cookies
 
 > [!CAUTION]
-> Using your account with yt-dlp may risk it being banned.
+> By using your account with yt-dlp, you run the risk of it being banned (temporarily or permanently).
 > Be mindful with the request rate and amount of downloads you make with an account. Consider using a throwaway account.
 
 > [!NOTE]
