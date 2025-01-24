@@ -1,7 +1,7 @@
 # YouTube
 
 > [!IMPORTANT]
-> YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them, so they must be provided from an external source.
+> YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them and they must be provided externally.
 > 
 > By default, yt-dlp will attempt to download videos using clients that do not currently require a PO Token. However, some formats and features may not be available.
 > 
