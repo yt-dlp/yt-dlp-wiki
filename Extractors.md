@@ -13,12 +13,13 @@
 > Using your account with yt-dlp may risk it being banned.
 > Be mindful with the request rate and amount of downloads you make with an account. Consider using a throwaway account.
 
+> [!NOTE]
+> this is only necessary for content that requires an account to access, such as private playlists, age restricted videos and members-only content.
+
 If you are unfamiliar with the basics of exporting cookies and passing them to yt-dlp, then first see [How do I pass cookies to yt-dlp?](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
 
 YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure.
 To export cookies that will remain working with yt-dlp, you will need to export cookies in such a way that they are never rotated. 
-
-Note: this is only necessary for content that requires an account to access, such as private playlists, age restricted videos and members-only content.
 
 One way to do this is through a private browsing/incognito window:
 1. Open a new private browsing/incognito window and log into YouTube
