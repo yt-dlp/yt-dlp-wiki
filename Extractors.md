@@ -3,7 +3,7 @@
 > [!IMPORTANT]
 > YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them and they must be provided externally.
 > 
-> By default, yt-dlp will attempt to download videos using clients that do not currently require a PO Token. However, some formats and features may not be available.
+> By default, yt-dlp will attempt to download videos using clients that do not currently require a PO Token. However, some formats and features may not be available without the token(s).
 > 
 > At this time, it is **recommended** to use provide a PO Token to use with the `web` client. Refer to the [PO Token Guide](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) on how to set up yt-dlp for this.
 
