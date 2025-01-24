@@ -14,7 +14,7 @@
 > Be mindful with the request rate and amount of downloads you make with an account. Use it only when necessary, or consider using a throwaway account.
 
 > [!NOTE]
-> This is only necessary for content that requires an account to access, such as private playlists, age restricted videos and members-only content.
+> This is only necessary for content that requires an account to access, such as private playlists, age-restricted videos and members-only content.
 
 If you are unfamiliar with the basics of exporting cookies and passing them to yt-dlp, then first see [How do I pass cookies to yt-dlp?](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
 
