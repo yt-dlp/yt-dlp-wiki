@@ -11,7 +11,7 @@
 
 > [!CAUTION]
 > By using your account with yt-dlp, you run the risk of it being banned (temporarily or permanently).
-> Be mindful with the request rate and amount of downloads you make with an account. Consider using a throwaway account.
+> Be mindful with the request rate and amount of downloads you make with an account. Use it only when necessary, or consider using a throwaway account.
 
 > [!NOTE]
 > This is only necessary for content that requires an account to access, such as private playlists, age restricted videos and members-only content.
