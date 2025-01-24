@@ -13,7 +13,7 @@
   * [Introduction](#introduction)
   * [Cases where a PO Token is required](#cases-where-a-po-token-is-required)
     * [Current PO Token enforcement](#current-po-token-enforcement)
-  * [Providing a PO Token manually (for web client)](#providing-a-po-token-manually-for-web-client)
+  * [Guide: Providing a PO Token manually (for use with `web` client)](#guide-providing-a-po-token-manually-for-use-with-web-client)
     * [PO Token for GVS](#po-token-for-gvs)
       * [No account](#no-account)
       * [With an account](#with-an-account)
@@ -66,9 +66,10 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 
 You can select what client to use with the [`player_client` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube).
 
-## Providing a PO Token manually (for web client)
+## Guide: Providing a PO Token manually (for use with `web` client)
 
-This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser **for use with the `web` client**, and manually passing it to yt-dlp via the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube). The same PO Token extraction method may work with other web browser-based clients too.
+This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser **for use with the `web` client**, and manually passing it to yt-dlp via the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube). 
+The same PO Token extraction method _may_ work with other web browser-based clients too.
 
 > [!TIP]
 > When supplying multiple PO Tokens, use the same extractor args option and comma-separate the PO Token configurations. For example:
@@ -83,10 +84,11 @@ The PO Token used for `web` GVS requests is tied to your YouTube session. It gen
 
 1. Open [YouTube Music](https://music.youtube.com) or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ) in a browser.  **Make sure you are not logged in to any account!**
 2. Open any video
-3. Open the developer console (F12), then go to the "Network" tab and filter by `googlevideo`
-4. Click the video and play for a few seconds - requests to `googlevideo.com` should appear in the network tab
-5. From the most recent `googlevideo.com` request, extract the `pot` query parameter value from the URL
-6. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
+3. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
+4. Filter requests by `googlevideo.com`
+5. Click the video and play for a few seconds - requests to `googlevideo.com` should appear in the network tab
+6. From the most recent `googlevideo.com` request, extract the `pot` query parameter value from the URL
+7. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
 Although not recommended, you may also provide visitor data instead of cookies. Refer to [Passing Visitor Data without cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#passing-visitor-data-without-cookies).
 
@@ -94,13 +96,13 @@ Although not recommended, you may also provide visitor data instead of cookies. 
 
 1. Open [YouTube Music](https://music.youtube.com) in a browser, and log in with the user you are using with yt-dlp
 2. Open any video
-3. Follow steps 3-5 above
+3. Follow steps 3-6 above
 4. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` [with your account cookies ](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
 Addendum:
 - If there is no `pot` parameter in the `googlevideo.com` URL, wait a few seconds for more requests to be made and check them. 
 - If there is a `sabr=1` query parameter in the `googlevideo.com` URL, then the PO Token is in the request body protobuf (and therefore is not easy to extract). 
-  - This should not be the case for YouTube Music or YouTube Embedded - if so, please raise an issue so we can update these docs.
+  - This should not be the case for YouTube Music or YouTube Embedded - if so, please raise an issue, so we can update these docs.
 
 
 ### PO Token for Player
