@@ -1,20 +1,24 @@
 # YouTube
 
 > [!IMPORTANT]
-> YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them, > YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them, so they must be provided from an external source.
+> YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them, so they must be provided from an external source.
 > 
 > By default, yt-dlp will attempt to download videos using clients that do not currently require a PO Token. However, some formats and features may not be available.
 > 
-> At this time, it is **recommended** to use the `web` client with a PO Token for GVS. Refer to the [PO Token Guide](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) on how to set up yt-dlp for this.
+> At this time, it is **recommended** to use provide a PO Token to use with the `web` client. Refer to the [PO Token Guide](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) on how to set up yt-dlp for this.
 
 ## Exporting YouTube cookies
+
+> [!CAUTION]
+> Using your account with yt-dlp may risk it being banned.
+> Be mindful with the request rate and amount of downloads you make with an account. Consider using a throwaway account.
 
 If you are unfamiliar with the basics of exporting cookies and passing them to yt-dlp, then first see [How do I pass cookies to yt-dlp?](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp)
 
 YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure.
 To export cookies that will remain working with yt-dlp, you will need to export cookies in such a way that they are never rotated. 
 
-Note: this is not necessary for guest sessions (i.e. not logged in) as they do not have rotating cookies.
+Note: this is only necessary for content that requires an account to access, such as private playlists, age restricted videos and members-only content.
 
 One way to do this is through a private browsing/incognito window:
 1. Open a new private browsing/incognito window and log into YouTube
