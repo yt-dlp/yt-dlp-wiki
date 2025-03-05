@@ -210,7 +210,7 @@ You can use yt-dlp on Android using [Termux](https://termux.dev). Once Termux is
 ```bash
 termux-setup-storage                 # Allow termux to download files into your phone's storage
 pkg update && pkg upgrade            # Update all packages
-pkg install libexpat openssl python  # Install python
+pkg install python python-pip        # Install Python, its package manager, and their dependencies
 pip install -U "yt-dlp[default]"     # Install yt-dlp with default dependencies
 pkg install ffmpeg                   # OPTIONAL: Install ffmpeg
 ```
