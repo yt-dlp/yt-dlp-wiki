@@ -42,7 +42,7 @@ You can do this with:
 
 #### `This content isn't available, try again later`
 
-This error is caused by your YouTube session (guest or account) hitting the YouTube video request rate limit. 
+This error is caused by your YouTube session (either guest or logged-in) exceeding the YouTube video request rate limit. 
 
 It is recommended to add a delay of around 5-10 seconds between downloads with `-t sleep` or [with the sleep options](https://github.com/yt-dlp/yt-dlp#workarounds).
 
