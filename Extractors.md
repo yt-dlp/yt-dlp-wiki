@@ -46,7 +46,7 @@ This error is caused by your YouTube session (either guest or logged-in) exceedi
 
 It is recommended to add a delay of around 5-10 seconds between downloads with `-t sleep` or [with the sleep options](https://github.com/yt-dlp/yt-dlp#workarounds).
 
-With the default yt-dlp settings, the rate limit for guest sessions is ~300 videos/hour. For account sessions, it is ~2000 videos/hour.
+With the default yt-dlp settings, the rate limit for guest sessions is ~300 videos/hour (~1000 webpage/player requests per hour). For account sessions, it is ~2000 videos/hour (~4000 webpage/player requests per hour).
 
 
 ## PO Token Guide
