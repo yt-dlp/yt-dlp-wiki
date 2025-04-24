@@ -42,14 +42,12 @@ You can do this with:
 
 #### `This content isn't available, try again later`
 
-This error is caused by the YouTube session (guest or account) hitting the YouTube video request rate limit. With the default yt-dlp settings, the session rate limit is ~300 videos/hour. 
-Note if using account cookies, the limit includes videos watched in the browser with that account.
+This error is caused by your YouTube session (guest or account) hitting the YouTube video request rate limit. 
 
 It is recommended to add a delay of around 5-10 seconds between downloads with `-t sleep` or [with the sleep options](https://github.com/yt-dlp/yt-dlp#workarounds).
 
-Other options include:
-- using only `web` client (`--extractor-args "youtube:player-client=web"`) which will increase the rate limit to a maximum of ~1000 videos/hour. Note that this client requires a [PO Token](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) to get working formats.
-- splitting up downloads into multiple sessions (i.e. multiple yt-dlp processes). If you are not using an account, yt-dlp creates a temporary guest session to download videos. It lasts for the lifetime of the yt-dlp process (or `YoutubeDL` instance for API users) if you are not persisting this session with cookies.
+With the default yt-dlp settings, the rate limit for guest sessions is ~300 videos/hour. For account sessions, it is ~2000 videos/hour.
+
 
 ## PO Token Guide
 
