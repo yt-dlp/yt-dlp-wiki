@@ -38,6 +38,16 @@ You can do this with:
 
     --extractor-args "youtubetab:skip=webpage" --extractor-args "youtube:player_skip=webpage,configs;visitor_data=VISITOR_DATA_VALUE_HERE"
 
+## Common YouTube Errors
+
+#### `This content isn't available, try again later`
+
+This error is caused by your YouTube guest session or account exceeding the YouTube video request rate limit. 
+
+It is recommended to add a delay of around 5-10 seconds between downloads with `-t sleep` or [with the sleep options](https://github.com/yt-dlp/yt-dlp#workarounds).
+
+With the default yt-dlp settings, the rate limit for guest sessions is ~300 videos/hour (~1000 webpage/player requests per hour). For accounts, it is ~2000 videos/hour per IP (~4000 webpage/player requests per hour).
+
 
 ## PO Token Guide
 
