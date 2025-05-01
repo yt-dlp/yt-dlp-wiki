@@ -5,7 +5,7 @@
 > 
 > By default, yt-dlp will attempt to download videos using clients that do not currently require a PO Token. However, some formats and features may not be available without the token(s).
 > 
-> At this time, it is **recommended** to use provide a PO Token to use with the `web` client. Refer to the [PO Token Guide](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) on how to set up yt-dlp for this.
+> At this time, it is **recommended** to use provide a PO Token to use with the `mweb` client. Refer to the [PO Token Guide](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) on how to set up yt-dlp for this.
 
 ## Exporting YouTube cookies
 

@@ -3,7 +3,7 @@
 # YouTube PO Token Guide
 
 > [!TIP]
-> TL;DR recommended setup: Either use a [plugin](#plugins), or [manual extraction](#guide-providing-a-po-token-manually-for-use-with-web-client), to provide the `web` client with a [PO Token for GVS requests](#cases-where-a-po-token-is-required).
+> TL;DR recommended setup: Either use a [plugin](#plugins), or [manual extraction](#guide-providing-a-po-token-manually-for-use-with-web-client), to provide the `mweb` client with a [PO Token for GVS requests](#cases-where-a-po-token-is-required).
 > 
 > See the notice in the [YouTube Extractor Wiki](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#youtube) for more information on the current state of downloading videos from YouTube.
 
@@ -50,12 +50,12 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 
 | Client         | PO Token for GVS Required | PO Token for Player Required | Notes                                 |
 |----------------|---------------------------|------------------------------|---------------------------------------|
-| `web`          | Yes                       | No                           |                                       |
+| `web`          | Yes                       | No                           | Only SABR formats available           |
 | `web_safari`   | Yes*                      | No                           |                                       |
 | `mweb`         | Yes                       | No                           |                                       |
 | `tv`           | No                        | No                           |                                       |
 | `tv_embedded`  | No                        | No                           | Requires account cookies              |
-| `web_embedded` | No                        | No                           |                                       |
+| `web_embedded` | No                        | No                           | Only embeddable videos available      |
 | `web_music`    | Yes                       | No                           |                                       |
 | `web_creator`  | Yes                       | No                           | Requires account cookies              |
 | `android`      | Yes                       | ?                            | Account cookies not supported         |
@@ -68,12 +68,12 @@ You can select what client to use with the [`player_client` extractor argument](
 
 ## Guide: Providing a PO Token manually (for use with `web` client)
 
-This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser **for use with the `web` client**, and manually passing it to yt-dlp via the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube). 
+This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser **for use with the `mweb` client**, and manually passing it to yt-dlp via the [`po_token` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube). 
 The same PO Token extraction method _may_ work with other web browser-based clients too.
 
 > [!TIP]
 > When supplying multiple PO Tokens, use the same extractor args option and comma-separate the PO Token configurations. For example:
->   `--extractor-args "youtube:po_token=web.gvs+GVS_PO_TOKEN_VALUE_HERE,web.player+PLAYER_PO_TOKEN_VALUE_HERE"`
+>   `--extractor-args "youtube:po_token=mweb.gvs+GVS_PO_TOKEN_VALUE_HERE,mweb.player+PLAYER_PO_TOKEN_VALUE_HERE"`
 
 
 ### PO Token for GVS
@@ -88,7 +88,7 @@ The PO Token used for `web` GVS requests is tied to your YouTube session. It gen
 4. Filter requests by `googlevideo.com`
 5. Click the video and play for a few seconds - requests to `googlevideo.com` should appear in the network tab
 6. From the most recent `googlevideo.com` request, extract the `pot` query parameter value from the URL
-7. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
+7. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
 Although not recommended, you may also provide visitor data instead of cookies. Refer to [Passing Visitor Data without cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#passing-visitor-data-without-cookies).
 
@@ -97,7 +97,7 @@ Although not recommended, you may also provide visitor data instead of cookies. 
 1. Open [YouTube Music](https://music.youtube.com) in a browser, and log in with the user you are using with yt-dlp
 2. Open any video
 3. Follow steps 3-6 above
-4. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:po_token=web.gvs+PO_TOKEN_VALUE_HERE"` [with your account cookies ](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
+4. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` [with your account cookies ](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
 Addendum:
 - If there is no `pot` parameter in the `googlevideo.com` URL, wait a few seconds for more requests to be made and check them. 
@@ -107,7 +107,7 @@ Addendum:
 
 ### PO Token for Player
 
-The PO Token for `web` Player requests is tied to the Video ID. This means you must generate a new PO Token for each video.
+The PO Token for `web`/`mweb` Player requests is tied to the Video ID. This means you must generate a new PO Token for each video.
 
 > [!NOTE]
 > If you are using the `web` client and have not disabled the `webpage` request, providing this PO Token is not necessary at this time.
@@ -117,7 +117,7 @@ The PO Token for `web` Player requests is tied to the Video ID. This means you m
 3. Navigate to the video you want to download (e.g. using search - do not go to the video url directly as the page will refresh)
 4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value
 5. Export cookies from the browser
-6. Pass the PO Token for Player to yt-dlp using `--extractor-args "youtube:po_token=web.player+PO_TOKEN_VALUE_HERE"`
+6. Pass the PO Token for Player to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.player+PO_TOKEN_VALUE_HERE"`
 
 ## Plugins
 
