@@ -23,8 +23,8 @@ To export cookies that will remain working with yt-dlp, you will need to export 
 
 One way to do this is through a private browsing/incognito window:
 1. Open a new private browsing/incognito window and log into YouTube
-2. Open a new tab and **close the YouTube tab**
-3. Export `youtube.com` cookies from the browser then **close the private browsing/incognito window** so the session is never opened in the browser again.
+2. In same window and same tab from step 1, navigate to `https://www.youtube.com/robots.txt` (this should be the **only** private/incognito browsing tab open)
+3. Export `youtube.com` cookies from the browser, then **close the private browsing/incognito window** so that the session is never opened in the browser again.
 
 
 ## Passing Visitor Data without cookies
