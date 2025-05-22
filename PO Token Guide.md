@@ -169,6 +169,6 @@ These PO Tokens are only valid for a limited time (usually at least 12 hours), s
 
 ### PO Tokens for Player and Subs
 
-Web Tokens for player (and subtitle) requests are bound to the video ID the associated `/player` request is for. YouTube has only recently started generating these for some clients (e.g. `web`).
+Web Tokens for player (and subtitles) requests are bound to the video ID the associated `/player` request is for. YouTube has only recently started generating these for some clients (e.g. `web`).
 
 As of writing, some clients, such as `web_music` use a session-bound PO Token for player requests. This is likely to change.
