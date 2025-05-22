@@ -78,8 +78,6 @@ Manually fetching PO Tokens can be a tedious process. As an alternative, you can
 
 Check out the [yt-dlp-pot-provider GitHub topic](https://github.com/topics/yt-dlp-pot-provider) for more PO Token Provider plugins.
 
-Also see the [yt-dlp-plugins GitHub topic](https://github.com/topics/yt-dlp-plugins) and the [yt-dlp plugin wiki](https://github.com/yt-dlp/yt-dlp/wiki/Plugins) to explore more yt-dlp plugins.
-
 For developers: [PO Token Framework developer documentation](https://github.com/yt-dlp/yt-dlp/tree/master/yt_dlp/extractor/youtube/pot/README.md)
 
 ## Guide: Providing a PO Token manually (for use with `mweb` client)
