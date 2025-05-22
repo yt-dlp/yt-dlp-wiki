@@ -3,7 +3,7 @@
 # YouTube PO Token Guide
 
 > [!TIP]
-> TL;DR recommended setup: Either use a [plugin](#plugins), or [manual extraction](#guide-providing-a-po-token-manually-for-use-with-mweb-client), to provide the `mweb` client with a [PO Token for GVS requests](#cases-where-a-po-token-is-required).
+> TL;DR recommended setup: Either use a [PO Token Provider plugin](#po-token-provider-plugins), or [manual extraction](#guide-providing-a-po-token-manually-for-use-with-mweb-client), to provide the `mweb` client with a [PO Token for GVS requests](#cases-where-a-po-token-is-required).
 > 
 > See the notice in the [YouTube Extractor Wiki](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#youtube) for more information on the current state of downloading videos from YouTube.
 
@@ -13,7 +13,8 @@
   * [Introduction](#introduction)
   * [Cases where a PO Token is required](#cases-where-a-po-token-is-required)
     * [Current PO Token enforcement](#current-po-token-enforcement)
-  * [Plugins](#plugins)
+  * [PO Token Provider Plugins](#po-token-provider-plugins)
+    * [Featured Plugins](#featured-plugins)
   * [Guide: Providing a PO Token manually (for use with `mweb` client)](#guide-providing-a-po-token-manually-for-use-with-mweb-client)
     * [PO Token for GVS](#po-token-for-gvs)
       * [No account](#no-account)
@@ -67,7 +68,7 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 
 You can select what client to use with the [`player_client` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube).
 
-## Plugins
+## PO Token Provider Plugins
 
 Manually fetching PO Tokens can be a tedious process. As an alternative, you can use PO Token Provider plugin to handle fetching PO Tokens automatically.
 
