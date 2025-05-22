@@ -69,13 +69,18 @@ You can select what client to use with the [`player_client` extractor argument](
 
 ## Plugins
 
-Manually fetching PO Tokens can be a tedious process. Alternatively, you can use a plugin that hooks into the YouTube extractor to handle fetching a PO Token.
+Manually fetching PO Tokens can be a tedious process. As an alternative, you can use PO Token Provider plugin to handle fetching PO Tokens automatically.
+
+### Featured Plugins
 
 - [bgutil-ytdlp-pot-provider](https://github.com/Brainicism/bgutil-ytdlp-pot-provider) by [Brainicism](https://github.com/Brainicism)
-  - A [yt-dlp-get-pot](https://github.com/coletdjnz/yt-dlp-get-pot) provider which uses [BgUtils](https://github.com/LuanRT/BgUtils) to generate PO Tokens. _Not affiliated with yt-dlp._
+  - A PO Token Provider which uses [BgUtils](https://github.com/LuanRT/BgUtils) to generate PO Tokens. _Not affiliated with yt-dlp._
 
-See the [yt-dlp-plugins GitHub topic](https://github.com/topics/yt-dlp-plugins) and the [yt-dlp plugin wiki](https://github.com/yt-dlp/yt-dlp/wiki/Plugins) to explore more yt-dlp plugins.
+Check out the [yt-dlp-pot-provider GitHub topic](https://github.com/topics/yt-dlp-pot-provider) for more PO Token Provider plugins.
 
+Also see the [yt-dlp-plugins GitHub topic](https://github.com/topics/yt-dlp-plugins) and the [yt-dlp plugin wiki](https://github.com/yt-dlp/yt-dlp/wiki/Plugins) to explore more yt-dlp plugins.
+
+For developers: [PO Token Framework developer documentation](https://github.com/yt-dlp/yt-dlp/tree/master/yt_dlp/extractor/youtube/pot/README.md)
 
 ## Guide: Providing a PO Token manually (for use with `mweb` client)
 
