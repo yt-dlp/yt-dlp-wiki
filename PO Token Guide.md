@@ -70,7 +70,7 @@ You can select what client to use with the [`player_client` extractor argument](
 
 ## PO Token Provider Plugins
 
-Manually fetching PO Tokens can be a tedious process. As an alternative, you can use PO Token Provider plugin to handle fetching PO Tokens automatically.
+Manually fetching PO Tokens can be a tedious process. As an alternative, you can install a PO Token Provider plugin to handle fetching PO Tokens automatically.
 
 ### Featured Plugins
 
@@ -79,7 +79,7 @@ Manually fetching PO Tokens can be a tedious process. As an alternative, you can
 
 Check out the [yt-dlp-pot-provider GitHub topic](https://github.com/topics/yt-dlp-pot-provider) for more PO Token Provider plugins.
 
-For developers: [PO Token Framework developer documentation](https://github.com/yt-dlp/yt-dlp/tree/master/yt_dlp/extractor/youtube/pot/README.md)
+For developers, refer to the [PO Token Provider developer documentation](https://github.com/yt-dlp/yt-dlp/tree/master/yt_dlp/extractor/youtube/pot/README.md)
 
 ## Guide: Providing a PO Token manually (for use with `mweb` client)
 
