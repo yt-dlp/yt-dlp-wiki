@@ -203,6 +203,10 @@ To update, run:
 ```powershell
 winget upgrade yt-dlp --source winget
 ```
+You can also update using the yt-dlp executable's built-in updater:
+```
+yt-dlp -U
+```
 
 ## Android
 
