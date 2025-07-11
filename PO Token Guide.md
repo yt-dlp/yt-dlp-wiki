@@ -40,8 +40,8 @@ For more technical details on these tokens, refer to the [technical details sect
 ## Cases where a PO Token is required
 
 There are currently two cases yt-dlp may require PO Tokens for video downloads, [depending on the client used](#current-po-token-enforcement):
-- GVS: Google Video Server requests
-- Player: Innertube `player` requests
+- GVS: Google Video Server requests (video streaming - https, dash, hls, etc.)
+- Player: Innertube `player` requests (fetch video format URLs)
 - Subs: Subtitle requests
 
 The PO Tokens may be generated differently for each of these cases, depending on the client.
@@ -50,21 +50,23 @@ The PO Tokens may be generated differently for each of these cases, depending on
 
 YouTube is at present rolling out changes to enforce PO Tokens for video playback. Currently, only GVS and Subs require PO Tokens for some clients.
 
-| Client         | PO Token for GVS Required | PO Token for Player Required | PO Token for Subs required | Notes                                            |
-|----------------|---------------------------|------------------------------|----------------------------|--------------------------------------------------|
-| `web`          | Yes                       | No                           | Sometimes (A/B test)       | Only SABR formats available                      |
-| `web_safari`   | Yes*                      | No                           | Sometimes (A/B test)       |                                                  |
-| `mweb`         | Yes                       | No                           | No                         |                                                  |
-| `tv`           | No                        | No                           | No                         | All formats may have DRM if you request too much |
-| `tv_embedded`  | No                        | No                           | No                         | Requires account cookies                         |
-| `web_embedded` | No                        | No                           | No                         | Only embeddable videos available                 |
-| `web_music`    | Yes                       | No                           | No                         |                                                  |
-| `web_creator`  | Yes                       | No                           | No                         | Requires account cookies                         |
-| `android`      | Yes?                      | ?                            | No                         | Account cookies not supported                    |
-| `android_vr`   | No                        | No                           | No                         | YouTube Kids videos are not available            |
-| `ios`          | Yes?*                     | ?                            | No                         | Account cookies not supported                    |
+| Client         | PO Token Required For       | Notes                                                                                           |
+|----------------|-----------------------------|-------------------------------------------------------------------------------------------------|
+| `web`          | Subs (rolling out), GVS     | Only SABR formats available                                                                     |
+| `web_safari`   | Subs (rolling out), GVS*    | Same as `web`. *Provides HLS (m3u8) formats which do not require PO Token for GVS at this time. |
+| `mweb`         | GVS                         |                                                                                                 |
+| `tv`           | Not required                | All formats may have DRM if you request too much                                                |
+| `tv_embedded`  | Not required                | Requires account cookies                                                                        |
+| `web_embedded` | Not required                | Only embeddable videos available                                                                |
+| `web_music`    | GVS                         |                                                                                                 |
+| `web_creator`  | GVS                         | Requires account cookies                                                                        |
+| `android`      | GVS or Player               | Account cookies not supported                                                                   |
+| `android_vr`   | Not required                | YouTube Kids videos are not available                                                           |
+| `ios`          | GVS or Player (rolling out) | Account cookies not supported                                                                   |
 
-*Client provides HLS (m3u8) formats which do not require PO Token for GVS at this time.
+For all clients:
+- GVS PO Token is not required for YouTube Premium subscribers
+- HLS live streams do not require a PO Token for GVS requests (excluding `ios` client)
 
 You can select what client to use with the [`player_client` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube).
 
