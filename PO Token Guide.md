@@ -98,32 +98,19 @@ The same PO Token extraction method _may_ work with other web browser-based clie
 
 ### PO Token for GVS
 
-The PO Token used for `web` GVS requests is tied to your YouTube session. It generated differently depending on if you are logged in to yt-dlp or not.
+The PO Token used for `web` GVS requests is tied to your YouTube session, so you will need to provide cookies.
 
-#### No account
-
-1. Open [YouTube Music](https://music.youtube.com) or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ) in a browser.  **Make sure you are not logged in to any account!**
-2. Open any video
-3. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
-4. Filter requests by `googlevideo.com`
-5. Click the video and play for a few seconds - requests to `googlevideo.com` should appear in the network tab
-6. From the most recent `googlevideo.com` request, extract the `pot` query parameter value from the URL
+1. Open [YouTube Music](https://music.youtube.com) in a browser.
+2. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
+3. Click any video
+4. Filter requests by `v1/player`
+5. Click the video and play for a few seconds - `player` requests should appear in the network tab
+6. From the most recent `player` request, extract the PO Token from `serviceIntegrityDimensions.poToken` field in the JSON request body
 7. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
-Although not recommended, you may also provide visitor data instead of cookies. Refer to [Passing Visitor Data without cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#passing-visitor-data-without-cookies).
+If using an account, [refer to this guide on exporting account cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
-#### With an account
-
-1. Open [YouTube Music](https://music.youtube.com) in a browser, and log in with the user you are using with yt-dlp
-2. Open any video
-3. Follow steps 3-6 above
-4. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` [with your account cookies ](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
-
-Addendum:
-- If there is no `pot` parameter in the `googlevideo.com` URL, wait a few seconds for more requests to be made and check them. 
-- If there is a `sabr=1` query parameter in the `googlevideo.com` URL, then the PO Token is in the request body protobuf (and therefore is not easy to extract). 
-  - This should not be the case for YouTube Music or YouTube Embedded - if so, please raise an issue, so we can update these docs.
-
+(Not recommended) If not using an account, you may also provide visitor data instead of cookies. Refer to [Passing Visitor Data without cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#passing-visitor-data-without-cookies).
 
 ### PO Token for Player or Subs
 
