@@ -66,7 +66,7 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 
 For all clients:
 - GVS PO Token is not required for YouTube Premium subscribers
-- HLS live streams do not require a PO Token for GVS requests (excluding `ios` client)
+- HLS live streams do not require a PO Token (excluding `ios` client)
 
 You can select what client to use with the [`player_client` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube).
 
