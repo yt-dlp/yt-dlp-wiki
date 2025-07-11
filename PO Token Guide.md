@@ -177,3 +177,5 @@ These PO Tokens are only valid for a limited time (usually at least 12 hours), s
 Web Tokens for player (and subtitles) requests are bound to the video ID the associated `/player` request is for. YouTube has only recently started generating these for some clients (e.g. `web`).
 
 As of writing, some clients, such as `web_music` use a session-bound PO Token for player requests. This is likely to change.
+
+For Android (and presumably iOS), the Player PO Token is bound to the user session, similar to GVS tokens. If a Player PO token is provided, the GVS PO token is not required.
