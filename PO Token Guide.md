@@ -72,6 +72,9 @@ You can select what client to use with the [`player_client` extractor argument](
 
 ## PO Token Provider Plugins
 
+> [!TIP]
+> Recommended
+
 Manually fetching PO Tokens can be a tedious process. As an alternative, you can install a PO Token Provider plugin to handle fetching PO Tokens automatically.
 
 ### Featured Plugins
