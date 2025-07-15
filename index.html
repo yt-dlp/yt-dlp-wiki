@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yt-dlp Wiki - Complete Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a; /* Deep blue for primary elements */
+            --secondary-color: #3b82f6; /* Bright blue for secondary elements */
+            --accent-color: #93c5fd; /* Light blue for accents */
+            --text-color: #1f2937; /* Dark gray for text */
+            --light-text-color: #6b7280; /* Lighter gray for secondary text */
+            --bg-light: #f9fafb; /* Very light gray for backgrounds */
+            --bg-dark: #e5e7eb; /* Slightly darker gray for hover effects */
+            --border-color: #d1d5db; /* Light gray for borders */
+            --code-bg: #f3f4f6; /* Light gray for code backgrounds */
+            --code-color: #be123c; /* Rich red for code text */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--accent-color) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.4);
+            letter-spacing: -0.05em;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        nav {
+            background: white;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 1.2rem 1.8rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            border-bottom: 3px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--bg-light);
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        nav ul li a.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-bottom-color: var(--secondary-color);
+            transform: translateY(0);
+        }
+
+        main {
+            padding: 3.5rem 2.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+            padding: 2.5rem 0;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h1 {
+            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 1.8rem;
+            border-bottom: 4px solid var(--secondary-color);
+            padding-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .section h2 {
+            color: var(--secondary-color);
+            font-size: 2.2rem;
+            margin: 2.5rem 0 1.2rem 0;
+            position: relative;
+            line-height: 1.3;
+        }
+
+        .section h3 {
+            color: var(--text-color);
+            font-size: 1.7rem;
+            margin: 2rem 0 1rem 0;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+        }
+
+        .section h4 {
+            color: var(--light-text-color);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+
+        .section p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .section a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .section a:hover {
+            border-bottom-color: var(--secondary-color);
+            color: var(--primary-color);
+        }
+
+        .section ul, .section ol {
+            margin: 1.5rem 0 1.5rem 2.5rem;
+            list-style-type: disc;
+        }
+
+        .section ol {
+            list-style-type: decimal;
+        }
+
+        .section li {
+            margin-bottom: 0.7rem;
+        }
+
+        .section blockquote {
+            background: var(--bg-light);
+            border-left: 5px solid var(--secondary-color);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: var(--light-text-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .section blockquote p {
+            margin-bottom: 0.5rem;
+        }
+
+        .section code {
+            background: var(--code-bg);
+            padding: 0.3rem 0.5rem;
+            border-radius: 5px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.95em;
+            color: var(--code-color);
+            white-space: nowrap;
+        }
+
+        .section pre {
+            background: var(--bg-light);
+            padding: 1.8rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+        }
+
+        .section pre code {
+            background: none;
+            padding: 0;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            white-space: pre;
+        }
+
+        .section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0xfffffffff,0,0,0.1);
+        }
+
+        .section th, .section td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        .section tr:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .section tr:hover {
+            background: var(--bg-dark);
+        }
+
+        .welcome-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-dark) 100%);
+            border-radius: 15px;
+            margin: 2. Toc: 2.5rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .welcome-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: var(--light-text-color);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .toc {
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            margin: 2.5rem 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .toc h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.8rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc li {
+            margin: 0.8rem 0;
+        }
+
+        .toc a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.2s ease;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            margin-top: auto;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+        }
+
+        footer p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                margin: 0 1rem;
+            }
+            main {
+                padding: 3rem 2rem;
+            }
+            .section h1 {
+                font-size: 2.5rem;
+            }
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+            nav ul li a {
+                padding: 1rem 1rem;
+                text-align: center;
+                border-bottom: none;
+                border-top: 1px solid var(--border-color);
+            }
+            nav ul li:first-child a {
+                border-top: none;
+            }
+            nav ul li a:hover {
+                transform: none;
+            }
+            main {
+                padding: 2rem 1.5rem;
+            }
+            .section {
+                margin-bottom: 4rem;
+                padding: 2rem 0;
+            }
+            .section h1 {
+                font-size: 2rem;
+            }
+            .section h2 {
+                font-size: 1.7rem;
+            }
+            .section h3 {
+                font-size: 1.4rem;
+            }
+            .section table {
+                font-size: 0.85rem;
+            }
+            .section th, .section td {
+                padding: 0.8rem;
+            }
+            .welcome-section {
+                padding: 3rem 1.5rem;
+            }
+            .welcome-section h2 {
+                font-size: 2rem;
+            }
+            .welcome-section p {
+                font-size: 1rem;
+            }
+            .toc {
+                padding: 2rem 1.5rem;
+            }
+            .toc h2 {
+                font-size: 1.7rem;
+            }
+            .toc a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            main {
+                padding: 1.5rem 1rem;
+            }
+            .section h1 {
+                font-size: 1.8rem;
+            }
+            .section h2 {
+                font-size: 1.5rem;
+            }
+            .section h3 {
+                font-size: 1.2rem;
+            }
+            .section p {
+                font-size: 0.95rem;
+            }
+            .section code {
+                font-size: 0.85em;
+            }
+            .section pre {
+                padding: 1.2rem;
+            }
+            .section table {
+                overflow-x: auto;
+                display: block;
+                white-space: nowrap;
+            }
+            .section th, .section td {
+                min-width: 120px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>yt-dlp Wiki</h1>
+            <p class="subtitle">Your comprehensive guide to yt-dlp - the ultimate video downloader</p>
+            <p class="subtitle">Made With 💙 by <a href="https://github.com/BF667" target="_blank">BF667</a></p>
+        </header>
+        
+        <nav role="navigation" aria-label="Main navigation">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#extractors">Extractors</a></li>
+                <li><a href="#plugins">Plugins</a></li>
+                <li><a href="#plugin-development">Plugin Development</a></li>
+                <li><a href="#po-token-guide">PO Token Guide</a></li>
+                <li><a href="#forks">Forks</a></li>
+            </ul>
+        </nav>
+
+        <main class="fade-in">
+            <div class="welcome-section">
+                <h2>Welcome to the yt-dlp Wiki!</h2>
+                <p>Discover everything you need to know about yt-dlp, from basic installation to advanced plugin development. Navigate through our comprehensive documentation using the menu above.</p>
+            </div>
+            
+            <div class="toc">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#home">Home</a> - Introduction and contributing guidelines</li>
+                    <li><a href="#faq">FAQ</a> - Frequently asked questions and troubleshooting</li>
+                    <li><a href="#installation">Installation</a> - How to install yt-dlp on various platforms</li>
+                    <li><a href="#extractors">Extractors</a> - YouTube-specific features and configurations</li>
+                    <li><a href="#plugins">Plugins</a> - Available plugins to extend functionality</li>
+                    <li><a href="#plugin-development">Plugin Development</a> - How to create your own plugins</li>
+                    <li><a href="#po-token-guide">PO Token Guide</a> - Handling YouTube's PO Token requirements</li>
+                    <li><a href="#forks">Forks</a> - Related projects and forks</li>
+                </ul>
+            </div>
+
+            <!-- HOME SECTION -->
+            <section id="home" class="section">
+                <h1>Welcome to the yt-dlp wiki!</h1>
+                <h3>Contributing to the wiki</h3>
+                <p>If you have any suggestions, open a PR against <strong>https://github.com/yt-dlp/yt-dlp-wiki</strong></p>
+                <p>Do not open issues about the wiki on the main repo</p>
+            </section>
+
+            <!-- FAQ SECTION -->
+            <section id="faq" class="section">
+                <h1>FAQ - Frequently Asked Questions</h1>
+                
+                <h3>Known issues</h3>
+                <p>See <a href="https://github.com/yt-dlp/yt-dlp/issues/3766">this pinned issue</a> for a list of some important currently known issues and the <a href="https://github.com/yt-dlp/yt-dlp/issues">bugtracker</a> for a full list of issues.</p>
+
+                <h3>The yt-dlp in my Package Manager is outdated/broken</h3>
+                <p>Unfortunately, there is nothing we can do if your distribution serves an outdated/broken version. You should report this to the package maintainer or your distribution in their bugtracker or support forum.</p>
+                <p>As a last resort, you can also uninstall the version installed by your package manager and follow <a href="#installation">our installation instructions</a> to install the latest version.</p>
+
+                <h3>Do I need any other programs?</h3>
+                <p>yt-dlp works reasonably well on its own on most sites. However, some sites - most notably YouTube - serve higher quality formats as separate audio and video. You will need <a href="https://www.ffmpeg.org/">ffmpeg</a> to download and merge such formats. yt-dlp also uses many other optional dependencies for additional features. See <a href="https://github.com/yt-dlp/yt-dlp#dependencies">Dependencies</a> for more information.</p>
+
+                <h3>How do I pass cookies to yt-dlp?</h3>
+                <p>Passing cookies to yt-dlp is a good way to workaround login when a particular extractor does not implement it explicitly. Another use case is working around <a href="https://en.wikipedia.org/wiki/CAPTCHA">CAPTCHA</a> some websites require you to solve in particular cases in order to get access (e.g. YouTube, CloudFlare).</p>
+                <p>The easiest way to pass cookies is to let yt-dlp extract it from your browser (say, Chrome) using <code>--cookies-from-browser chrome</code>. In Linux, this searches for config in location <code>~/.config/google-chrome</code>.</p>
+
+                <h3>How do I download only new videos from a playlist?</h3>
+                <p>Use download-archive feature. With this feature you should initially download the complete playlist with <code>--download-archive /path/to/download/archive/file.txt</code> that will record identifiers of all the videos in a special file.</p>
+                <pre><code>yt-dlp --download-archive archive.txt "https://www.youtube.com/playlist?list=PLwiyx1dc3P2JR9N8gQaQN_BCvlSlap7re"</code></pre>
+            </section>
+
+            <!-- INSTALLATION SECTION -->
+            <section id="installation" class="section">
+                <h1>Installation</h1>
+                <p>You can install yt-dlp either using one of the official releases, or with your favorite package manager</p>
+                <blockquote>
+                    <p>If you are unfamiliar with the command line, you may use one of the many third-party GUIs available</p>
+                </blockquote>
+
+                <h2>Installing the release binary</h2>
+                <p>You can simply download the <a href="https://github.com/yt-dlp/yt-dlp#release-files">correct binary file</a> for your OS</p>
+                
+                <p>In UNIX-like OSes (MacOS, Linux, BSD), you can also install the application into a location in your <code>$PATH</code>, such as <code>~/.local/bin</code>:</p>
+                <pre><code>curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp\nchmod a+rx ~/.local/bin/yt-dlp  # Make executable</code></pre>
+
+                <p>To update, run:</p>
+                <pre><code>yt-dlp -U</code></pre>
+
+                <h2>With pip</h2>
+                <p>You can install the <a href="https://pypi.org/project/yt-dlp">PyPI package</a> with:</p>
+                <pre><code>python3 -m pip install -U "yt-dlp[default]"</code></pre>
+
+                <h2>Third-party package managers</h2>
+                <p><strong>Note</strong>: These packages are maintained by third-parties and may not be up-to-date. Please report any issues to the respective package maintainers</p>
+
+                <h3>Homebrew</h3>
+                <p>macOS or Linux users that are using Homebrew can also install it by:</p>
+                <pre><code>brew install yt-dlp</code></pre>
+
+                <h3>pacman</h3>
+                <p>Arch Linux users can install it from the official community repository:</p>
+                <pre><code>sudo pacman -Syu yt-dlp</code></pre>
+
+                <h3>APT</h3>
+                <p>You can download and install yt-dlp for recent Ubuntu and other related Debian-based distributions:</p>
+                <pre><code>sudo add-apt-repository ppa:tomtomtom/yt-dlp\nsudo apt update\nsudo apt install yt-dlp</code></pre>
+
+                <h3>Windows Package Managers</h3>
+                <h4>Scoop</h4>
+                <pre><code>scoop install yt-dlp</code></pre>
+
+                <h4>Chocolatey</h4>
+                <pre><code>choco install yt-dlp</code></pre>
+
+                <h4>winget</h4>
+                <pre><code>winget install yt-dlp</code></pre>
+
+                <h3>Android</h3>
+                <p>You can use yt-dlp on Android using <a href="https://termux.dev">Termux</a>. Once Termux is installed, open it and run the following commands:</p>
+                <pre><code>termux-setup-storage\npkg update && pkg upgrade\npkg install python python-pip\npip install -U "yt-dlp[default]"\npkg install ffmpeg  # OPTIONAL</code></pre>
+            </section>
+
+            <!-- EXTRACTORS SECTION -->
+            <section id="extractors" class="section">
+                <h1>YouTube Extractor</h1>
+                
+                <blockquote>
+                    <p><strong>IMPORTANT</strong><br>
+                    YouTube is gradually enforcing the use of a "PO Token" to be able to download videos. Due to the nature of these tokens, yt-dlp cannot generate them and they must be provided externally.</p>
+                    <p>By default, yt-dlp will attempt to download videos using clients that do not currently require a PO Token. However, some formats and features may not be available without the token(s).</p>
+                    <p>At this time, if you are having issues with the default clients, it is suggested to use the <code>mweb</code> client with a PO Token. Refer to the <a href="#po-token-guide">PO Token Guide</a> on how to set up yt-dlp for this.</p>
+                </blockquote>
+
+                <h2>Exporting YouTube cookies</h2>
+                <blockquote>
+                    <p><strong>CAUTION</strong><br>
+                    By using your account with yt-dlp, you run the risk of it being banned (temporarily or permanently).
+                    Be mindful with the request rate and amount of downloads you make with an account. Use it only when necessary, or consider using a throwaway account.</p>
+                </blockquote>
+
+                <p>YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure.
+                To export cookies that will remain working with yt-dlp, you will need to export cookies in such a way that they are never rotated.</p>
+
+                <p>One way to do this is through a private browsing/incognito window:</p>
+                <ol>
+                    <li>Open a new private browsing/incognito window and log into YouTube</li>
+                    <li>In same window and same tab from step 1, navigate to <code>https://www.youtube.com/robots.txt</code></li>
+                    <li>Export <code>youtube.com</code> cookies from the browser, then <strong>close the private browsing/incognito window</strong></li>
+                </ol>
+
+                <h2>Common YouTube Errors</h2>
+                <h4><code>This content isn't available, try again later</code></h4>
+                <p>This error is caused by your YouTube guest session or account exceeding the YouTube video request rate limit.</p>
+                <p>It is recommended to add a delay of around 5-10 seconds between downloads with <code>-t sleep</code> or with the sleep options.</p>
+                <p>With the default yt-dlp settings, the rate limit for guest sessions is ~300 videos/hour (~1000 webpage/player requests per hour). For accounts, it is ~2000 videos/hour (~4000 webpage/player requests per hour).</p>
+            </section>
+
+            <!-- PLUGINS SECTION -->
+            <section id="plugins" class="section">
+                <h1>Plugins</h1>
+                
+                <h3><a href="https://github.com/yt-dlp/yt-dlp#plugins">How to use plugins?</a></h3>
+
+                <h3>Extractor Plugins</h3>
+                <ul>
+                    <li><a href="https://github.com/pukkandan/yt-dlp-YTAgeGateBypass">YouTube Agegate Bypass</a> by <a href="https://github.com/pukkandan">pukkandan</a>
+                        <ul><li>Bypasses YouTube age-gate using account proxy</li></ul>
+                    </li>
+                    <li><a href="https://github.com/pukkandan/yt-dlp-YTNSigProxy">YouTube nsig Proxy</a> by <a href="https://github.com/pukkandan">pukkandan</a>
+                        <ul><li>Uses an online solver for decrypting YouTube nsig</li></ul>
+                    </li>
+                    <li><a href="https://github.com/bashonly/yt-dlp-YTNSigDeno">YouTube nsig Deno</a> by cute-sakura
+                        <ul><li>Uses <a href="https://deno.land">Deno</a> for decrypting YouTube nsig</li></ul>
+                    </li>
+                    <li><a href="https://github.com/coletdjnz/yt-dlp-get-pot">YouTube PO Token Framework</a> by <a href="https://github.com/coletdjnz">coletdjnz</a>
+                        <ul><li>A plugin framework for yt-dlp to support fetching PO Tokens from external providers</li></ul>
+                    </li>
+                </ul>
+
+                <h3>Postprocessor Plugins</h3>
+                <ul>
+                    <li><a href="https://github.com/pukkandan/yt-dlp-returnyoutubedislike">Return Youtube Dislikes</a> by <a href="https://github.com/pukkandan">pukkandan</a>
+                        <ul><li>Add dislike count from returnyoutubedislike to Youtube video metadata</li></ul>
+                    </li>
+                    <li><a href="https://github.com/bindestriche/srt_fix">srt fixer</a> by <a href="https://github.com/bindestriche">bindestriche</a>
+                        <ul><li>Fix duplicate lines in Youtube's <code>--auto-subs</code> when converted to <code>srt</code></li></ul>
+                    </li>
+                    <li><a href="https://github.com/bradenhilton/yt-dlp-FixupMtime">FixupMtime</a> by <a href="https://github.com/bradenhilton">bradenhilton</a>
+                        <ul><li>Sets the mtime of all files to a given datetime value by key</li></ul>
+                    </li>
+                </ul>
+
+                <h3>Other Plugins</h3>
+                <ul>
+                    <li><a href="https://github.com/seproDev/yt-dlp-ChromeCookieUnlock">yt-dlp-ChromeCookieUnlock</a> by <a href="https://github.com/seproDev">seproDev</a>
+                        <ul><li>Unlocks the cookie database for chromium based browsers</li></ul>
+                    </li>
+                    <li><a href="https://github.com/Grub4K/yt-dont-lock-p">yt-dont-lock-p</a> by <a href="https://github.com/Grub4K">Grub4K</a>
+                        <ul><li>Apply a system wake lock during yt-dlp execution</li></ul>
+                    </li>
+                </ul>
+
+                <h3><a href="https://github.com/topics/yt-dlp-plugins">Check out the yt-dlp-plugins GitHub topic for more</a></h3>
+            </section>
+
+            <!-- PLUGIN DEVELOPMENT SECTION -->
+            <section id="plugin-development" class="section">
+                <h1>How do I create a plugin for yt-dlp?</h1>
+                <p>A template plugin package repository is available at <a href="https://github.com/yt-dlp/yt-dlp-sample-plugins">yt-dlp/yt-dlp-sample-plugins</a>.</p>
+
+                <ul>
+                    <li>To see how to write extractors in general, see the <a href="https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md#developer-instructions">yt-dlp developer instructions</a>.</li>
+                    <li>For information regarding the plugin spec, see the <a href="https://github.com/yt-dlp/yt-dlp#plugins">plugins section of the yt-dlp README</a>.</li>
+                </ul>
+
+                <h2>Getting Started</h2>
+                <ol>
+                    <li><a href="https://github.com/yt-dlp/yt-dlp-sample-plugins/generate">Create a new repository based on yt-dlp/yt-dlp-sample-plugins</a></li>
+                    <li>Check out the source code with: <code>git clone git@github.com:YOUR_GITHUB_USERNAME/YOUR_REPOSITORY.git</code></li>
+                    <li>Configure your IDE's run and debug configuration (optional)</li>
+                    <li>Write your plugin code in the <code>yt_dlp_plugins/<type></code> folder (where type is either <code>extractor</code> or <code>postprocessor</code>)</li>
+                    <li>Configure your plugin package</li>
+                    <li>Add the new files, commit them and push the result</li>
+                </ol>
+
+                <h2>Configuring your plugin package</h2>
+                <ol>
+                    <li>Modify setup.cfg with your plugin's name and version</li>
+                    <li>Update the installation instructions on README.md to point to this repository</li>
+                    <li>Add <code>yt-dlp-plugins</code> to the repository tags for discoverability</li>
+                    <li>Be sure to remove any of the sample extractors/post-processors</li>
+                </ol>
+
+                <h2>Importing extractors from other plugins</h2>
+                <pre><code>from yt_dlp_plugins.extractor.example import ExampleIE</code></pre>
+                <p>This works regardless of where the <code>example</code> plugin is installed on the system, as long as yt-dlp can find it.</p>
+            </section>
+
+            <!-- PO TOKEN GUIDE SECTION -->
+            <section id="po-token-guide" class="section">
+                <h1>YouTube PO Token Guide</h1>
+                
+                <blockquote>
+                    <p><strong>TIP</strong><br>
+                    TL;DR recommended setup: Either use a PO Token Provider plugin, or manual extraction, to provide the <code>mweb</code> client with a PO Token for GVS requests.</p>
+                </blockquote>
+
+                <h2>Introduction</h2>
+                <p>Proof of Origin (PO) Token is a parameter that YouTube requires to be sent with requests from some clients. Without it, requests for the affected clients' format URLs may return HTTP Error 403, or result in your account or IP address being blocked.</p>
+
+                <p>A PO Token is generated by an attestation provider on Web, Android and iOS platforms to attest the requests are coming from a genuine client.</p>
+
+                <h2>Cases where a PO Token is required</h2>
+                <p>There are currently two cases yt-dlp may require PO Tokens for video downloads:</p>
+                <ul>
+                    <li>GVS: Google Video Server requests</li>
+                    <li>Player: Innertube <code>player</code> requests</li>
+                    <li>Subs: Subtitle requests</li>
+                </ul>
+
+                <h2>Current PO Token enforcement</h2>
+                <p>YouTube is at present rolling out changes to enforce PO Tokens for video playback. Currently, only GVS and Subs require PO Tokens for some clients.</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>PO Token for GVS Required</th>
+                            <th>PO Token for Player Required</th>
+                            <th>PO Token for Subs required</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>web</code></td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>Sometimes (A/B test)</td>
+                            <td>Only SABR formats available</td>
+                        </tr>
+                        <tr>
+                            <td><code>mweb</code></td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><code>tv</code></td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>All formats may have DRM if you request too much</td>
+                        </tr>
+                        <tr>
+                            <td><code>android</code></td>
+                            <td>Yes?</td>
+                            <td>?</td>
+                            <td>No</td>
+                            <td>Account cookies not supported</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>PO Token Provider Plugins</h2>
+                <p>Manually fetching PO Tokens can be a tedious process. As an alternative, you can install a PO Token Provider plugin to handle fetching PO Tokens automatically.</p>
+
+                <h3>Featured Plugins</h3>
+                <ul>
+                    <li><a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider">bgutil-ytdlp-pot-provider</a> by <a href="https://github.com/Brainicism">Brainicism</a>
+                        <ul><li>A PO Token Provider which uses BgUtils to generate PO Tokens. <em>Not affiliated with yt-dlp.</em></li></ul>
+                    </li>
+                </ul>
+
+                <h2>Guide: Providing a PO Token manually (for use with mweb client)</h2>
+                <p>This section provides a basic guide on extracting PO Token(s) manually from YouTube in a web browser <strong>for use with the <code>mweb</code> client</strong>.</p>
+
+                <blockquote>
+                    <p><strong>TIP</strong><br>
+                    When supplying multiple PO Tokens, use the same extractor args option and comma-separate the PO Token configurations. For example:<br>
+                    <code>--extractor-args "youtube:po_token=mweb.gvs+GVS_PO_TOKEN_VALUE_HERE,mweb.player+PLAYER_PO_TOKEN_VALUE_HERE"</code></p>
+                </blockquote>
+
+                <h3>PO Token for GVS</h3>
+                <p>The PO Token used for <code>web</code> GVS requests is tied to your YouTube session.</p>
+
+                <h4>No account</h4>
+                <ol>
+                    <li>Open YouTube Music or YouTube Embedded in a browser. <strong>Make sure you are not logged in to any account!</strong></li>
+                    <li>Open any video</li>
+                    <li>Open the developer console (F12), then go to the "Network" tab</li>
+                    <li>Filter requests by <code>googlevideo.com</code></li>
+                    <li>Click the video and play for a few seconds - requests to <code>googlevideo.com</code> should appear</li>
+                    <li>From the most recent <code>googlevideo.com</code> request, extract the <code>pot</code> query parameter value from the URL</li>
+                    <li>Pass the PO Token for GVS to yt-dlp using <code>--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"</code></li>
+                </ol>
+
+                <h4>With an account</h4>
+                <ol>
+                    <li>Open YouTube Music in a browser, and log in with the user you are using with yt-dlp</li>
+                    <li>Open any video</li>
+                    <li>Follow steps 3-6 above</li>
+                    <li>Pass the PO Token for GVS to yt-dlp using <code>--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"</code> with your account cookies</li>
+                </ol>
+            </section>
+
+            <!-- FORKS SECTION -->
+            <section id="forks" class="section">
+                <h1>Forks and Related Projects</h1>
+                
+                <h3>Active</h3>
+                <ul>
+                    <li><a href="https://github.com/ytdl-org/youtube-dl">youtube-dl</a> - The original project</li>
+                    <li><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> - This project!</li>
+                    <li><a href="https://github.com/nicolaasjan/yt-dlp">nicolaasjan/yt-dlp</a> - Unofficial yt-dlp builds for Windows 7/XP</li>
+                </ul>
+
+                <h3>Inactive</h3>
+                <ul>
+                    <li><a href="https://github.com/blackjack4494/yt-dlc">yt-dlc</a>/<a href="https://github.com/blackjack4494/youtube-dlc">youtube-dlc</a> - <a href="https://github.com/blackjack4494/yt-dlc/issues/289">yt-dlp was forked from this</a></li>
+                    <li><a href="https://github.com/animelover1984/youtube-dl">weeb-dl</a> - <a href="https://github.com/yt-dlp/yt-dlp/pull/31">Mostly Merged</a> into yt-dlp</li>
+                    <li><a href="https://git.sakamoto.pl/laudom/haruhi-dl">haruhi-dl</a> - Partially merged into yt-dlp</li>
+                </ul>
+
+                <h3>Automated releases</h3>
+                <ul>
+                    <li><a href="https://github.com/yt-dlp/yt-dlp-nightly-builds">yt-dlp nightly</a></li>
+                    <li><a href="https://github.com/ytdl-org/ytdl-nightly">youtube-dl nightly</a></li>
+                </ul>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2025 yt-dlp Wiki Documentation - Complete Single Page Version</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active navigation item based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Add fade-in animation to sections when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
