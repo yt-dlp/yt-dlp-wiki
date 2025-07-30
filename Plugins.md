@@ -10,6 +10,8 @@
     - Uses [Deno](https://deno.land) for decrypting YouTube nsig
 - [YouTube PO Token Framework](https://github.com/coletdjnz/yt-dlp-get-pot) by [coletdjnz](https://github.com/coletdjnz)
     - A plugin framework for yt-dlp to support fetching [PO Tokens](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#po-token-guide) from external providers 
+- [YouTube nsig DukPy](https://github.com/alive4ever/yt-dlp-YTNSigDukpy) by [alive4ever](https://github.com/alive4ever)
+    - Uses [dukpy](https://github.com/amol-/dukpy) to decrypt YouTube nsig faster.
 
 ### Postprocessor
 
