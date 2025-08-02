@@ -104,7 +104,7 @@ The PO Token used for `web` GVS requests is tied to your YouTube session, so you
 1. Open **[YouTube Music](https://music.youtube.com)** in a browser.
 2. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
 3. Filter requests by `v1/player`
-4. Click the video and play - a `/player` request should appear in the network tab
+4. Play a video - a `/player` request should appear in the network tab
 5. From the most recent `player` request, extract the PO Token from `serviceIntegrityDimensions.poToken` field in the JSON request body
 6. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
@@ -116,7 +116,7 @@ If using an account, [refer to this guide on exporting account cookies](https://
 
 The PO Token for `web`/`mweb` Player or Subs requests is tied to the Video ID. This means you must generate a new PO Token for each video.
 
-1. Open [YouTube Web](https://www.youtube.com) in a browser.
+1. Open **[YouTube Web](https://www.youtube.com)** in a browser.
 2. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
 3. Navigate to the video you want to download (e.g. using search - do not go to the video url directly as the page will refresh)
 4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value
