@@ -104,7 +104,7 @@ The PO Token used for `web` GVS requests is tied to your YouTube session, so you
 1. Open **[YouTube Music](https://music.youtube.com)** in a browser.
 2. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
 3. Filter requests by `v1/player`
-4. Play a video - a `/player` request should appear in the network tab
+4. Play a video - a `player` request should appear in the network tab
 5. From the most recent `player` request, extract the PO Token from `serviceIntegrityDimensions.poToken` field in the JSON request body
 6. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
