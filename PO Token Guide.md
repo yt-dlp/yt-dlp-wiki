@@ -39,9 +39,9 @@ For more technical details on these tokens, refer to the [technical details sect
 
 ## Cases where a PO Token is required
 
-There are currently two cases yt-dlp may require PO Tokens for video downloads, [depending on the client used](#current-po-token-enforcement):
-- GVS: Google Video Server requests
-- Player: Innertube `player` requests
+There are currently three cases yt-dlp may require PO Tokens for video downloads, [depending on the client used](#current-po-token-enforcement):
+- GVS: Google Video Server requests (video streaming - https, dash, hls, etc.)
+- Player: Innertube `player` requests (fetch video format URLs)
 - Subs: Subtitle requests
 
 The PO Tokens may be generated differently for each of these cases, depending on the client.
@@ -50,25 +50,31 @@ The PO Tokens may be generated differently for each of these cases, depending on
 
 YouTube is at present rolling out changes to enforce PO Tokens for video playback. Currently, only GVS and Subs require PO Tokens for some clients.
 
-| Client         | PO Token for GVS Required | PO Token for Player Required | PO Token for Subs required | Notes                                            |
-|----------------|---------------------------|------------------------------|----------------------------|--------------------------------------------------|
-| `web`          | Yes                       | No                           | Sometimes (A/B test)       | Only SABR formats available                      |
-| `web_safari`   | Yes*                      | No                           | Sometimes (A/B test)       |                                                  |
-| `mweb`         | Yes                       | No                           | No                         |                                                  |
-| `tv`           | No                        | No                           | No                         | All formats may have DRM if you request too much |
-| `tv_embedded`  | No                        | No                           | No                         | Requires account cookies                         |
-| `web_embedded` | No                        | No                           | No                         | Only embeddable videos available                 |
-| `web_music`    | Yes                       | No                           | No                         |                                                  |
-| `web_creator`  | Yes                       | No                           | No                         | Requires account cookies                         |
-| `android`      | Yes?                      | ?                            | No                         | Account cookies not supported                    |
-| `android_vr`   | No                        | No                           | No                         | YouTube Kids videos are not available            |
-| `ios`          | Yes?*                     | ?                            | No                         | Account cookies not supported                    |
+| Client         | PO Token Required For       | Notes                                                                                           |
+|----------------|-----------------------------|-------------------------------------------------------------------------------------------------|
+| `web`          | Subs (rolling out), GVS     | Only SABR formats available                                                                     |
+| `web_safari`   | Subs (rolling out), GVS*    | Same as `web`. *Provides HLS (m3u8) formats which do not require PO Token for GVS at this time. |
+| `mweb`         | GVS                         |                                                                                                 |
+| `tv`           | Not required                | All formats may have DRM if you request too much                                                |
+| `tv_simply`    | Not required                | Account cookies not supported                                                                   |
+| `tv_embedded`  | Not required                | Requires account cookies                                                                        |
+| `web_embedded` | Not required                | Only embeddable videos available                                                                |
+| `web_music`    | GVS                         |                                                                                                 |
+| `web_creator`  | GVS                         | Requires account cookies                                                                        |
+| `android`      | GVS or Player               | Account cookies not supported                                                                   |
+| `android_vr`   | Not required                | YouTube Kids videos are not available                                                           |
+| `ios`          | GVS or Player (rolling out) | Account cookies not supported                                                                   |
 
-*Client provides HLS (m3u8) formats which do not require PO Token for GVS at this time.
+For all clients:
+- GVS PO Token is not required for YouTube Premium subscribers
+- HLS live streams do not require a PO Token (excluding `ios` client)
 
 You can select what client to use with the [`player_client` extractor argument](https://github.com/yt-dlp/yt-dlp#youtube).
 
 ## PO Token Provider Plugins
+
+> [!TIP]
+> Recommended
 
 Manually fetching PO Tokens can be a tedious process. As an alternative, you can install a PO Token Provider plugin to handle fetching PO Tokens automatically.
 
@@ -93,38 +99,24 @@ The same PO Token extraction method _may_ work with other web browser-based clie
 
 ### PO Token for GVS
 
-The PO Token used for `web` GVS requests is tied to your YouTube session. It generated differently depending on if you are logged in to yt-dlp or not.
+The PO Token used for `web` GVS requests is tied to your YouTube session, so you will need to provide cookies.
 
-#### No account
+1. Open **[YouTube Music](https://music.youtube.com)** in a browser.
+2. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
+3. Filter requests by `v1/player`
+4. Play a video - a `player` request should appear in the network tab
+5. From the most recent `player` request, extract the PO Token from `serviceIntegrityDimensions.poToken` field in the JSON request body
+6. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
-1. Open [YouTube Music](https://music.youtube.com) or YouTube Embedded (e.g. https://www.youtube.com/embed/aqz-KE-bpKQ) in a browser.  **Make sure you are not logged in to any account!**
-2. Open any video
-3. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
-4. Filter requests by `googlevideo.com`
-5. Click the video and play for a few seconds - requests to `googlevideo.com` should appear in the network tab
-6. From the most recent `googlevideo.com` request, extract the `pot` query parameter value from the URL
-7. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
+If using an account, [refer to this guide on exporting account cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
-Although not recommended, you may also provide visitor data instead of cookies. Refer to [Passing Visitor Data without cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#passing-visitor-data-without-cookies).
-
-#### With an account
-
-1. Open [YouTube Music](https://music.youtube.com) in a browser, and log in with the user you are using with yt-dlp
-2. Open any video
-3. Follow steps 3-6 above
-4. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` [with your account cookies ](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
-
-Addendum:
-- If there is no `pot` parameter in the `googlevideo.com` URL, wait a few seconds for more requests to be made and check them. 
-- If there is a `sabr=1` query parameter in the `googlevideo.com` URL, then the PO Token is in the request body protobuf (and therefore is not easy to extract). 
-  - This should not be the case for YouTube Music or YouTube Embedded - if so, please raise an issue, so we can update these docs.
-
+(Not recommended) If not using an account, you may also provide visitor data instead of cookies. Refer to [Passing Visitor Data without cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#passing-visitor-data-without-cookies).
 
 ### PO Token for Player or Subs
 
 The PO Token for `web`/`mweb` Player or Subs requests is tied to the Video ID. This means you must generate a new PO Token for each video.
 
-1. Open [YouTube Web](https://www.youtube.com) in a browser.
+1. Open **[YouTube Web](https://www.youtube.com)** in a browser.
 2. Open the developer console (F12), then go to the "Network" tab and filter by `v1/player`
 3. Navigate to the video you want to download (e.g. using search - do not go to the video url directly as the page will refresh)
 4. In the request payload JSON, find the PO Token at `serviceIntegrityDimensions.poToken` and save that value
@@ -172,3 +164,5 @@ These PO Tokens are only valid for a limited time (usually at least 12 hours), s
 Web Tokens for player (and subtitles) requests are bound to the video ID the associated `/player` request is for. YouTube has only recently started generating these for some clients (e.g. `web`).
 
 As of writing, some clients, such as `web_music` use a session-bound PO Token for player requests. This is likely to change.
+
+For Android (and presumably iOS), the Player PO Token is bound to the user session, similar to GVS tokens. If a Player PO token is provided, the GVS PO token is not required.
