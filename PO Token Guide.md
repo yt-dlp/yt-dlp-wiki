@@ -56,6 +56,7 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 | `web_safari`   | Subs (rolling out), GVS*    | Same as `web`. *Provides HLS (m3u8) formats which do not require PO Token for GVS at this time. |
 | `mweb`         | GVS                         |                                                                                                 |
 | `tv`           | Not required                | All formats may have DRM if you request too much                                                |
+| `tv_simply`    | Not required                | Account cookies not supported                                                                   |
 | `tv_embedded`  | Not required                | Requires account cookies                                                                        |
 | `web_embedded` | Not required                | Only embeddable videos available                                                                |
 | `web_music`    | GVS                         |                                                                                                 |
@@ -100,13 +101,12 @@ The same PO Token extraction method _may_ work with other web browser-based clie
 
 The PO Token used for `web` GVS requests is tied to your YouTube session, so you will need to provide cookies.
 
-1. Open [YouTube Music](https://music.youtube.com) in a browser.
+1. Open **[YouTube Music](https://music.youtube.com)** in a browser.
 2. Open the developer console (F12), then go to the "Network" tab (click the `>>` button if you don't see it)
-3. Click any video
-4. Filter requests by `v1/player`
-5. Click the video and play for a few seconds - `player` requests should appear in the network tab
-6. From the most recent `player` request, extract the PO Token from `serviceIntegrityDimensions.poToken` field in the JSON request body
-7. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
+3. Filter requests by `v1/player`
+4. Click the video and play - a `/player` request should appear in the network tab
+5. From the most recent `player` request, extract the PO Token from `serviceIntegrityDimensions.poToken` field in the JSON request body
+6. Pass the PO Token for GVS to yt-dlp using `--extractor-args "youtube:player-client=default,mweb;po_token=mweb.gvs+PO_TOKEN_VALUE_HERE"` with cookies (`--cookies COOKIES_FILE` or `--cookies-from-browser`)
 
 If using an account, [refer to this guide on exporting account cookies](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies)
 
