@@ -22,6 +22,9 @@ This guide will help you set up and enable the necessary components based on you
 
 ### deno
 
+> [!TIP]
+> Recommended
+
 https://deno.com
 
 Enabled by default
@@ -87,7 +90,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 
 | yt-dlp distribution                                                                        | EJS scripts installation options                                                                                                                                                                                                                                                                                                                                           |
 |--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Official PyInstaller-bundled executable (e.g. yt-dlp.exe, yt-dlp_macos, yt-dlp_linux, etc) | No additional action required (besides having Deno). All the necessary JavaScript components will be bundled with these executables.                                                                                                                                                                                                                                       |
+| Official PyInstaller-bundled executable (e.g. yt-dlp.exe, yt-dlp_macos, yt-dlp_linux, etc) | No additional action required. All the necessary JavaScript components will be bundled with these executables.                                                                                                                                                                                                                                                             |
 | PyPI package (e.g. installed with pip, pipx, etc):                                         | - [Install and upgrade yt-dlp with `default` dependency group](#option-1-install-the-yt-dlp-ejs-python-package)<br/>- or [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only)<br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/>                                                |
 | Official zipimport binary (the yt-dlp Unix executable)                                     | - [Install yt-dlp's EJS python package in your Python environment](#option-1-install-the-yt-dlp-ejs-python-package) <br/>- or [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/>                                          |
 | Third-party package users (e.g. installed with pacman, brew, etc)                          | The will depend on if your third-party package repository ships or bundles the EJS script package with yt-dlp.<br/> <br/>If it does not (or it is out of date): <br/>- [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/> |
