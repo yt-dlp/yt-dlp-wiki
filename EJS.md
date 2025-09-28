@@ -1,4 +1,4 @@
-# External JavaScript (EJS) Scripts Setup Guide
+# External JS Scripts Setup Guide
 
 To download from YouTube, yt-dlp needs to solve JavaScript challenges presented by YouTube using an external JavaScript runtime. 
 
@@ -42,6 +42,8 @@ If you use a package manager, you may be able to get it from there.
 
 Deno is enabled by default. To supply an optional path, use `--js-runtimes deno:/path/to/deno`
 
+---
+
 ### node
 
 https://nodejs.org
@@ -60,6 +62,7 @@ Enable with `--js-runtimes node` or `--js-runtimes node:/path/to/node`.
  
 It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time.
 
+---
 ### bun
 
 https://bun.com
