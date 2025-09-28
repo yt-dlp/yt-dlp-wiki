@@ -1,0 +1,125 @@
+# External JavaScript (EJS) Scripts Setup Guide
+
+To download from YouTube, yt-dlp needs to solve JavaScript challenges presented by YouTube using an external JavaScript runtime. 
+
+This involves running challenge solver scripts maintained at [yt-dlp-ejs](https://github.com/yt-dlp/ejs). Depending on your yt-dlp installation method, you may need to set up and enable these components manually.
+
+This guide will help you set up and enable the necessary components based on your yt-dlp installation method.
+
+## Setup steps
+
+1. [Install a supported JavaScript runtime](#step-1-install-a-supported-javascript-runtime)
+2. [Install EJS challenge solver scripts](#step-2-install-ejs-challenge-solver-scripts)
+
+## Step 1: Install a supported JavaScript Runtime
+
+| JS Runtime                  | Summary                             |
+|-----------------------------|-------------------------------------|
+| [Deno](#deno) (recommended) | Enabled by default. Best supported. |
+| [Node](#node)               | Enable with `--js-runtimes node`    |
+| [Bun](#bun)                 | Enable with `--js-runtimes bun`     |
+
+
+### deno
+
+https://deno.com
+
+Enabled by default
+
+Sandboxed environment with no file system or network access.
+
+Supports downloading NPM modules on-the-fly When 
+
+#### Installation instructions
+
+Minimum supported version: `2.0.0`
+
+Download instructions at https://docs.deno.com/runtime/getting_started/installation/
+
+If you use a package manager, you may be able to get it from there.
+
+#### Enable
+
+Deno is enabled by default. To supply an optional path, use `--js-runtimes deno:/path/to/deno`
+
+### node
+
+https://nodejs.org
+
+#### Installation instructions
+
+Minimum supported version: `21.0.0`
+
+Download instructions at https://nodejs.org/en/download/
+
+If you use a package manager, you may be able to get it from there.
+
+#### Enable
+
+Enable with `--js-runtimes node` or `--js-runtimes node:/path/to/node`.
+ 
+It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time.
+
+### bun
+
+https://bun.com
+
+#### Installation instructions
+
+Minimum supported version: `X.Y.Z` (TODO)
+
+Download instructions at https://bun.com/docs/installation
+
+If you use a package manager, you may be able to get it from there.
+
+#### Enable
+
+Enable with `--js-runtimes bun` or `--js-runtimes bun:/path/to/bun`.
+ 
+It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time.
+
+
+
+## Step 2: Install EJS challenge solver scripts
+
+| yt-dlp distribution                                                                        | EJS scripts installation options                                                                                                                                                                                                                                                                                                                                           |
+|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Official PyInstaller-bundled executable (e.g. yt-dlp.exe, yt-dlp_macos, yt-dlp_linux, etc) | No additional action required (besides having Deno). All the necessary JavaScript components will be bundled with these executables.                                                                                                                                                                                                                                       |
+| PyPI package (e.g. installed with pip, pipx, etc):                                         | - [Install and upgrade yt-dlp with `default` dependency group](#option-1-install-the-yt-dlp-ejs-python-package)<br/>- or [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only)<br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/>                                                |
+| Official zipimport binary (the yt-dlp Unix executable)                                     | - [Install yt-dlp's EJS python package in your Python environment](#option-1-install-the-yt-dlp-ejs-python-package) <br/>- or [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/>                                          |
+| Third-party package users (e.g. installed with pacman, brew, etc)                          | The will depend on if your third-party package repository ships or bundles the EJS script package with yt-dlp.<br/> <br/>If it does not (or it is out of date): <br/>- [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/> |
+
+
+### Option 1: Install the yt-dlp-ejs python package
+
+yt-dlp ships a companion package, `yt-dlp-ejs`, which contains all the EJS scripts.
+
+If you installed yt-dlp using the PyPI package (e.g. with pip or pipx), install _and upgrade_ yt-dlp with the `default` dependency group:
+
+i.e. `pip install -U "yt-dlp[default]"`
+
+The default dependency group includes the `yt-dlp-ejs` package.
+
+Refer to https://github.com/yt-dlp/yt-dlp/wiki/Installation#with-pip for more details.
+
+Alternatively, if you only want to install the EJS package, you can install the `yt-dlp-ejs` package directly from PyPI. The version MUST match the version specified in yt-dlp's `pyproject.toml` for the version of yt-dlp you are using.
+
+> [!WARNING]
+> This library SHOULD be updated alongside yt-dlp to avoid running an outdated version. The version MUST be a supported version as per yt-dlp's pyproject.toml file. yt-dlp may bump the minimum version on updates without warning, and old versions will be ignored by yt-dlp.
+
+### Option 2: Enable EJS script downloads from npm
+
+> [!IMPORTANT]
+> This option only works with Deno and Bun runtimes, which support downloading npm packages on-the-fly.
+
+To enable this, supply `--remote-components ejs:npm` to yt-dlp. It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time and allow automatic updates.
+
+### Option 3: Enable EJS script downloads from GitHub
+
+yt-dlp can automatically download the EJS scripts directly from GitHub (https://github.com/yt-dlp/ejs).
+
+To enable this, supply `--remote-components ejs:github` to yt-dlp. It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time and allow automatic updates.
+
+
+> [!NOTE]
+> This method may not work if GitHub and GitHub release assets are not accessible from your network. This includes if you are using yt-dlp with a IPv6 IP-only (e.g., `--force-ipv6`)
