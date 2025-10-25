@@ -13,11 +13,11 @@ This guide will help you set up and enable the necessary components based on you
 
 ## Step 1: Install a supported JavaScript Runtime
 
-| JS Runtime                  | Summary                             |
-|-----------------------------|-------------------------------------|
-| [Deno](#deno) (recommended) | Enabled by default. Best supported. |
-| [Node](#node)               | Enable with `--js-runtimes node`    |
-| [Bun](#bun)                 | Enable with `--js-runtimes bun`     |
+| JS Runtime                  | Summary                          |
+|-----------------------------|----------------------------------|
+| [Deno](#deno) (recommended) | Enabled by default.              |
+| [Node](#node)               | Enable with `--js-runtimes node` |
+| [Bun](#bun)                 | Enable with `--js-runtimes bun`  |
 
 
 ### deno
@@ -27,23 +27,20 @@ This guide will help you set up and enable the necessary components based on you
 
 https://deno.com
 
-Enabled by default
-
-Sandboxed environment with no file system or network access.
-
-Supports downloading NPM modules on-the-fly When 
-
 #### Installation instructions
 
 Minimum supported version: `2.0.0`
 
-Download instructions at https://docs.deno.com/runtime/getting_started/installation/
-
-If you use a package manager, you may be able to get it from there.
+Download from https://docs.deno.com/runtime/getting_started/installation/ or from your package manager.
 
 #### Enable
 
 Deno is enabled by default. To supply an optional path, use `--js-runtimes deno:/path/to/deno`
+
+#### Notes
+
+- Code is run with restricted permissions (e.g, no file system or network access)
+- Supports downloading EJS script dependencies from [npm](https://www.npmjs.com/) (`--remote-components ejs:npm`).
 
 ---
 
@@ -53,17 +50,19 @@ https://nodejs.org
 
 #### Installation instructions
 
-Minimum supported version: `21.0.0`
+Minimum supported version: `20.0.0`
 
-Download instructions at https://nodejs.org/en/download/
-
-If you use a package manager, you may be able to get it from there.
+Download from https://nodejs.org/en/download/ or from your package manager.
 
 #### Enable
 
 Enable with `--js-runtimes node` or `--js-runtimes node:/path/to/node`.
  
 It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time.
+
+#### Notes
+
+- Runs code with [restricted permissions](https://nodejs.org/api/permissions.html).
 
 ---
 ### bun
@@ -72,11 +71,9 @@ https://bun.com
 
 #### Installation instructions
 
-Minimum supported version: `X.Y.Z` (TODO)
+Minimum supported version: `1.0.31`
 
-Download instructions at https://bun.com/docs/installation
-
-If you use a package manager, you may be able to get it from there.
+Download from https://bun.com/docs/installation or from your package manager.
 
 #### Enable
 
@@ -85,6 +82,11 @@ Enable with `--js-runtimes bun` or `--js-runtimes bun:/path/to/bun`.
 It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time.
 
 
+#### Notes
+
+- No permission restrictions available. Scripts have full file system and network access.
+- Supports downloading EJS script dependencies from [npm](https://www.npmjs.com/) (`--remote-components ejs:npm`).
+- No support for SOCKS proxies when downloading EJS script dependencies from npm.
 
 ## Step 2: Install EJS challenge solver scripts
 
@@ -129,3 +131,16 @@ To enable this, supply `--remote-components ejs:github` to yt-dlp. It is recomme
 
 > [!NOTE]
 > This method may not work if GitHub and GitHub release assets are not accessible from your network. This includes if you are using yt-dlp with a IPv6 IP-only (e.g., `--force-ipv6`)
+
+## Plugins
+
+You can install alternatives to the built-in JS challenge solvers through plugins.
+
+### Featured Plugins:
+- [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi) by [grqz](https://github.com/grqz)
+  - Experimental Apple WebKit JS Challenge Provider plugin for yt-dlp. Should work on most Apple devices. *Maintained by a yt-dlp maintainer*
+
+Check out the [yt-dlp-jsc-provider](https://github.com/topics/yt-dlp-jsc-provider) GitHub topic for more JSC Provider plugins.
+
+For developers, refer to the [JSC Provider developer documentation](https://github.com/yt-dlp/yt-dlp/blob/master/yt_dlp/extractor/youtube/jsc/README.md)
+- **Please note: Currently only the base JavaScript Challenge Provider API is public. The API to hook into yt-dlp's EJS scripts is private at this time due to ongoing development with potential breaking changes; it may be made public in the future.**
