@@ -13,12 +13,12 @@ This guide will help you set up and enable the necessary components based on you
 
 ## Step 1: Install a supported JavaScript Runtime
 
-| JS Runtime                  | Summary                              |
-|-----------------------------|--------------------------------------|
-| [Deno](#deno) (recommended) | Enabled by default.                  |
-| [Node](#node)               | Enable with `--js-runtimes node`     |
-| [Bun](#bun)                 | Enable with `--js-runtimes bun`      |
-| [QuickJS](#quickjs)         | Enable with `--js-runtimes quickjs`  |
+| JS Runtime                      | Summary                              |
+|---------------------------------|--------------------------------------|
+| [Deno](#deno) (recommended)     | Enabled by default.                  |
+| [Node](#node)                   | Enable with `--js-runtimes node`     |
+| [Bun](#bun)                     | Enable with `--js-runtimes bun`      |
+| [QuickJS](#quickjs--quickjs-ng) | Enable with `--js-runtimes quickjs`  |
 
 
 ### deno
