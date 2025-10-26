@@ -13,11 +13,12 @@ This guide will help you set up and enable the necessary components based on you
 
 ## Step 1: Install a supported JavaScript Runtime
 
-| JS Runtime                  | Summary                          |
-|-----------------------------|----------------------------------|
-| [Deno](#deno) (recommended) | Enabled by default.              |
-| [Node](#node)               | Enable with `--js-runtimes node` |
-| [Bun](#bun)                 | Enable with `--js-runtimes bun`  |
+| JS Runtime                  | Summary                              |
+|-----------------------------|--------------------------------------|
+| [Deno](#deno) (recommended) | Enabled by default.                  |
+| [Node](#node)               | Enable with `--js-runtimes node`     |
+| [Bun](#bun)                 | Enable with `--js-runtimes bun`      |
+| [QuickJS](#quickjs)         | Enable with `--js-runtimes quickjs`  |
 
 
 ### deno
@@ -87,6 +88,33 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 - No permission restrictions available. Scripts have full file system and network access.
 - Supports downloading EJS script dependencies from [npm](https://www.npmjs.com/) (`--remote-components ejs:npm`).
 - No support for SOCKS proxies when downloading EJS script dependencies from npm.
+
+---
+### QuickJS / QuickJS-NG
+
+https://bellard.org/quickjs/ / https://quickjs-ng.github.io/quickjs/
+
+#### Installation instructions
+
+Minimum supported QuickJS version: `2023-12-9`
+
+All versions of QuickJS-NG are supported.
+
+Download from https://bellard.org/quickjs/ / https://quickjs-ng.github.io/quickjs/installation or from your package manager.
+
+#### Enable
+
+Enable with `--js-runtimes quickjs` or `--js-runtimes quickjs:/path/to/qjs`.
+ 
+It is recommended to add this to your [yt-dlp configuration file](https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#configuration) to avoid needing to pass it every time.
+
+
+#### Notes
+
+- QuickJS versions prior to 2025-4-26 are missing optimizations which can lead to execution times of several minutes.
+- All QuickJS-NG versions are missing optimizations which can lead to execution times of several minutes.
+- Both QuickJS and QuickJS-NG do not fully allow executing files from stdin, so yt-dlp will create temporary files for each EJS script execution. This can theoretically lead to time-of-check to time-of-use (TOCTOU) vulnerabilities.
+
 
 ## Step 2: Install EJS challenge solver scripts
 
