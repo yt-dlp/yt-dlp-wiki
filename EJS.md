@@ -34,6 +34,8 @@ Minimum supported version: `2.0.0`
 
 Download from https://docs.deno.com/runtime/getting_started/installation/ or from your package manager.
 
+When grabbing deno manually from the [Github release assets](https://github.com/denoland/deno/releases/latest) you will need to download `deno` and not `denort`.
+
 #### Enable
 
 Deno is enabled by default. To supply an optional path, use `--js-runtimes deno:/path/to/deno`
