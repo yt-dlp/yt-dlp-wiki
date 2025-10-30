@@ -68,7 +68,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 
 #### Notes
 
-- Runs code with [restricted permissions](https://nodejs.org/api/permissions.html).
+- Runs code with [*some* permissions restricted](https://nodejs.org/api/permissions.html).
 
 ---
 ### bun
