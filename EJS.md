@@ -6,6 +6,9 @@ This involves running challenge solver scripts maintained at [yt-dlp-ejs](https:
 
 This guide will help you set up and enable the necessary components based on your yt-dlp installation method.
 
+> [!NOTE]  
+> EJS replaces the prior JSInterp and PhantomJS based approach. For YouTube both are no longer used. PhantomJS is still being used for a few other extractors, but is planned to be deprecated in the near future.
+
 ## Setup steps
 
 1. [Install a supported JavaScript runtime](#step-1-install-a-supported-javascript-runtime)
