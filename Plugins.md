@@ -4,8 +4,6 @@
 
 - [YouTube Agegate Bypass](https://github.com/pukkandan/yt-dlp-YTAgeGateBypass) by [pukkandan](https://github.com/pukkandan)
     - Bypasses YouTube age-gate using [account proxy](https://youtube-proxy.zerody.one) by [zerodytrash](https://github.com/zerodytrash)
-- [YouTube nsig Proxy](https://github.com/pukkandan/yt-dlp-YTNSigProxy) by [pukkandan](https://github.com/pukkandan)
-    - Uses an online solver for decrypting YouTube nsig (based on [nparams/decrypt](https://github.com/Lesmiscore/bookish-octo-barnacle/blob/master/api/youtube/nparams/decrypt.js) by [Lesmiscore](https://github.com/Lesmiscore))
 - [YouTube PO Token Framework](https://github.com/coletdjnz/yt-dlp-get-pot) by [coletdjnz](https://github.com/coletdjnz)
     - A plugin framework for yt-dlp to support fetching [PO Tokens](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#po-token-guide) from external providers 
 
