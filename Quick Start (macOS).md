@@ -1,4 +1,5 @@
 ## macOS
+
 On macOS, we recommend installing yt-dlp through the Homebrew package manager.
 
 1. Install Homebrew (if you don't already have it)  
