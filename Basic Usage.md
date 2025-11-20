@@ -210,6 +210,7 @@ The order is the same as it appears in the site (for example, in YouTube it is f
 </summary>
 
 `yt-dlp --cookies-from-browser NAMEBROWSER URL`
+`yt-dlp --cookies cookies.txt URL`
 
 WARNING: You shouldn't always use your account’s cookies, but only in specific scenarios:
 
@@ -221,6 +222,11 @@ WARNING: You shouldn't always use your account’s cookies, but only in specific
 In cases where you need to use your account’s cookies, avoid using an important account’s cookies, as this may result in the account being restricted.
 
 Note: `--cookies-from-browser` **does not work for Chromium-based browsers** (e.g. Chrome, Edge, Brave, Opera) **on *Windows***. You must manually export cookies. If you encounter `The provided YouTube account cookies are no longer valid.`, we also recommend manually exporting cookies:
+
+<details>
+<summary> 
+Export cookies from Youtube 
+</summary>
 
 If you want to use the cookies of your Google account (for YouTube):
 
@@ -234,6 +240,12 @@ If you want to use the cookies of your Google account (for YouTube):
    1. If you’re on a Firefox-based browser, click on “Current Container and Site” and ensure you’re saving the file named `cookies.firefox-private.txt`  
 6. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`
 
+</details>
+
+<details>
+<summary>
+Exporting cookies from other sites 
+</summary>
 If you want to use the cookies of any other website:
 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)  
@@ -242,9 +254,9 @@ If you want to use the cookies of any other website:
 3. Click on the extension icon in the top right, click on "Export As” and save them as "cookies.txt”.  
 4. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`
 
-</summary>
+</details>
 
-
+</details>
 
 <details>
 <summary>
@@ -257,8 +269,7 @@ If you want to use the cookies of any other website:
 
 This will download the video’s original language subtitles and embed them into the video file. To download the subtitle files to your disk instead, use `yt-dlp --write-subs URL`. You can embed and write subs together: `yt-dlp --write-subs --embed-subs URL`.
 
-Note: To view the entire list of downloadable subtitles, use `yt-dlp --list-subs URL`.
-
+Note: To view the entire list of downloadable subtitles, use `yt-dlp --list-subs URL`. 
 
 <details>
 <summary>
@@ -272,7 +283,6 @@ Note: To view the entire list of downloadable subtitles, use `yt-dlp --list-subs
 Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp --embed-subs --sub-langs en,es URL` will download English and Spanish subtitles.
 
 </details>
-
 
 <details>
 <summary>
@@ -352,7 +362,7 @@ For example,  `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --au
 <details>
 <summary>
 
-### **How to download all languages**
+### How to download all languages
 
 </summary>
 
