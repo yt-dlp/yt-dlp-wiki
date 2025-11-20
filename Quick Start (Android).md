@@ -1,6 +1,6 @@
 ## Android
 
-On Android, we recommend installing yt-dlp through Termux:
+On Android, we recommend installing yt-dlp through Termux.
 
 1. Install and setup [Termux](https://github.com/termux/termux-app/releases)
    1. Ensure Termux can download files into your phone by executing
