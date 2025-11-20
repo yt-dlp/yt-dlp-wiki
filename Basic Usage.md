@@ -7,7 +7,7 @@ The following subsections explain what parameters to use for common scenarios. K
 <details>
 <summary>
 
-### How to download files to a specific folder
+## How to download files to a specific folder
 
 </summary>
 
@@ -23,7 +23,7 @@ Note: Consider adding this parameter to your config so you don’t have to manua
 <details>
 <summary>
 
-### How to download files without the numbers and letters (video ID) at the end
+## How to download files without the numbers and letters (video ID) at the end
 
 </summary>
 
@@ -38,7 +38,7 @@ Note: Consider adding this parameter to your config so you don’t have to manua
 <details>
 <summary>
 
-### How to download `.mp4`
+## How to download `.mp4`
 
 </summary>
 
@@ -61,7 +61,7 @@ Note: There are specific cases \- like using a video in DaVinci Resolve or embed
 <details>
 <summary>
 
-### How to download audio
+## How to download audio
 
 </summary>
 
@@ -76,7 +76,7 @@ This will download the highest-quality audio available.
 <details>
 <summary>
 
-## **How to download mp3**
+## How to download mp3
 
 </summary>
 
@@ -91,7 +91,7 @@ WARNING: This will download the highest audio quality possible and re-encodes it
 <details>
 <summary>
 
-### How to download aac (m4a)
+## How to download aac (m4a)
 
 </summary>
 
@@ -106,13 +106,13 @@ WARNING: This should be used only on devices where `.opus` audio is not playable
 <details>
 <summary>
 
-### How to download the thumbnail (cover art) of a video or audio
+## How to download the thumbnail (cover art) of a video or audio
 
 </summary>
 
 `yt-dlp --embed-thumbnail URL`
 
-### **How to crop the thumbnail into a square**
+### How to crop the thumbnail into a square
 
 `yt-dlp --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+ffmpeg_o:-vf crop=ih"`
 </details>
@@ -122,7 +122,7 @@ WARNING: This should be used only on devices where `.opus` audio is not playable
 <details>
 <summary>
 
-## **How to download the metadata (uploader, album, etc.) of a video or audio**
+## How to download the metadata (uploader, album, etc.) of a video or audio
 
 </summary>
 
@@ -135,7 +135,7 @@ WARNING: This should be used only on devices where `.opus` audio is not playable
 <details>
 <summary>
 
-### How to download in a specific quality
+## How to download in a specific quality
 
 </summary>
 
@@ -153,7 +153,7 @@ Keep in mind that this would download the next lower quality if that video doesn
 <details>
 <summary>
 
-### How to download a specific portion of the video (from one minute to another)
+## How to download a specific portion of the video (from one minute to another)
 
 </summary>
 
@@ -171,7 +171,7 @@ This may take awhile depending on your system’s specifications, and the durati
 <details>
 <summary>
 
-### How to download a playlist/channel
+## How to download a playlist/channel
 
 </summary>
 
@@ -188,7 +188,7 @@ If you’re going to download the playlist/channel again, use `--download-archiv
 <details>
 <summary>
 
-### How to download a specific video (or several) from a playlist or channel
+## How to download a specific video (or several) from a playlist or channel
 
 </summary>
 
@@ -205,7 +205,7 @@ The order is the same as it appears in the site (for example, in YouTube it is f
 <details>
 <summary>
 
-### How to use my account to download (how to use the cookies of my account)
+## How to use my account to download (how to use the cookies of my account)
 
 </summary>
 
@@ -261,7 +261,7 @@ If you want to use the cookies of any other website:
 <details>
 <summary>
 
-### How to download subtitles
+## How to download subtitles
 
 </summary>
 
@@ -334,7 +334,7 @@ WARNING: On YouTube, auto-generated subtitles are highly restricted due to mass 
 <details>
 <summary>
 
-### How to download audio from different languages
+## How to download audio from different languages
 
 </summary>
 
