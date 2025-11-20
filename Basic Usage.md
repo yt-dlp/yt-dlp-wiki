@@ -274,7 +274,7 @@ Note: To view the entire list of downloadable subtitles, use `yt-dlp --list-subs
 <details>
 <summary>
 
-#### How to download subtitles in specific language(s)
+### How to download subtitles in specific language(s)
 
 </summary>
 
@@ -287,7 +287,7 @@ Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en
 <details>
 <summary>
 
-#### How to download subtitles in all available languages
+### How to download subtitles in all available languages
 
 </summary>
 
@@ -301,7 +301,7 @@ Use `-` before a language code to exclude it. For example, you can use `yt-dlp -
 <details>
 <summary>
 
-#### How to download all variants of a language
+### How to download all variants of a language
 
 </summary>
 
@@ -315,7 +315,7 @@ For example, `yt-dlp --embed-subs --sub-langs "en.*” URL` will download all En
 <details>
 <summary>
 
-#### How to download auto-generated subtitles
+### How to download auto-generated subtitles
 
 </summary>
 
@@ -348,7 +348,7 @@ Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en
 <details>
 <summary>
 
-#### How to download more than 1 language
+### How to download more than 1 language
 
 </summary>
 
