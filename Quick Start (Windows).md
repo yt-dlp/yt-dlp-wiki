@@ -24,9 +24,13 @@ On Windows, we recommend installing yt-dlp through `winget`:
 
 > [!NOTE]
 > `winget` is preinstalled on Windows 11 and newer versions of Windows 10 (after build 1709). If you don't have `winget` (if your terminal says `'winget' is not recognized[...]`), follow these instructions to install `winget`:
-1. Open Powershell with administrator permissions.
-2. Execute `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`
-3. Reboot your PC.  
+1. Open Powershell with administrator permissions
+   1. Press the Windows key, type `powershell` and click the top result
+2. Execute:
+   ```
+   Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
+   ```
+3. Reboot your PC.
 
 <details>
 <summary>
