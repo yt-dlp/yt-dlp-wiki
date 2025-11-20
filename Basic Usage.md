@@ -62,7 +62,6 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    ```shell
    pkg update && pkg upgrade && pkg upgrade ffmpeg deno
    ```
-</summary>
 
 </details>
 
@@ -545,14 +544,16 @@ yt-dlp -f "bv+mergeall[format_id^=251]" --audio-multistreams "URL"
 
 </details>
 
-
-
 </details>
 
-## How to create a config
+
 
 <details>
 <summary>
+
+## How to create a config
+
+</summary>
 
 If you want to always use certain parameters (options) with yt-dlp without writing them every single time, you should create a configuration file. This file stores your preferred parameters, which are automatically applied whenever you run yt-dlp. This is useful for setting a default download directory (where your files are downloaded) or defining a specific naming format for your downloads.
 
