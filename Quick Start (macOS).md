@@ -10,12 +10,12 @@ On macOS, we recommend installing yt-dlp through the Homebrew package manager:
    4. After installing Homebrew, reopen Terminal.
 2. Install yt-dlp, FFmpeg, and Deno (required for YouTube downloads).
    1. Execute:
-      ```
+      ```shell
       brew install --HEAD yt-dlp ffmpeg deno
       ```
 3. Download a video.
    1. In a Terminal window, execute:
-      ```
+      ```shell
       yt-dlp -P PATH "URL"
       ```
       Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.

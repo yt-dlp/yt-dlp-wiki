@@ -6,18 +6,18 @@ On Windows, we recommend installing yt-dlp through `winget`:
    1. Open a terminal.
       1. Press the Windows key, type `cmd` and click the top result
    2. Execute the following command by copy-pasting it into your Terminal and hitting Enter:
-      ```
+      ```shell
       winget install -e --id yt-dlp.yt-dlp
       ```
       1. Follow the on-screen instructions.
    3. Restart your terminal (close it and open it again).
    4. Execute:
-      ```
+      ```shell
       yt-dlp --update-to nightly
       ```
 2. Download a video.
    1. Execute:
-      ```
+      ```shell
       yt-dlp -P PATH "URL"
       ```
       Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
@@ -27,7 +27,7 @@ On Windows, we recommend installing yt-dlp through `winget`:
 1. Open Powershell with administrator permissions.
    1. Press the Windows key, type `powershell` and click the top result.
 2. Execute:
-   ```
+   ```powershell
    Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
    ```
 3. Reboot your PC.
