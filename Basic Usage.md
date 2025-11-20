@@ -1,6 +1,70 @@
-# Basic usage
+# Basic Usage
 
 The following subsections explain what parameters to use for common scenarios. You can concatenate several parameters to specify more than one option.
+
+
+
+<details>
+<summary>
+
+## How to update yt-dlp
+
+</summary>
+
+Before panicking and wondering what's wrong with yt-dlp, make sure it's up to date. **Fast-changing websites, like YouTube, require frequent yt-dlp updates in order to download properly.**
+
+To update, execute the following command for your operating system (assuming you've installed yt-dlp based on the recommended installation instructions).
+
+1) Windows:
+   ```shell
+   yt-dlp -U
+   ```  
+2) macOS:
+   ```shell
+   brew upgrade yt-dlp
+   ```
+3) Linux:
+   ```shell
+   uv tool upgrade yt-dlp
+   ```  
+4) iOS:
+   ```shell
+   pip install -U yt-dlp[default] yt-dlp-apple-webkit-jsi
+   ```
+5) Android:
+   ```
+   pip install -U yt-dlp[default]
+   ```
+
+### **How to update yt-dlp's external dependencies**
+
+Although not as important or urgent as updating yt-dlp itself, it's good practice to update its external dependencies (FFmpeg and Deno) **as older versions may become unsupported by yt-dlp**. Internal dependencies, like yt-dlp-ejs, are updated with every yt-dlp update.
+
+1. Windows:  
+   1. `winget` installation:
+      ```shell
+      winget upgrade yt-dlp
+      ```
+   2. Manual yt-dlp.exe installation:
+      1. Update Deno by executing:
+         ```shell
+         deno upgrade
+         ```
+      2. You will need to redownload `ffmpeg.exe` and `ffprobe.exe` [here](idk how the actual link would look like to `Quick Start (Windows).md`)
+2. macOS:
+   ```shell
+   brew upgrade ffmpeg deno
+   ```  
+3. Linux
+	1. Depending on (todo)
+4. iOS: FFmpeg is updated when a-Shell updates.
+5. Android:
+   ```shell
+   pkg update && pkg upgrade && pkg upgrade ffmpeg deno
+   ```
+</summary>
+
+</details>
 
 
 
@@ -26,7 +90,7 @@ To download to your Downloads folder, execute:
 yt-dlp -P "%USERPROFILE%\Downloads" URL
 ```
 
-**Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](?tab=t.0#heading=h.rjiod5ey8v89).
+**Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](#how-to-create-a-config).
 
 </details>
 
@@ -43,7 +107,7 @@ yt-dlp -P "%USERPROFILE%\Downloads" URL
 yt-dlp -o "%(title)s.%(ext)s" "URL"
 ```
 
-**Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](?tab=t.0#heading=h.rjiod5ey8v89).
+**Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](#how-to-create-a-config).
 
 </details>
 
@@ -60,7 +124,7 @@ yt-dlp -o "%(title)s.%(ext)s" "URL"
 yt-dlp -t mp4 "URL"
 ```
 
-**NOTE:** On YouTube, this will limit the maximum possible quality to 1080p. You will also end up downloading **formats with inferior quality** and/or formats with a **higher filesize**. This happens because you are specifying a combination of codecs (H.264, aka. AVC, for video and AAC for audio) that may serve inferior quality. Because of this, it's not recommended to "download mp4" unless it's truly necessary. 
+**NOTE:** On YouTube, this will limit the maximum possible quality to 1080p. You may also end up downloading **formats with inferior quality** and/or formats with a **higher filesize**. This happens because you are specifying a combination of codecs (H.264, aka. AVC, for video and AAC for audio) that may serve inferior quality. Because of this, it's not recommended to "download mp4" unless it's truly necessary. 
 
 Valid reasons include importing videos to use in video editors (like Premiere Pro), but generally not because "my media player doesn't support webm files". We recommend players like [VLC](https://www.videolan.org/vlc/) or [MPV](https://mpv.io/installation/).
 
@@ -97,7 +161,7 @@ This will download the highest-quality audio available.
 <details>
 <summary>
 
-## How to download mp3
+## How to download `.mp3`
 
 </summary>
 
@@ -217,7 +281,10 @@ yt-dlp -t sleep "URL"
 
 Remember to quote your URL (surround it with `"`) to prevent [unexpected behaviors](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#video-url-contains-an-ampersand--and-im-getting-some-strange-output-1-2839-or-v-is-not-recognized-as-an-internal-or-external-command). `-t sleep` helps prevent temporary restrictions on sites like YouTube.
 
-If you're going to download the playlist/channel again, use `--download-archive archive.txt` to avoid unnecessary network requests of already-downloaded videos in the future.
+If you're going to download the playlist/channel again, use `--download-archive` to avoid unnecessary network requests of already-downloaded videos in the future:
+```shell
+yt-dlp -t sleep --download-archive archive.txt "URL"
+```
 
 </details>
 
@@ -424,7 +491,7 @@ yt-dlp --write-auto-subs "URL"
 ```
 You can use this option with `--embed-subs` to embed the auto-generated subtitles into the video file.
 
-WARNING: On YouTube, auto-generated subtitles are highly restricted, likely due to AI scrapers mass downloading. You may encounter HTTP 429 errors despite using `-t sleep` or other sleep-related parameters. See [https://github.com/yt-dlp/yt-dlp/issues/13831](https://github.com/yt-dlp/yt-dlp/issues/13831) for more information.
+**NOTE:** On YouTube, auto-generated subtitles are highly restricted, likely due to AI-scrapers mass downloading. You may encounter HTTP 429 errors despite using `-t sleep` or other sleep-related parameters. See [https://github.com/yt-dlp/yt-dlp/issues/13831](https://github.com/yt-dlp/yt-dlp/issues/13831) for more information.
 
 </details>
 
@@ -478,4 +545,49 @@ yt-dlp -f "bv+mergeall[format_id^=251]" --audio-multistreams "URL"
 
 </details>
 
+
+
 </details>
+
+## How to create a config
+
+<details>
+<summary>
+
+If you want to always use certain parameters (options) with yt-dlp without writing them every single time, you should create a configuration file. This file stores your preferred parameters, which are automatically applied whenever you run yt-dlp. This is useful for setting a default download directory (where your files are downloaded) or defining a specific naming format for your downloads.
+
+Windows yt-dlp installation via `winget`:
+1. Open Windows Explorer
+2. In the location bar (top of Explorer), type `%appdata%` and press Enter
+3. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`)
+   1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
+   2. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
+   3. Using Notepad, add your parameters inside.
+
+Windows yt-dlp manual installation of `yt-dlp.exe`:  
+1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) in the same folder where your yt-dlp.exe is located.
+   1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
+      1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
+   2. Using Notepad, add your parameters inside.
+
+<!-- need to add more to linux -->
+
+Mac or Linux:  
+   1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor.  
+
+Android:  
+   1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens)  
+   2. Add your parameters inside  
+   3. Use `CTRL + O`, press enter, and use `CTRL + X`
+
+<!-- how does one use vim for iOS in a-Shell -->
+
+After creating a config file, you can add useful parameters like `-P PATH`  or `-o "%(title)s.%(ext)s"`. To learn more, see [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) and [How to download files without the numbers and letters (IDs) at the end](#how-to-download-files-without-the-numbers-and-letters-video-id-at-the-end).
+
+</details>
+
+
+
+# Need Help?
+
+Ensure you're on the [latest version](#how-to-update-yt-dlp) before asking for help. If you encounter any issues using yt-dlp despite being on the latest version, feel free to [open a GitHub issue](https://github.com/yt-dlp/yt-dlp/issues/new/choose). For quick assistance, join our [Discord server](https://discord.gg/H5MNcFW63r).
