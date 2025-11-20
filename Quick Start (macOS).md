@@ -4,8 +4,8 @@ On macOS, we recommend installing yt-dlp through the Homebrew package manager.
 
 1. Install Homebrew (if you don't already have it)  
    1. Visit [https://brew.sh/](https://brew.sh/) in your browser  
-   2. Copy the command under "Install Homebrew” and paste it into your Terminal  
-      1. To open the Terminal, do `Command + Space` \> type "Terminal”  
+   2. Copy the command under "Install Homebrew" and paste it into your Terminal  
+      1. To open the Terminal, do `Command + Space` \> type "Terminal"  
    3. Follow the installation prompts  
    4. After installing brew, reopen Terminal  
 2. Install yt-dlp, ffmpeg, and deno (the latter is used only for Youtube)  
