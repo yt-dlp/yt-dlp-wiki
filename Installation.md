@@ -196,12 +196,16 @@ choco upgrade yt-dlp
 ### [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
 
 ```powershell
-winget install yt-dlp
+winget install yt-dlp --source winget
 ```
 
 To update, run:
 ```powershell
-winget upgrade yt-dlp
+winget upgrade yt-dlp --source winget
+```
+You can also update using the yt-dlp executable's built-in updater:
+```
+yt-dlp -U
 ```
 
 ## Android
