@@ -1,4 +1,4 @@
-## Android {#android}
+## Android
 
 On Android, we recommend installing yt-dlp through Termux.
 
