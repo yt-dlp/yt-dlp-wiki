@@ -483,7 +483,7 @@ This will to download all available subtitles, except for YouTube's live chat re
 <details>
 <summary>
 
-### How to download all variants of a language
+### How to download subtitles in all variants of a language
 
 </summary>
 
