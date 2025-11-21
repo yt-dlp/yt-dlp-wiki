@@ -63,6 +63,8 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    pkg update && pkg upgrade && pkg upgrade ffmpeg deno
    ```
 
+-----
+
 </details>
 
 
@@ -91,6 +93,8 @@ yt-dlp -P "%USERPROFILE%\Downloads" URL
 
 **Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](#how-to-create-a-config).
 
+-----
+
 </details>
 
 
@@ -107,6 +111,8 @@ yt-dlp -o "%(title)s.%(ext)s" "URL"
 ```
 
 **Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](#how-to-create-a-config).
+
+-----
 
 </details>
 
@@ -137,6 +143,8 @@ This will ensure you get the highest available quality while still producing a `
 
 ***If you don't know what "containers" or "codecs" are, feel free to download a video with `-t mp4` then redownload with `--merge mp4 –remux mp4` and see what works best for your needs.***
 
+-----
+
 </details>
 
 
@@ -152,6 +160,8 @@ This will ensure you get the highest available quality while still producing a `
 yt-dlp -x "URL"
 ```
 This will download the highest-quality audio available.
+
+-----
 
 </details>
 
@@ -169,6 +179,8 @@ yt-dlp -t mp3 URL
 ```
 **NOTE:** This will download the best audio quality available and re-encodes it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`m4a`). 
 
+-----
+
 </details>
 
 
@@ -184,6 +196,8 @@ yt-dlp -t mp3 URL
 yt-dlp -t aac URL
 ```
 **NOTE:** This should be used only on devices where `.opus` audio is not playable through any available audio player.
+
+-----
 
 </details>
 
@@ -206,6 +220,8 @@ yt-dlp --embed-thumbnail "URL"
 yt-dlp --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+ffmpeg_o:-vf crop=ih" "URL"
 ```
 
+-----
+
 </details>
 
 
@@ -220,6 +236,8 @@ yt-dlp --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+ffm
 ```shell
 yt-dlp --embed-metadata "URL"
 ```
+
+-----
 
 </details>
 
@@ -239,6 +257,8 @@ yt-dlp -S res:X "URL"
 Replace `X` with your desired resolution (e.g. 144, 240, 360, 480, 720, 1080, 2k, or 4k).
 
 **NOTE:** If there isn't a video stream at your specified resolution, yt-dlp will download the next lower-resolution video.
+
+-----
 
 </details>
 
@@ -263,6 +283,8 @@ yt-dlp --download-sections "*START-FINISH" --force-keyframes-at-cut URL
 ```
 This may take awhile depending on your system's specifications, and the duration and resolution of the video. This also re-encodes the video, which will result in quality loss.
 
+-----
+
 </details>
 
 
@@ -284,6 +306,8 @@ If you're going to download the playlist/channel again, use `--download-archive`
 ```shell
 yt-dlp -t sleep --download-archive archive.txt "URL"
 ```
+
+-----
 
 </details>
 
@@ -316,6 +340,8 @@ This will download from the 3rd to 7th video (3rd, 4th, 5th, 6th and 7th).
 
 The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order, (e.g. oldest to newest for YouTube), add `--playlist-reverse`.
 
+-----
+
 </details>
 
 
@@ -345,11 +371,9 @@ In cases where you need to use your account's cookies, avoid using an important 
 <details>
 <summary>
 
-How to manually export YouTube cookies
+### How to manually export YouTube cookies
 
 </summary>
-
-If you want to use the cookies of your YouTube account:
 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc).
    1. If you're on a Firefox-based browser, install [https://addons.mozilla.org/en-US/firefox/addon/cookies-txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead.
@@ -370,7 +394,7 @@ If you want to use the cookies of your YouTube account:
 <details>
 <summary>
 
-How to manually export cookies for all other sites
+### How to manually export cookies for all other sites
 
 </summary>
 
@@ -385,6 +409,8 @@ How to manually export cookies for all other sites
       ```
 
 </details>
+
+-----
 
 </details>
 
@@ -490,6 +516,8 @@ You can use this option with `--embed-subs` to embed the auto-generated subtitle
 
 </details>
 
+-----
+
 </details>
 
 
@@ -540,6 +568,8 @@ yt-dlp -f "bv+mergeall[format_id^=251]" --audio-multistreams "URL"
 
 </details>
 
+-----
+
 </details>
 
 
@@ -580,6 +610,8 @@ If you're on **Android**:
 <!-- how does one use vim for iOS in a-Shell -->
 
 After creating a config file, you can add useful parameters like `-P PATH`  or `-o "%(title)s.%(ext)s"`. To learn more, see [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) and [How to download files without the numbers and letters (IDs) at the end](#how-to-download-files-without-the-numbers-and-letters-video-id-at-the-end).
+
+-----
 
 </details>
 
