@@ -1,6 +1,6 @@
 # macOS
 
-On macOS, we recommend installing yt-dlp through the Homebrew package manager:
+On macOS, we recommend installing yt-dlp through the Homebrew package manager.
 
 1. Install Homebrew (if you don't already have it).
    1. Visit [https://brew.sh/](https://brew.sh/) in your browser.

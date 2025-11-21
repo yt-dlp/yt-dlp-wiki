@@ -1,6 +1,6 @@
 # Windows
 
-On Windows, we recommend installing yt-dlp through `winget`:
+On Windows, we recommend installing yt-dlp through `winget`.
 
 1. Install yt-dlp.
    1. Open a terminal.

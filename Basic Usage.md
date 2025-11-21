@@ -15,23 +15,23 @@ Before panicking and wondering what's wrong with yt-dlp, make sure it's up to da
 
 To update, execute the following command for your operating system (assuming you've installed yt-dlp based on the recommended installation instructions).
 
-1) Windows:
+1. Windows:
    ```shell
    yt-dlp -U
    ```  
-2) macOS:
+1. macOS:
    ```shell
    brew upgrade yt-dlp
    ```
-3) Linux:
+1. Linux:
    ```shell
    uv tool upgrade yt-dlp
    ```  
-4) iOS:
+1. iOS:
    ```shell
    pip install -U yt-dlp[default] yt-dlp-apple-webkit-jsi
    ```
-5) Android:
+1. Android:
    ```shell
    pip install -U yt-dlp[default]
    ```
@@ -338,7 +338,7 @@ yt-dlp -I 3:7 "URL"
 ```
 This will download from the 3rd to 7th video (3rd, 4th, 5th, 6th and 7th). 
 
-The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order, (e.g. oldest to newest for YouTube), add `--playlist-reverse`.
+The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order, e.g. oldest to newest for YouTube, add `--playlist-reverse`.
 
 -----
 
@@ -361,10 +361,10 @@ yt-dlp --cookies-from-browser BROWSER "URL"
 
 1. The video is age-restricted (and you can watch age-restricted videos with your account). 
 1. The video is paywalled/members-only (and you have a membership in that channel with your account).
-1. Your account has a premium subscription (e.g. YouTube Premium or Soundcloud Go(+)) and you want to download premium formats.
+1. Your account has a premium subscription (e.g. YouTube Premium or Soundcloud Go) and you want to download premium formats.
 1. You have been IP restricted and you want to continue downloading without changing your IP (explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors) for YouTube).
 
-In cases where you need to use your account's cookies, avoid using an important account's cookies, as this may result in the account being restricted. Sites like Instagram have ways to detect automatic behaviour in your account (like downloading with yt-dlp) and can restrict your account after just a few downloads.
+In cases where you need to use your account's cookies, avoid using an important account's cookies, as this may result in the account being restricted. DO NOT log in to Instagram/Facebook, as they can detect yt-dlp downloads with your account and may ban your account after a few downloads.
 
 **NOTE:** `--cookies-from-browser` <ins>**does not work for Chromium-based browsers**</ins> (e.g. Chrome, Edge, Brave, Opera) <ins>**on _Windows_**</ins>. You must manually export cookies. If you encounter `The provided YouTube account cookies are no longer valid.`, we also recommend manually exporting cookies.
 
@@ -388,6 +388,8 @@ In cases where you need to use your account's cookies, avoid using an important 
       ```shell
       yt-dlp --cookies "%USERPROFILE%\Downloads\cookies.txt" "URL"
       ```
+
+**CAUTION:** Overdownloading with your YouTube account may result in YouTube being [unplayable](https://github.com/yt-dlp/yt-dlp/issues/10085) with that account.
 
 </details>
 
@@ -585,7 +587,6 @@ If you want to always use certain parameters (options) with yt-dlp without writi
 
 
 If you're on **Windows** and installed yt-dlp via **`winget`**:
-
 1. Open Windows Explorer
 1. In the location bar (top of Explorer), type `%appdata%` and press Enter
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`)
@@ -607,7 +608,6 @@ If you're on **Mac or Linux**:
    1. Create a file named ``yt-dlp.conf`` (not ``yt-dlp.conf.txt``, but ``yt-dlp.conf``) inside your home directory and add your parameters inside using a text editor.  
 
 If you're on **Android**:  
-
    1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens)  
    1. Add your parameters inside  
    1. Use `CTRL + O`, press enter, and use `CTRL + X`
