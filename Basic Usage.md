@@ -595,7 +595,6 @@ If you're on **Windows** and installed yt-dlp via **`winget`**:
 
 
 If you're on **Windows** and **manually installed** `yt-dlp.exe`:  
-</summary>
 1. Create a file named ``yt-dlp.conf`` (not ``yt-dlp.conf.txt``, but ``yt-dlp.conf``) in the same folder where your yt-dlp.exe is located.
    1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
       1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
@@ -605,7 +604,6 @@ If you're on **Windows** and **manually installed** `yt-dlp.exe`:
 <!-- need to add more to linux -->
 
 If you're on **Mac or Linux**:
-</summary>
    1. Create a file named ``yt-dlp.conf`` (not ``yt-dlp.conf.txt``, but ``yt-dlp.conf``) inside your home directory and add your parameters inside using a text editor.  
 
 If you're on **Android**:  
