@@ -177,7 +177,7 @@ This will download the highest-quality audio available.
 ```shell
 yt-dlp -t mp3 URL
 ```
-**NOTE:** This will download the best audio quality available and re-encodes it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`m4a`). 
+**NOTE:** This will download the best audio quality available and re-encode it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`m4a`). 
 
 -----
 
@@ -338,7 +338,7 @@ yt-dlp -I 3:7 "URL"
 ```
 This will download from the 3rd to 7th video (3rd, 4th, 5th, 6th and 7th). 
 
-The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order, e.g. oldest to newest for YouTube, add `--playlist-reverse`.
+The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `--playlist-reverse`.
 
 -----
 
@@ -403,7 +403,7 @@ In cases where you need to use your account's cookies, avoid using an important 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
    1. If you're on a Firefox-based browser, install [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead
 1. Go to the website and ensure you're logged in
-1. Click on the extension icon in the top right, click on "Export As" and save them as "cookies.txt".
+1. Click on the extension icon in the top right, click on "Export As", and save them as "cookies.txt".
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`
    1. For example, if you've saved the cookies file to your Downloads folder on Windows:
       ```shell
@@ -551,7 +551,7 @@ Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en
 yt-dlp -f bv+ba[language=LANGUAGECODE1]+ba[language=LANGUAGECODE2] --audio-multistreams --embed-metadata "URL".
 ``` 
 
-For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --audio-multistreams --embed-metadata URL` would download the video with Spanish, English and French audio.
+For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --audio-multistreams --embed-metadata URL` would download the video with Spanish, English, and French audio.
 
 </details>
 
