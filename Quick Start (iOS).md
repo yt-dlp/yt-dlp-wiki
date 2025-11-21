@@ -1,6 +1,6 @@
 # iOS/iPadOS
 
-On iOS, we recommend installing yt-dlp through a-Shell.
+On iOS/iPadOS, we recommend installing yt-dlp through a-Shell.
 
 1. Install [a-Shell](https://apps.apple.com/us/app/a-shell/id1473805438).
 1. Install yt-dlp.
