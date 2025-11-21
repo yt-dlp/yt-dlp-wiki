@@ -54,7 +54,11 @@ You can manually download and install `yt-dlp.exe`, `ffmpeg.exe` and `ffprobe.ex
    1. Click on "New".
    1. Type `C:\yt-dlp` (or the location of your yt-dlp folder, if you chose to create it somewhere else) and click "OK" on every window.  
 1. Download a video.
-   1. Open a terminal (`cmd` or PowerShell), and execute `yt-dlp -P PATH "URL"`. Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+   1. Open a terminal (`cmd` or PowerShell), and execute:
+      ```shell
+      yt-dlp -P PATH "URL"
+      ```
+      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
 </details>
 
 ## For common usage commands, move on to Basic Usage.
