@@ -45,20 +45,20 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
       ```shell
       winget upgrade yt-dlp
       ```
-   2. Manual yt-dlp.exe installation:
+   1. Manual yt-dlp.exe installation:
       1. Update Deno by executing:
          ```shell
          deno upgrade
          ```
-      2. You will need to redownload `ffmpeg.exe` and `ffprobe.exe` [here](idk how the actual link would look like to `Quick Start (Windows).md`)
-2. macOS:
+      1. You will need to redownload `ffmpeg.exe` and `ffprobe.exe` [here](idk how the actual link would look like to `Quick Start (Windows).md`)
+1. macOS:
    ```shell
    brew upgrade ffmpeg deno
    ```  
-3. Linux
+1. Linux
 	1. Depending on (todo)
-4. iOS: FFmpeg is updated when a-Shell updates.
-5. Android:
+1. iOS: FFmpeg is updated when a-Shell updates.
+1. Android:
    ```shell
    pkg update && pkg upgrade && pkg upgrade ffmpeg deno
    ```
@@ -338,9 +338,9 @@ yt-dlp --cookies cookies.txt "URL"
 **CAUTION:** You shouldn't always use your account's cookies, but only in specific scenarios:
 
 1. The video is age-restricted (and you can watch age-restricted videos with your account). 
-2. The video is paywalled/members-only (and you have a membership in that channel with your account).
-3. Your account has a premium subscription (e.g. YouTube Premium or Soundcloud Go(+)) and you want to download premium formats.
-4. You have been IP restricted and you want to continue downloading without changing your IP (explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors) for YouTube).
+1. The video is paywalled/members-only (and you have a membership in that channel with your account).
+1. Your account has a premium subscription (e.g. YouTube Premium or Soundcloud Go(+)) and you want to download premium formats.
+1. You have been IP restricted and you want to continue downloading without changing your IP (explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors) for YouTube).
 
 In cases where you need to use your account's cookies, avoid using an important account's cookies, as this may result in the account being restricted.
 
@@ -357,13 +357,13 @@ If you want to use the cookies of your YouTube account:
 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc).
    1. If you're on a Firefox-based browser, install [https://addons.mozilla.org/en-US/firefox/addon/cookies-txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead.
-2. In a tab, go to `chrome://extensions/?id=cclelndahbckbenkjhflpdbgdldlbecc` and enable "Allow in incognito"
+1. In a tab, go to `chrome://extensions/?id=cclelndahbckbenkjhflpdbgdldlbecc` and enable "Allow in incognito"
    1. If you're on a Firefox-based browser, go to `about:addons`, enter the `cookies.txt` extension's settings, and allow "Run in Private Windows".
-3. Open an ***incognito window*** and log into YouTube.
-4. Open [https://youtube.com/robots.txt](https://youtube.com/robots.txt) in a new tab and ***close all other incognito YouTube tabs***..
-5. Click on the extension icon in the top right, click on "Export As" and save them as "cookies.txt". Then close the incognito window (so the cookies will never rotate).
+1. Open an ***incognito window*** and log into YouTube.
+1. Open [https://youtube.com/robots.txt](https://youtube.com/robots.txt) in a new tab and ***close all other incognito YouTube tabs***..
+1. Click on the extension icon in the top right, click on "Export As" and save them as "cookies.txt". Then close the incognito window (so the cookies will never rotate).
    1. If you're on a Firefox-based browser, click on the extension icon, click on "Current Container and Site", and ensure you're saving the file prenamed `cookies.firefox-private.txt`.
-6. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
+1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
    1. For example, if you've saved the cookies file to your Downloads folder on Windows:
       ```shell
       yt-dlp --cookies "%USERPROFILE%\Downloads\cookies.txt" "URL"
@@ -380,9 +380,9 @@ How to manually export cookies for all other sites
 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
    1. If you're on a Firefox-based browser, install [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead
-2. Go to the website and ensure you're logged in
-3. Click on the extension icon in the top right, click on "Export As" and save them as "cookies.txt".
-4. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`
+1. Go to the website and ensure you're logged in
+1. Click on the extension icon in the top right, click on "Export As" and save them as "cookies.txt".
+1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`
    1. For example, if you've saved the cookies file to your Downloads folder on Windows:
       ```shell
       yt-dlp --cookies "%USERPROFILE%\Downloads\cookies.txt" "URL"
@@ -559,17 +559,17 @@ If you want to always use certain parameters (options) with yt-dlp without writi
 
 Windows yt-dlp installation via `winget`:
 1. Open Windows Explorer
-2. In the location bar (top of Explorer), type `%appdata%` and press Enter
-3. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`)
+1. In the location bar (top of Explorer), type `%appdata%` and press Enter
+1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`)
    1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
-   2. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
-   3. Using Notepad, add your parameters inside.
+   1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
+   1. Using Notepad, add your parameters inside.
 
 Windows yt-dlp manual installation of `yt-dlp.exe`:  
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) in the same folder where your yt-dlp.exe is located.
    1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
       1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
-   2. Using Notepad, add your parameters inside.
+   1. Using Notepad, add your parameters inside.
 
 <!-- need to add more to linux -->
 
@@ -578,8 +578,8 @@ Mac or Linux:
 
 Android:  
    1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens)  
-   2. Add your parameters inside  
-   3. Use `CTRL + O`, press enter, and use `CTRL + X`
+   1. Add your parameters inside  
+   1. Use `CTRL + O`, press enter, and use `CTRL + X`
 
 <!-- how does one use vim for iOS in a-Shell -->
 
