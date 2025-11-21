@@ -1,13 +1,13 @@
-## Windows
+# Windows
 
 On Windows, we recommend installing yt-dlp through `winget`:
 
 1. Install yt-dlp.
    1. Open a terminal.
-      1. Press the Windows key, type `cmd` and click the top result
+      1. Press the Windows key, type "cmd" and click the top result.
    1. Execute the following command by copy-pasting it into your Terminal and hitting Enter:
       ```shell
-      winget install -e --id yt-dlp.yt-dlp
+      winget install -e --id yt-dlp.yt-dlp --source winget 
       ```
       1. Follow the on-screen instructions.
    1. Restart your terminal (close it and open it again).
@@ -24,8 +24,8 @@ On Windows, we recommend installing yt-dlp through `winget`:
 
 > [!NOTE]
 > `winget` is preinstalled on Windows 11 and newer versions of Windows 10 (after build 1709). If you don't have `winget` (if your terminal says `'winget' is not recognized[...]`), follow these instructions to install `winget`:
-1. Open Powershell with administrator permissions.
-   1. Press the Windows key, type `powershell`, right click "Windows Powershell", and click "Run as Administrator".
+1. Open PowerShell with administrator permissions.
+   1. Press the Windows key, type "powershell", right click "Windows PowerShell", and click "Run as Administrator".
 1. Execute:
    ```powershell
    Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
@@ -35,7 +35,7 @@ On Windows, we recommend installing yt-dlp through `winget`:
 <details>
 <summary>
 
-Can't install yt-dlp through `winget`?
+#### Can't install yt-dlp through `winget`?
 
 </summary>
 
@@ -54,5 +54,7 @@ You can manually download and install `yt-dlp.exe`, `ffmpeg.exe` and `ffprobe.ex
    1. Click on "New".
    1. Type `C:\yt-dlp` (or the location of your yt-dlp folder, if you chose to create it somewhere else) and click "OK" on every window.  
 1. Download a video.
-   1. Open a terminal (`cmd` or powershell), and execute `yt-dlp -P PATH "URL"`. Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+   1. Open a terminal (`cmd` or PowerShell), and execute `yt-dlp -P PATH "URL"`. Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
 </details>
+
+## For common usage commands, move on to Basic Usage.

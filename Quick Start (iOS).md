@@ -1,4 +1,4 @@
-## iOS/iPadOS
+# iOS/iPadOS
 
 On iOS, we recommend installing yt-dlp through a-Shell.
 
@@ -16,3 +16,5 @@ On iOS, we recommend installing yt-dlp through a-Shell.
       ```
       Replace `URL` with the actual video URL you want to download. Your video will start downloading.
    1. You can find the downloaded video in the Files app \> On My iPhone/iPad \> a-Shell \> your downloaded video.
+
+## For common usage commands, move on to Basic Usage.

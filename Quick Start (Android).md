@@ -1,4 +1,4 @@
-## Android
+# Android
 
 On Android, we recommend installing yt-dlp through Termux.
 
@@ -24,3 +24,5 @@ On Android, we recommend installing yt-dlp through Termux.
    yt-dlp "URL"
    ```
    Replace `URL` with the actual video URL you want to download. Your video will start downloading.
+
+## For common usage commands, move on to Basic Usage.

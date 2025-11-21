@@ -330,10 +330,6 @@ The order is the same as it appears in the site (e.g. YouTube sorts videos from 
 ```shell
 yt-dlp --cookies-from-browser BROWSER "URL"
 ```
-or
-```shell
-yt-dlp --cookies cookies.txt "URL"
-```
 
 **CAUTION:** You shouldn't always use your account's cookies, but only in specific scenarios:
 
@@ -557,7 +553,7 @@ yt-dlp -f "bv+mergeall[format_id^=251]" --audio-multistreams "URL"
 
 If you want to always use certain parameters (options) with yt-dlp without writing them every single time, you should create a configuration file. This file stores your preferred parameters, which are automatically applied whenever you run yt-dlp. This is useful for setting a default download directory (where your files are downloaded) or defining a specific naming format for your downloads.
 
-Windows yt-dlp installation via `winget`:
+If you're on **Windows** and installed yt-dlp via **`winget`**:
 1. Open Windows Explorer
 1. In the location bar (top of Explorer), type `%appdata%` and press Enter
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`)
@@ -565,7 +561,7 @@ Windows yt-dlp installation via `winget`:
    1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
    1. Using Notepad, add your parameters inside.
 
-Windows yt-dlp manual installation of `yt-dlp.exe`:  
+If you're on **Windows** and **manually installed** `yt-dlp.exe`:  
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) in the same folder where your yt-dlp.exe is located.
    1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
       1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
@@ -573,10 +569,10 @@ Windows yt-dlp manual installation of `yt-dlp.exe`:
 
 <!-- need to add more to linux -->
 
-Mac or Linux:  
+If you're on **Mac or Linux**:  
    1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor.  
 
-Android:  
+If you're on **Android**:  
    1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens)  
    1. Add your parameters inside  
    1. Use `CTRL + O`, press enter, and use `CTRL + X`
