@@ -50,7 +50,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
          ```shell
          deno upgrade
          ```
-      1. You will need to redownload `ffmpeg.exe` and `ffprobe.exe` [here](idk how the actual link would look like to `Quick Start (Windows).md`)
+      1. You will need to redownload `ffmpeg.exe` and `ffprobe.exe` [here](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip)
 1. macOS:
    ```shell
    brew upgrade ffmpeg deno
@@ -591,14 +591,14 @@ If you're on **Windows** and installed yt-dlp via **`winget`**:
 1. In the location bar (top of Explorer), type `%appdata%` and press Enter
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`)
    1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
-   1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
+      1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types".
    1. Using Notepad, add your parameters inside.
 
 
 If you're on **Windows** and **manually installed** `yt-dlp.exe`:  
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) in the same folder where your yt-dlp.exe is located.
    1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
-      1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
+      1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types".
    1. Using Notepad, add your parameters inside.
 
 
