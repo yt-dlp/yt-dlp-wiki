@@ -88,7 +88,7 @@ yt-dlp -P "C:\yt-dlp\Videos" "URL"
 
 To download to your Downloads folder, execute:
 ```shell
-yt-dlp -P "%USERPROFILE%\Downloads" URL
+yt-dlp -P "%USERPROFILE%\Downloads" "URL"
 ```
 
 **Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](#how-to-create-a-config).
@@ -175,7 +175,7 @@ This will download the highest-quality audio available.
 </summary>
 
 ```shell
-yt-dlp -t mp3 URL
+yt-dlp -t mp3 "URL"
 ```
 **NOTE:** This will download the best audio quality available and re-encode it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`m4a`). 
 
@@ -193,7 +193,7 @@ yt-dlp -t mp3 URL
 </summary>
 
 ```shell
-yt-dlp -t aac URL
+yt-dlp -t aac "URL"
 ```
 **NOTE:** This should be used only on devices where `.opus` audio is not playable through any available audio player.
 
@@ -275,11 +275,11 @@ Replace `X` with your desired resolution (e.g. 144, 240, 360, 480, 720, 1080, 2k
 yt-dlp --download-sections "*START-FINISH" "URL"
 ```
 
-Replace `START` and `FINISH` with your desired timestamps in `HH:MM:SS.MS` (or `MM:SS`) format. You can also use `inf` to indicate the end of the video. For example, to download from the 10-second mark to the end, execute `yt-dlp --download-sections "*00:10-inf" URL`.
+Replace `START` and `FINISH` with your desired timestamps in `HH:MM:SS.MS` (or `MM:SS`) format. You can also use `inf` to indicate the end of the video. For example, to download from the 10-second mark to the end, execute `yt-dlp --download-sections "*00:10-inf" "URL"`.
 
 **NOTE:** If the downloaded video has issues (e.g. desynchronized audio/video or frozen/black frames at the beginning and/or end), you can try adding the `--force-keyframes-at-cut` parameter:
 ```shell
-yt-dlp --download-sections "*START-FINISH" --force-keyframes-at-cut URL
+yt-dlp --download-sections "*START-FINISH" --force-keyframes-at-cut "URL"
 ```
 This may take awhile depending on your system's specifications, and the duration and resolution of the video. This also re-encodes the video, which will result in quality loss.
 
@@ -366,7 +366,7 @@ yt-dlp --cookies-from-browser BROWSER "URL"
 
 In cases where you need to use your account's cookies, avoid using an important account's cookies, as this may result in the account being restricted. DO NOT log in to Instagram/Facebook, as they can detect yt-dlp downloads with your account and may ban your account after a few downloads.
 
-**NOTE:** `--cookies-from-browser` <ins>**does not work for Chromium-based browsers**</ins> (e.g. Chrome, Edge, Brave, Opera) <ins>**on _Windows_**</ins>. You must manually export cookies. If you encounter `The provided YouTube account cookies are no longer valid.`, we also recommend manually exporting cookies.
+**NOTE:** `--cookies-from-browser` <ins>**does not work for Chromium-based browsers**</ins> (e.g. Chrome, Edge, Brave, or Opera) <ins>**on _Windows_**</ins>. You must manually export cookies. If you encounter `The provided YouTube account cookies are no longer valid.`, we also recommend manually exporting cookies.
 
 <details>
 <summary>
@@ -381,7 +381,7 @@ In cases where you need to use your account's cookies, avoid using an important 
    1. If you're on a Firefox-based browser, go to `about:addons`, enter the `cookies.txt` extension's settings, and allow "Run in Private Windows".
 1. Open an ***incognito window*** and log into YouTube.
 1. Open [https://youtube.com/robots.txt](https://youtube.com/robots.txt) in a new tab and ***close all other incognito YouTube tabs***.
-1. Click on the extension icon in the top right, click on "Export As" and save them as "cookies.txt". Then close the incognito window (so the cookies will never rotate).
+1. Click on the extension's icon in the top right, click on "Export As", and save as "cookies.txt". Then close the incognito window (so the cookies will never rotate).
    1. If you're on a Firefox-based browser, click on the extension icon, click on "Current Container and Site", and ensure you're saving the file prenamed `cookies.firefox-private.txt`.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
    1. For example, if you've saved the cookies file to your Downloads folder on Windows:
@@ -452,7 +452,7 @@ yt-dlp --write-subs --embed-subs "URL"
 yt-dlp --embed-subs --sub-langs LANGUAGECODE "URL"
 ```
 
-Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp --embed-subs --sub-langs en,es URL` will download English and Spanish subtitles.
+Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp --embed-subs --sub-langs en,es "URL"` will download English and Spanish subtitles.
 
 **TIP:** To view the entire list of downloadable subtitles' language codes:
 ```shell
@@ -475,7 +475,7 @@ yt-dlp --embed-subs --sub-langs all "URL"
 
 Use `-` before a language code to exclude language(s). For example:
 ```shell
-yt-dlp --embed-subs --sub-langs all,-live_chat URL
+yt-dlp --embed-subs --sub-langs all,-live_chat "URL"
 ```
 This will to download all available subtitles, except for YouTube's live chat replay.
 
@@ -495,7 +495,7 @@ yt-dlp --embed-subs --sub-langs "BASICLANGUAGECODE.*" "URL"
 
 For example:
 ```
-yt-dlp --embed-subs --sub-langs "en.*" URL
+yt-dlp --embed-subs --sub-langs "en.*" "URL"
 ```
 This will download all English variants' subtitles (en, en-US, en-GB, etc.) using regex.
 
@@ -535,7 +535,7 @@ You can use this option with `--embed-subs` to embed the auto-generated subtitle
 yt-dlp -f bv+ba[language=LANGUAGECODE]/b[language=LANGUAGECODE] --embed-metadata "URL"
 ```
 
-Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp -f bv+ba[language=es]/b[language=es] --embed-metadata URL` will download Spanish audio. 
+Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp -f bv+ba[language=es]/b[language=es] --embed-metadata "URL"` will download Spanish audio. 
 
 `--embed-metadata` is required in order to ensure the appropriate language code is tagged with its respective audio track. Otherwise, all audio tracks may be incorrectly marked as English.
 
@@ -551,7 +551,7 @@ Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en
 yt-dlp -f bv+ba[language=LANGUAGECODE1]+ba[language=LANGUAGECODE2] --audio-multistreams --embed-metadata "URL".
 ``` 
 
-For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --audio-multistreams --embed-metadata URL` would download the video with Spanish, English, and French audio.
+For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --audio-multistreams --embed-metadata "URL"` would download the video with Spanish, English, and French audio.
 
 </details>
 
@@ -596,7 +596,7 @@ If you're on **Windows** and installed yt-dlp via **`winget`**:
 
 
 If you're on **Windows** and **manually installed** `yt-dlp.exe`:  
-1. Create a file named ``yt-dlp.conf`` (not ``yt-dlp.conf.txt``, but ``yt-dlp.conf``) in the same folder where your yt-dlp.exe is located.
+1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) in the same folder where your yt-dlp.exe is located.
    1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
       1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types"
    1. Using Notepad, add your parameters inside.
@@ -605,7 +605,7 @@ If you're on **Windows** and **manually installed** `yt-dlp.exe`:
 <!-- need to add more to linux -->
 
 If you're on **Mac or Linux**:
-   1. Create a file named ``yt-dlp.conf`` (not ``yt-dlp.conf.txt``, but ``yt-dlp.conf``) inside your home directory and add your parameters inside using a text editor.  
+   1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor.  
 
 If you're on **Android**:  
    1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens)  
