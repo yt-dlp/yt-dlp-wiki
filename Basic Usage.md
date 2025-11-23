@@ -59,7 +59,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    ```shell
    sudo apt-upgrade && sudo apt-update && sudo apt-get ffmpeg deno
    ```
-   * Arch-based (Arch):
+   * Arch-based (Arch, Manjaro):
    ```shell
    sudo pacman -Sy && sudo pacman -S ffmpeg deno
    ```
