@@ -3,7 +3,7 @@
 1. Download ffmpeg and deno  
 - Deno and ffmpeg can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
   * Debian-based (Debian, Ubuntu, Mint): `sudo apt-get ffmpeg deno`  
-  * Arch-based (Arch): `sudo pacman -S ffmpeg deno`  
+  * Arch-based (Arch, Manjaro): `sudo pacman -S ffmpeg deno`  
 2. Download yt-dlp  
 - If you are using Arch Linux you can install yt-dlp-git from AUR ([https://aur.archlinux.org/packages/yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git)).  
 - For all other users (e.g. Ubuntu and Debian) we recommend installing yt-dlp via `uv`:  
