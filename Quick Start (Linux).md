@@ -15,4 +15,4 @@ TODO/finish
      3. Execute `uv tool install uv`   
      4. Execute `uv tool install --pre "yt-dlp[default]"`  
 3. Download a video  
-   1. In a terminal window, execute `yt-dlp -P PATH "URL"`. Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+   1. In a terminal window, execute `yt-dlp -P PATH "URL"`. Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Basic&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
