@@ -1,7 +1,5 @@
 ## Linux
 
-TODO/finish
-
 1. Download ffmpeg and deno  
 - Deno and ffmpeg can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
   * Debian-based (Debian, Ubuntu, Mint): `sudo apt-get ffmpeg deno`  
