@@ -37,7 +37,6 @@ To update, execute the following command for your operating system (assuming you
    ```
 
 ### How to update yt-dlp's external dependencies
-
 Although not as important or urgent as updating yt-dlp itself, it's good practice to update its external dependencies (FFmpeg and Deno) **as older versions may become unsupported by yt-dlp**. Internal dependencies, like yt-dlp-ejs, are updated with every yt-dlp update.
 
 1. Windows:  
@@ -50,19 +49,25 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
          ```shell
          deno upgrade
          ```
-      1. You will need to redownload `ffmpeg.exe` and `ffprobe.exe` [here](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip)
+      1. You will need to redownload `ffmpeg.exe` and `ffprobe.exe` from [here](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip)
 1. macOS:
    ```shell
    brew upgrade ffmpeg deno
    ```  
-1. Linux
-	1. Depending on (todo)
+1. Linux:
+	* Debian-based (Debian, Ubuntu, Mint):
+   ```shell
+   sudo apt-upgrade && sudo apt-update && sudo apt-get ffmpeg deno
+   ```
+   * Arch-based (Arch):
+   ```shell
+   sudo pacman -Sy && sudo pacman -S ffmpeg deno
+   ```
 1. iOS: FFmpeg is updated when a-Shell updates.
 1. Android:
    ```shell
    pkg update && pkg upgrade && pkg upgrade ffmpeg deno
    ```
-
 -----
 
 </details>
