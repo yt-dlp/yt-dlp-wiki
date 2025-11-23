@@ -307,6 +307,8 @@ If you're going to download the playlist/channel again, use `--download-archive`
 yt-dlp -t sleep --download-archive archive.txt "URL"
 ```
 
+The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `--playlist-reverse`.
+
 -----
 
 </details>
@@ -338,7 +340,11 @@ yt-dlp -I 3:7 "URL"
 ```
 This will download from the 3rd to 7th video (3rd, 4th, 5th, 6th and 7th). 
 
-The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `--playlist-reverse`.
+The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `-` before `POSITION`:
+```shell
+yt-dlp -I -7:-3 "URL"
+```
+This will download from the 7th-oldest video to the 3rd-oldest video.
 
 -----
 
@@ -587,17 +593,17 @@ If you want to always use certain parameters with yt-dlp without writing them ev
 
 
 If you're on **Windows** and installed yt-dlp via **`winget`**:
-1. Open Windows Explorer
-1. In the location bar (top of Explorer), type `%appdata%` and press Enter
-1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`)
-   1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
+1. Open Windows Explorer.
+1. In the location bar (top of Explorer), type `%appdata%` and press Enter.
+1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`).
+   1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document".
       1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types".
    1. Using Notepad, add your parameters inside.
 
 
 If you're on **Windows** and **manually installed** `yt-dlp.exe`:  
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) in the same folder where your yt-dlp.exe is located.
-   1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document"
+   1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document".
       1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types".
    1. Using Notepad, add your parameters inside.
 
@@ -608,9 +614,9 @@ If you're on **Mac or Linux**:
    1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor.  
 
 If you're on **Android**:  
-   1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens)  
-   1. Add your parameters inside  
-   1. Use `CTRL + O`, press enter, and use `CTRL + X`
+   1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens).
+   1. Add your parameters inside.
+   1. Use `CTRL + O`, press enter, and use `CTRL + X`.
 
 
 <!-- how does one use vim for iOS in a-Shell -->
