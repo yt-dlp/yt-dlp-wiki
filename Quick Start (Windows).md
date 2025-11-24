@@ -59,6 +59,7 @@ You can manually download and install `yt-dlp.exe`, `ffmpeg.exe` and `ffprobe.ex
       yt-dlp -P PATH "URL"
       ```
       Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Basic&#x20;Usage.md#How-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+
 </details>
 
 For common usage commands, move on to [Basic Usage](Basic&#x20;Usage.md).

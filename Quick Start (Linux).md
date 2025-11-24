@@ -4,15 +4,15 @@
    - FFmpeg and Deno can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
      - Debian-based (e.g. Debian, Ubuntu, or Mint):
        ```shell
-       sudo apt install ffmpeg deno
+       sudo apt update && sudo apt install ffmpeg deno
        ```
        If your package manager doesn't have Deno, install Node.js instead:
        ```shell
        sudo apt install nodejs
        ```
-     - Arch-based (Arch, Manjaro):
+     - Arch-based (e.g. Arch or Manjaro):
        ```shell
-       sudo pacman -S ffmpeg deno
+       sudo pacman -Syu ffmpeg deno
        ```
 2. Download yt-dlp.
    - If you are using an Arch-based distribution, you can install yt-dlp-git from the AUR: [https://aur.archlinux.org/packages/yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git)

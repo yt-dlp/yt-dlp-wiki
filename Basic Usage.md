@@ -13,7 +13,7 @@ The following subsections explain what parameters to use for common scenarios. Y
 
 Before panicking and wondering what's wrong with yt-dlp, make sure it's up to date. **Fast-changing websites, like YouTube, require frequent yt-dlp updates in order to download properly.**
 
-To update, execute the following command for your operating system (assuming you've installed yt-dlp based on the recommended installation instructions).
+To update, execute the following command for your operating system (assuming you've installed yt-dlp based on the recommended installation instructions):
 
 1. Windows:
    ```shell
@@ -27,7 +27,7 @@ To update, execute the following command for your operating system (assuming you
    ```shell
    uv tool upgrade yt-dlp
    ```  
-1. iOS:
+1. iOS/iPadOS:
    ```shell
    pip install -U yt-dlp[default] yt-dlp-apple-webkit-jsi
    ```
@@ -36,7 +36,14 @@ To update, execute the following command for your operating system (assuming you
    pip install -U yt-dlp[default]
    ```
 
+
+<details>
+<summary>
+
 ### How to update yt-dlp's external dependencies
+
+</summary>
+
 Although not as important or urgent as updating yt-dlp itself, it's good practice to update its external dependencies (FFmpeg and Deno) **as older versions may become unsupported by yt-dlp**. Internal dependencies, like yt-dlp-ejs, are updated with every yt-dlp update.
 
 1. Windows:  
@@ -55,19 +62,25 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    brew upgrade ffmpeg deno
    ```  
 1. Linux:
-	* Debian-based (Debian, Ubuntu, Mint):
-   ```shell
-   sudo apt-upgrade && sudo apt-update && sudo apt-get ffmpeg deno
-   ```
-   * Arch-based (Arch, Manjaro):
+	- Debian-based (e.g. Debian, Ubuntu, or Mint):
+     ```shell
+     sudo apt update && sudo apt upgrade && sudo apt install ffmpeg deno
+     ```
+     - If you've installed Node.js:
+       ```shell
+       sudo apt update && sudo apt upgrade && sudo apt install ffmpeg nodejs
+       ``` 
+   - Arch-based (e.g. Arch or Manjaro):
    ```shell
    sudo pacman -Sy && sudo pacman -S ffmpeg deno
    ```
-1. iOS: FFmpeg is updated when a-Shell updates.
+1. iOS/iPadOS: FFmpeg is updated when a-Shell updates. Instead of Deno, you're using [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-js), which is updated with the yt-dlp update command above.
 1. Android:
    ```shell
    pkg update && pkg upgrade && pkg upgrade ffmpeg deno
    ```
+
+</details>
 
 -----
 
@@ -405,6 +418,7 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 </details>
 
+
 <details>
 <summary>
 
@@ -414,7 +428,7 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
    1. If you're on a Firefox-based browser, install [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead
-1. Go to the website and ensure you're logged in
+1. Go to the website and ensure you're logged in.
 1. Click on the extension icon in the top right, click on "Export As", and save them as "cookies.txt".
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
    1. For example, if you've saved the cookies file to your Downloads folder on Windows:
@@ -453,6 +467,7 @@ You can embed and write subs together:
 yt-dlp --write-subs --embed-subs "URL"
 ```
 
+
 <details>
 <summary>
 
@@ -489,7 +504,7 @@ Use `-` before a language code to exclude language(s). For example:
 ```shell
 yt-dlp --embed-subs --sub-langs all,-live_chat "URL"
 ```
-This will to download all available subtitles, except for YouTube's live chat replay.
+This will to download all available manual subtitles, except for YouTube's live chat replay.
 
 </details>
 
@@ -509,7 +524,7 @@ For example:
 ```
 yt-dlp --embed-subs --sub-langs "en.*" "URL"
 ```
-This will download all English variants' subtitles (en, en-US, en-GB, etc.) using regex.
+This will download all the English variants' subtitles (en, en-US, en-GB, etc.) using regex.
 
 </details>
 
@@ -539,7 +554,7 @@ You can use this option with `--embed-subs` to embed the auto-generated subtitle
 <details>
 <summary>
 
-## How to download audio from different languages
+## How to download different audio languages
 
 </summary>
 
@@ -555,7 +570,7 @@ Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en
 <details>
 <summary>
 
-### How to download more than 1 language
+### How to download more than 1 audio language
 
 </summary>
 
@@ -571,7 +586,7 @@ For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --aud
 <details>
 <summary>
 
-### How to download all languages
+### How to download all audio languages
 
 </summary>
 
@@ -595,7 +610,7 @@ yt-dlp -f "bv+mergeall[format_id^=251][format_id!*=drc]" --audio-multistreams "U
 
 </summary>
 
-If you want to always use certain parameters with yt-dlp without writing them every single time, create a configuration file. The file's stored parameters are automatically applied whenever you run yt-dlp. This is useful for setting a default download directory (where your files are downloaded) or defining a specific naming format for your downloads.
+If you want to always use certain parameters with yt-dlp without writing them every single time, create a configuration file. The file's stored parameters are automatically applied whenever you run yt-dlp. This is useful for setting a [default download directory](#how-to-download-files-to-a-specific-folder) or [defining a specific naming format for your downloads](#how-to-download-files-without-the-numbers-and-letters-video-id-at-the-end).
 
 If you're on **Windows** and installed yt-dlp via **`winget`**:
 1. Open Windows Explorer.
@@ -611,7 +626,7 @@ If you're on **Windows** and **manually installed** `yt-dlp.exe`:
       1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types".
    1. Using Notepad, add your parameters inside.
 
-If you're on **Mac or Linux**:
+If you're on **macOS or Linux**:
    1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor.  
 
 If you're on **Android**:  
@@ -625,8 +640,6 @@ If you're on **iOS/iPadOS**:
    1. Add your parameters inside.
    1. Press Esc (the circle icon with ↖) to exit Insert mode and return to Command mode.
    1. Type `:wq` and press Enter to save and exit.
-
-After creating a config file, you can add useful parameters like `-P PATH`  or `-o "%(title)s.%(ext)s"`. To learn more, see [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) and [How to download files without the numbers and letters (IDs) at the end](#how-to-download-files-without-the-numbers-and-letters-video-id-at-the-end).
 
 -----
 
