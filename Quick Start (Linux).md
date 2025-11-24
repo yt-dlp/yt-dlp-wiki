@@ -1,15 +1,37 @@
-## Linux
+# Linux
 
-1. Download ffmpeg and deno  
-- Deno and ffmpeg can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
-  * Debian-based (Debian, Ubuntu, Mint): `sudo apt-get ffmpeg deno`  
-  * Arch-based (Arch, Manjaro): `sudo pacman -S ffmpeg deno`  
-2. Download yt-dlp  
-- If you are using Arch Linux you can install yt-dlp-git from AUR ([https://aur.archlinux.org/packages/yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git)).  
-- For all other users (e.g. Ubuntu and Debian) we recommend installing yt-dlp via `uv`:  
-  1. Download `uv` from [https://github.com/astral-sh/uv/releases](https://github.com/astral-sh/uv/releases)  
-     2. Extract `uv` and `uvx` from the tar.  
-     3. Execute `uv tool install uv`   
-     4. Execute `uv tool install --pre "yt-dlp[default]"`  
-3. Download a video  
-   1. In a terminal window, execute `yt-dlp -P PATH "URL"`. Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Basic&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+1. Download FFmpeg and Deno.  
+   - Deno and FFmpeg can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
+     - Debian-based (e.g. Debian, Ubuntu, or Mint):
+       ```shell
+       sudo apt install ffmpeg deno
+       ```
+       If your package manager doesn't have Deno, install Node.js instead:
+       ```shell
+       sudo apt install nodejs
+       ```
+     - Arch-based (Arch, Manjaro):
+       ```shell
+       sudo pacman -S ffmpeg deno
+       ```
+2. Download yt-dlp.
+   - If you are using an Arch-based distribution, you can install yt-dlp-git from the AUR: ([https://aur.archlinux.org/packages/yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git))
+   - For all other users (e.g. Ubuntu and Debian), we recommend installing yt-dlp via `uv`:
+     1. Download `uv` from [https://github.com/astral-sh/uv/releases](https://github.com/astral-sh/uv/releases)
+     1. Extract `uv` and `uvx` from the tar.
+     1. Execute:
+        ```shell
+        uv tool install uv
+        ```
+     1. Execute:
+        ```shell
+        uv tool install --pre "yt-dlp[default]"
+        ```
+3. Download a video.
+   1. Execute:
+      ```shell
+      yt-dlp -P PATH "URL"
+      ```
+      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Basic&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+
+## For common usage commands, move on to [Basic Usage](Basic&#x20;Usage.md).
