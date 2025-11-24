@@ -619,8 +619,12 @@ If you're on **Android**:
    1. Add your parameters inside.
    1. Use `CTRL + O`, press enter, and use `CTRL + X`.
 
-
-<!-- how does one use vim for iOS in a-Shell -->
+If you're on **iOS**:
+   1. Execute `vim yt-dlp.conf`.
+   1. Type `i` on your keyboard to enter Insert mode.
+   1. Add your parameters inside.
+   1. Press Esc (the circle icon with ↖) to exit Insert mode and return to Command mode.
+   1. Type `:wq` and press Enter to save and exit.
 
 After creating a config file, you can add useful parameters like `-P PATH`  or `-o "%(title)s.%(ext)s"`. To learn more, see [How to download files to a specific folder](#how-to-download-files-to-a-specific-folder) and [How to download files without the numbers and letters (IDs) at the end](#how-to-download-files-without-the-numbers-and-letters-video-id-at-the-end).
 
