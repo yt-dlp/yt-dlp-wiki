@@ -411,7 +411,7 @@ In cases where you need to use your account's cookies, avoid using an important 
    - If you're on a Firefox-based browser, go to `about:addons`, enter the `cookies.txt` extension's settings, and allow "Run in Private Windows".
 1. Open an ***incognito window*** and log into YouTube.
 1. Open [https://youtube.com/robots.txt](https://youtube.com/robots.txt) in a new tab and ***close all other incognito YouTube tabs***.
-1. Click on the extension's icon in the top right, click on "Export As", and save as "cookies.txt". Then close the incognito window (so the cookies will never rotate).
+1. Click on the extension's icon in the top right, click on "Export As", and save as "cookies.txt". Then ***close all incognito windows*** (so the cookies will never rotate).
    - If you're on a Firefox-based browser, click on the extension's icon, click on "Current Container and Site", and ensure you're saving the file prenamed `cookies.firefox-private.txt`.
    - Open [https://www.tiktok.com/robots.txt](https://www.tiktok.com/robots.txt) instead to export TikTok cookies.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
