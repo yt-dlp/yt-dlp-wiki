@@ -24,7 +24,7 @@ To update, execute the following command for your operating system (assuming you
    brew upgrade yt-dlp
    ```
 1. Linux:
-	- Debian-based (e.g. Debian, Ubuntu, or Mint):
+   - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
      uv tool upgrade yt-dlp
      ```
