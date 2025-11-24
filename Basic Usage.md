@@ -638,7 +638,7 @@ If you're on **iOS/iPadOS**:
    1. Execute `vim yt-dlp.conf`.
    1. Type `i` on your keyboard to enter Insert mode.
    1. Add your parameters inside.
-   1. Press Esc (the circle icon with ↖) to exit Insert mode and return to Command mode.
+   1. Press Esc (the circle icon with ↖ above the keyboard) to exit Insert mode and return to Command mode.
    1. Type `:wq` and tap Enter to save and exit.
 
 -----
