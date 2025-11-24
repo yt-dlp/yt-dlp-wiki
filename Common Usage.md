@@ -67,7 +67,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    brew upgrade ffmpeg deno
    ```  
 1. Linux:
-	- Debian-based (e.g. Debian, Ubuntu, or Mint):
+   - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
      sudo apt update && sudo apt upgrade && sudo apt install ffmpeg deno
      ```
