@@ -415,7 +415,7 @@ In cases where you need to use your account's cookies, avoid using an important 
    - If you're on a Firefox-based browser, click on the extension's icon, click on "Current Container and Site", and ensure you're saving the file prenamed `cookies.firefox-private.txt`.
    - Open [https://www.tiktok.com/robots.txt](https://www.tiktok.com/robots.txt) instead to export TikTok cookies.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
-   1. For example, if you've saved the cookies file to your Downloads folder on Windows:
+   - For example, if you've saved the cookies file to your Downloads folder on Windows:
       ```shell
       yt-dlp --cookies "%USERPROFILE%\Downloads\cookies.txt" "URL"
       ```
