@@ -74,7 +74,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    ```shell
    sudo pacman -Sy && sudo pacman -S ffmpeg deno
    ```
-1. iOS/iPadOS: FFmpeg is updated when a-Shell updates. Instead of Deno, you're using [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-js), which is updated with the yt-dlp update command above.
+1. iOS/iPadOS: FFmpeg is updated when a-Shell updates. Instead of Deno, you're using [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi), which is updated with the yt-dlp update command above.
 1. Android:
    ```shell
    pkg update && pkg upgrade && pkg upgrade ffmpeg deno
