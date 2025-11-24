@@ -326,7 +326,7 @@ If you're going to download the playlist/channel again, use `--download-archive`
 yt-dlp -t sleep --download-archive archive.txt "URL"
 ```
 
-The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `--playlist-reverse`.
+The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `-I ::-1`.
 
 -----
 
