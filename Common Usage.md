@@ -29,9 +29,9 @@ To update, execute the following command for your operating system (assuming you
      uv tool upgrade yt-dlp
      ```
    - Arch-based (e.g. Arch or Manjaro):
-   ```shell
-   pamac build yt-dlp-git
-   ```
+     ```shell
+     pamac build yt-dlp-git
+     ```
 1. iOS/iPadOS:
    ```shell
    pip install -U yt-dlp[default] yt-dlp-apple-webkit-jsi
