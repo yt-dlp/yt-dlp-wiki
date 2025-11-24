@@ -18,7 +18,7 @@ To update, execute the following command for your operating system (assuming you
 1. Windows:
    ```shell
    yt-dlp -U
-   ```  
+   ```
 1. macOS:
    ```shell
    brew upgrade yt-dlp
@@ -65,7 +65,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
 1. macOS:
    ```shell
    brew upgrade ffmpeg deno
-   ```  
+   ```
 1. Linux:
    - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
