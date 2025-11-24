@@ -24,9 +24,14 @@ To update, execute the following command for your operating system (assuming you
    brew upgrade yt-dlp
    ```
 1. Linux:
+	- Debian-based (e.g. Debian, Ubuntu, or Mint):
+     ```shell
+     uv tool upgrade yt-dlp
+     ```
+   - Arch-based (e.g. Arch or Manjaro):
    ```shell
-   uv tool upgrade yt-dlp
-   ```  
+   pamac build yt-dlp-git
+   ```
 1. iOS/iPadOS:
    ```shell
    pip install -U yt-dlp[default] yt-dlp-apple-webkit-jsi
