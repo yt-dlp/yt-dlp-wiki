@@ -18,6 +18,6 @@ On macOS, we recommend installing yt-dlp through the Homebrew package manager.
       ```shell
       yt-dlp -P PATH "URL"
       ```
-      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Basic&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Common&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
 
-For common usage commands, move on to [Basic Usage](Basic&#x20;Usage.md).
+For common usage commands, move on to [Common Usage](Common&#x20;Usage.md).

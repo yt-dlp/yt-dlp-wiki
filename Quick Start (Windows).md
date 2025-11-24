@@ -20,7 +20,7 @@ On Windows, we recommend installing yt-dlp through `winget`.
       ```shell
       yt-dlp -P PATH "URL"
       ```
-      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Basic&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Common&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
 
 > [!NOTE]
 > `winget` is preinstalled on Windows 11 and newer versions of Windows 10 (after build 1709). If you don't have `winget` (if your terminal says `'winget' is not recognized[...]`), follow these instructions to install `winget`:
@@ -58,8 +58,8 @@ You can manually download and install `yt-dlp.exe`, `ffmpeg.exe` and `ffprobe.ex
       ```shell
       yt-dlp -P PATH "URL"
       ```
-      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Basic&#x20;Usage.md#How-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
+      Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Common&#x20;Usage.md#How-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
 
 </details>
 
-For common usage commands, move on to [Basic Usage](Basic&#x20;Usage.md).
+For common usage commands, move on to [Common Usage](Common&#x20;Usage.md).
