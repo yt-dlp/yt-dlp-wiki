@@ -359,11 +359,11 @@ yt-dlp -I 3:7 "URL"
 ```
 This will download from the 3rd to 7th video (3rd, 4th, 5th, 6th and 7th). 
 
-The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `-` before `POSITION`:
+Download backwards with `-` and another `:`:
 ```shell
-yt-dlp -I -7:-3 "URL"
+yt-dlp -I -3:-7:-1 "URL"
 ```
-This will download from the 7th-oldest video to the 3rd-oldest video.
+This will download from the third-to-last video to the seventh-to-last video, and the trailing `-1` means stepping backwards by 1.
 
 -----
 
