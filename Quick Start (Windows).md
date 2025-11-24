@@ -7,13 +7,13 @@ On Windows, we recommend installing yt-dlp through `winget`.
       1. Press the Windows key, type "cmd" and click the top result.
    1. Execute the following command by copy-pasting it into your Terminal and hitting Enter:
       ```shell
-      winget install -e --id yt-dlp.yt-dlp --source winget 
+      winget install -e --id yt-dlp.yt-dlp.nightly --source winget
       ```
       1. Follow the on-screen instructions.
    1. Restart your terminal (close it and open it again).
    1. Execute:
       ```shell
-      yt-dlp --update-to nightly
+      yt-dlp -U
       ```
 1. Download a video.
    1. Execute:

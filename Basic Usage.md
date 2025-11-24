@@ -49,7 +49,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
 1. Windows:  
    1. `winget` installation:
       ```shell
-      winget upgrade yt-dlp
+      winget install -e --id yt-dlp.yt-dlp.nightly --source winget
       ```
    1. Manual yt-dlp.exe installation:
       1. Update Deno by executing:
