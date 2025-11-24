@@ -619,7 +619,7 @@ If you're on **Android**:
    1. Add your parameters inside.
    1. Use `CTRL + O`, press enter, and use `CTRL + X`.
 
-If you're on **iOS**:
+If you're on **iOS/iPadOS**:
    1. Execute `vim yt-dlp.conf`.
    1. Type `i` on your keyboard to enter Insert mode.
    1. Add your parameters inside.
