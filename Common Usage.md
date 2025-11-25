@@ -392,7 +392,7 @@ yt-dlp --cookies-from-browser BROWSER "URL"
 1. The video is age-restricted (and you can watch age-restricted videos with your account). 
 1. The video is paywalled/members-only (and you have a membership in that channel with your account).
 1. Your account has a premium subscription (e.g. YouTube Premium or Soundcloud Go) and you want to download premium formats.
-1. You have been IP restricted and you want to continue downloading without changing your IP (explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors) for YouTube).
+1. You have been IP restricted and you want to continue downloading without changing your IP (YouTube rate limits explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors)).
 
 In cases where you need to use your account's cookies, avoid using an important account's cookies, as this may result in the account being restricted. DO NOT log in to Instagram/Facebook, as they can detect yt-dlp downloads with your account and may ban your account after a few downloads.
 
@@ -407,11 +407,11 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc).
    - If you're on a Firefox-based browser, install [https://addons.mozilla.org/en-US/firefox/addon/cookies-txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead.
-1. In a tab, go to `chrome://extensions/?id=cclelndahbckbenkjhflpdbgdldlbecc` and enable "Allow in incognito"
+1. In a tab, go to `chrome://extensions/?id=cclelndahbckbenkjhflpdbgdldlbecc` and enable "Allow in incognito".
    - If you're on a Firefox-based browser, go to `about:addons`, enter the `cookies.txt` extension's settings, and allow "Run in Private Windows".
 1. Open an ***incognito window*** and log into YouTube.
 1. Open [https://youtube.com/robots.txt](https://youtube.com/robots.txt) in a new incognito tab and ***close all other incognito YouTube tabs***.
-1. Click on the extension's icon in the top right, click on "Export As", and save as "cookies.txt". Then ***close all incognito windows*** (so the cookies will never rotate).
+1. Click on the extension's icon in the top right, click on "Export As", and save as `cookies.txt`. Then ***close all incognito windows*** (so the cookies will never rotate).
    - If you're on a Firefox-based browser, click on the extension's icon, click on "Current Container and Site", and ensure you're saving the file prenamed `cookies.firefox-private.txt`.
    - Open [https://www.tiktok.com/robots.txt](https://www.tiktok.com/robots.txt) instead to export TikTok cookies.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
@@ -433,9 +433,9 @@ In cases where you need to use your account's cookies, avoid using an important 
 </summary>
 
 1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
-   - If you're on a Firefox-based browser, install [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead
+   - If you're on a Firefox-based browser, install [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead.
 1. Go to the website and ensure you're logged in.
-1. Click on the extension icon in the top right, click on "Export As", and save them as "cookies.txt".
+1. Click on the extension icon in the top right, click on "Export As", and save them as `cookies.txt`.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
    - For example, if you've saved the cookies file to your Downloads folder on Windows:
      ```shell
