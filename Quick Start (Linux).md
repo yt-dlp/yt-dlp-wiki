@@ -14,7 +14,7 @@
        ```shell
        sudo pacman -Syu ffmpeg deno
        ```
-2. Download yt-dlp.
+1. Download yt-dlp.
    - If you are using an Arch-based distribution, you can install yt-dlp-git from the AUR: [https://aur.archlinux.org/packages/yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git)
    - For all other users (e.g. Ubuntu and Debian), we recommend installing yt-dlp via `uv`:
      1. Download `uv` from [https://github.com/astral-sh/uv/releases](https://github.com/astral-sh/uv/releases)
@@ -27,7 +27,7 @@
         ```shell
         uv tool install --pre "yt-dlp[default]"
         ```
-3. Download a video.
+1. Download a video.
    1. Execute:
       ```shell
       yt-dlp -P PATH "URL"
