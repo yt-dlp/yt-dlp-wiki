@@ -201,7 +201,7 @@ This will download the highest-quality audio available.
 ```shell
 yt-dlp -t mp3 "URL"
 ```
-**NOTE:** This will download the best audio quality available and re-encode it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`m4a`). 
+**NOTE:** This will download the best audio quality available and re-encode it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`.m4a`). 
 
 -----
 
