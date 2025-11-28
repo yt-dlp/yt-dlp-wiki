@@ -8,7 +8,7 @@ On iOS/iPadOS, we recommend installing yt-dlp through a-Shell.
       ```shell
       pip install --pre -U yt-dlp[default] yt-dlp-apple-webkit-jsi
       ```
-      Note: [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi) is a 3rd-party plugin used to solve [YouTube's JavaScript challenges](https://github.com/yt-dlp/yt-dlp/wiki/EJS).
+      Tip: To easily paste something into a-Shell, press the clipboard icon above the keyboard. Note: [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi) is a 3rd-party plugin used to solve [YouTube's JavaScript challenges](https://github.com/yt-dlp/yt-dlp/wiki/EJS).
 1. Download a video.
    1. Execute:
       ```shell
