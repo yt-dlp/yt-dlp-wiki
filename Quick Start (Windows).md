@@ -1,6 +1,6 @@
 # Windows
 
-On Windows, we recommend installing yt-dlp through `winget`.
+On Windows, we recommend installing yt-dlp through `winget`. Keep in mind this method **will automatically download `ffmpeg` and `deno` too.**
 
 1. Install yt-dlp.
    1. Open a terminal.
