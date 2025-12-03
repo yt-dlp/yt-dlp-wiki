@@ -301,7 +301,7 @@ yt-dlp --download-sections "*START-FINISH" "URL"
 
 Replace `START` and `FINISH` with your desired timestamps in `HH:MM:SS.MS` (or `MM:SS`) format. You can also use `inf` to indicate the end of the video. For example, to download from the 10-second mark to the end, execute `yt-dlp --download-sections "*00:10-inf" "URL"`.
 
-**NOTE:** If the downloaded video has issues (e.g. desynchronized audio/video or frozen/black frames at the beginning and/or end), you can try adding the `--force-keyframes-at-cut` parameter:
+**NOTE:** If the downloaded video has issues (e.g. desynchronized audio/video, frozen/black frames at the beginning and/or end, or a few extra seconds at the start and end), you can try adding the `--force-keyframes-at-cut` parameter:
 ```shell
 yt-dlp --download-sections "*START-FINISH" --force-keyframes-at-cut "URL"
 ```
