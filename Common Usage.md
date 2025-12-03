@@ -101,7 +101,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
 </summary>
 
 ```shell
-yt-dlp -P PATH "URL"
+yt-dlp -P "PATH" "URL"
 ```
 Replace `PATH` with the absolute path to your folder.
 
