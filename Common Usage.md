@@ -1,6 +1,6 @@
 # Common Usage
 
-The following subsections explain what parameters to use for common scenarios. You can concatenate several parameters to specify more than one option.
+The following subsections explain what parameters to use for common scenarios. **You can use multiple parameters in a single command.**
 
 
 
