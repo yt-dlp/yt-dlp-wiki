@@ -278,7 +278,7 @@ yt-dlp --embed-metadata "URL"
 yt-dlp -S res:X "URL"
 ```
 
-Replace `X` with your desired resolution (e.g. 144, 240, 360, 480, 720, 1080, 2k, or 4k).
+Replace `X` with your desired resolution (e.g. 144, 240, 360, 480, 720, 1080, 1440, or 2160).
 
 **NOTE:** If there isn't a video stream at your specified resolution, yt-dlp will download the next lower-resolution video.
 
