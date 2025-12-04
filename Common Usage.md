@@ -110,7 +110,7 @@ For example, to download to a folder named Videos inside your yt-dlp folder on W
 yt-dlp -P "C:\yt-dlp\Videos" "URL"
 ```
 
-To download to your Downloads folder, execute:
+To download to your Downloads folder on Windows, execute:
 ```shell
 yt-dlp -P "%USERPROFILE%\Downloads" "URL"
 ```
@@ -301,7 +301,7 @@ yt-dlp --download-sections "*START-FINISH" "URL"
 
 Replace `START` and `FINISH` with your desired timestamps in `HH:MM:SS.MS` (or `MM:SS`) format. You can also use `inf` to indicate the end of the video. For example, to download from the 10-second mark to the end, execute `yt-dlp --download-sections "*00:10-inf" "URL"`.
 
-**NOTE:** If the downloaded video has issues (e.g. desynchronized audio/video, frozen/black frames at the beginning and/or end, or a few extra seconds at the start and end), you can try adding the `--force-keyframes-at-cut` parameter:
+**NOTE:** If the downloaded video has issues (e.g. desynchronized audio/video, frozen/black frames at the start and/or end, or a few extra seconds at the start and/or end), you can try adding the `--force-keyframes-at-cut` parameter:
 ```shell
 yt-dlp --download-sections "*START-FINISH" --force-keyframes-at-cut "URL"
 ```
