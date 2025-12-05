@@ -405,8 +405,7 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 </summary>
 
-1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc).
-   - If you're on a Firefox-based browser, install [https://addons.mozilla.org/en-US/firefox/addon/cookies-txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead.
+1. Install Get cookies.txt LOCALLY ([Chrome](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/get-cookies-txt-locally/)).
 1. In a tab, go to `chrome://extensions/?id=cclelndahbckbenkjhflpdbgdldlbecc` and enable "Allow in incognito".
    - If you're on a Firefox-based browser, go to `about:addons`, enter the `cookies.txt` extension's settings, and allow "Run in Private Windows".
 1. Open an ***incognito window*** and log into YouTube.
@@ -432,8 +431,7 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 </summary>
 
-1. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
-   - If you're on a Firefox-based browser, install [cookies.txt](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt) instead.
+1. Install Get cookies.txt LOCALLY ([Chrome](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/get-cookies-txt-locally/)).
 1. Go to the website and ensure you're logged in.
 1. Click on the extension icon in the top right, click on "Export As", and save them as `cookies.txt`.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
