@@ -620,10 +620,10 @@ If you're on **Windows**:
 1. Open a terminal (cmd or powershell).
 1. Write ``notepad "%userprofile%\yt-dlp.conf"`` and press enter.
 1. Notepad will open with a warning saying the file doesn't exist. Press "Yes" to create it.
-1. Add your parameters inside.
+1. Add your parameters inside. Don't forget to save the file.
 
 If you're on **macOS or Linux**:
-   1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor.  
+   1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor. Don't forget to save the file.
 
 If you're on **Android**:  
    1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens).
