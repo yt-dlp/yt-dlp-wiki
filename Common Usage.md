@@ -620,22 +620,21 @@ If you're on **Windows**:
    1. Open a terminal (`cmd` or PowerShell).
    1. Execute `notepad "%USERPROFILE%\yt-dlp.conf"` and press Enter.
    1. Notepad will open with a warning saying the file doesn't exist. Press "Yes" to create it.
-   1. Add your parameters inside. Don't forget to save the file.
+   1. Add your parameters. Don't forget to save the file.
 
 If you're on **macOS or Linux**:
    1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor. Don't forget to save the file.
 
 If you're on **Android**:  
    1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens).
-   1. Add your parameters inside.
+   1. Add your parameters.
    1. Use `CTRL + O`, press enter, and use `CTRL + X`.
 
 If you're on **iOS/iPadOS**:
-   1. Execute `vim yt-dlp.conf`.
-   1. Type `i` on your keyboard to enter Insert mode.
-   1. Add your parameters inside.
-   1. Press Esc (the circle icon with ↖ above the keyboard) to exit Insert mode and return to Command mode.
-   1. Type `:wq` and tap Enter to save and exit.
+   1. Execute `pico yt-dlp.conf`.
+   1. Add your parameters.
+   1. Press 🔼 above the keyboard and `x` to quit, then press `y` to confirm saving.
+   1. Press `return` on your keyboard to confirm saving the file as `yt-dlp.conf`.
 
 -----
 
