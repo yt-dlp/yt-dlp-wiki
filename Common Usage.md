@@ -617,12 +617,10 @@ yt-dlp -f "bv+mergeall[format_id^=251][format_id!*=drc]" --audio-multistreams "U
 If you want to always use certain parameters with yt-dlp without writing them every single time, create a configuration file. The file's stored parameters are automatically applied whenever you run yt-dlp. This is useful for setting a [default download directory](#how-to-download-files-to-a-specific-folder) or [defining a specific naming format for your downloads](#how-to-download-files-without-the-numbers-and-letters-video-id-at-the-end).
 
 If you're on **Windows** and installed yt-dlp via **`winget`**:
-1. Open Windows Explorer.
-1. In the location bar (top of Explorer), type `%appdata%` and press Enter.
-1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`).
-   1. You can do this by right clicking an empty space in the folder \> click "New" in the context menu \> click "Text document".
-      1. To confirm that you didn't create `yt-dlp.conf.txt`, ensure that you have enabled file name extensions. To do this, press the Windows key, search for "File Explorer options" \> go to the "View" tab \> **uncheck** "Hide extensions for known file types".
-   1. Using Notepad, add your parameters inside.
+1. Open a terminal (cmd or powershell).
+1. Write ``notepad "%userprofile%\yt-dlp.conf"`` and press enter.
+1. Notepad will open with a warning saying the file doesn't exist. Press "Yes" to create it.
+1. Add your parameters inside.
 
 If you're on **Windows** and **manually installed** `yt-dlp.exe`:  
 1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) in the same folder where your yt-dlp.exe is located.
