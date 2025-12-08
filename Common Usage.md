@@ -51,7 +51,7 @@ To update, execute the following command for your operating system (assuming you
 
 Although not as important or urgent as updating yt-dlp itself, it's good practice to update its external dependencies (FFmpeg and Deno) **as older versions may become unsupported by yt-dlp**. Internal dependencies, like yt-dlp-ejs, are updated with every yt-dlp update.
 
-1. Windows:  
+1. Windows:
    1. `winget` installation:
       ```shell
       winget upgrade -e --id yt-dlp.yt-dlp.nightly --source winget
@@ -74,7 +74,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
      - If you've installed Node.js:
        ```shell
        sudo apt update && sudo apt upgrade && sudo apt install ffmpeg nodejs
-       ``` 
+       ```
    - Arch-based (e.g. Arch or Manjaro):
    ```shell
    sudo pacman -Syu
@@ -87,7 +87,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
 
 </details>
 
------
+---
 
 </details>
 
@@ -103,21 +103,24 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
 ```shell
 yt-dlp -P "PATH" "URL"
 ```
+
 Replace `PATH` with the absolute path to your folder.
 
 For example, to download to a folder named Videos inside your yt-dlp folder on Windows, execute:
+
 ```shell
 yt-dlp -P "C:\yt-dlp\Videos" "URL"
 ```
 
 To download to your Downloads folder on Windows, execute:
+
 ```shell
 yt-dlp -P "%USERPROFILE%\Downloads" "URL"
 ```
 
 **Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](#how-to-create-a-config).
 
------
+---
 
 </details>
 
@@ -136,7 +139,7 @@ yt-dlp -o "%(title)s.%(ext)s" "URL"
 
 **Tip:** Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](#how-to-create-a-config).
 
------
+---
 
 </details>
 
@@ -153,21 +156,23 @@ yt-dlp -o "%(title)s.%(ext)s" "URL"
 yt-dlp -t mp4 "URL"
 ```
 
-**NOTE:** On YouTube, this will limit the maximum possible quality to 1080p. You may also end up downloading **formats with inferior quality** and/or formats with a **higher filesize**. This happens because you are specifying a combination of codecs (H.264, aka. AVC, for video and AAC for audio) that may serve inferior quality. Because of this, it's not recommended to "download mp4" unless it's truly necessary. 
+**NOTE:** On YouTube, this will limit the maximum possible quality to 1080p. You may also end up downloading **formats with inferior quality** and/or formats with a **higher filesize**. This happens because you are specifying a combination of codecs (H.264, aka. AVC, for video and AAC for audio) that may serve inferior quality. Because of this, it's not recommended to "download mp4" unless it's truly necessary.
 
 Valid reasons include importing videos to use in video editors (like Premiere Pro), but generally not because "my media player doesn't support webm files". We recommend players like [VLC](https://www.videolan.org/vlc/) or [MPV](https://mpv.io/installation/).
 
 It's important to note that video ≠ `.mp4`. `.mp4` is just one of several containers ("formats") that support video.
 
 There are specific cases \- like using a video in DaVinci Resolve or embedding a video in Telegram \- where the container format matters more than the codec downloaded. In these situations, you can use:
+
 ```shell
 yt-dlp --merge mp4 --remux mp4 "URL"
 ```
+
 This will ensure you get the highest available quality while still producing a `.mp4` file.
 
 ***If you don't know what "containers" or "codecs" are, feel free to download a video with `-t mp4` then redownload with `--merge mp4 –remux mp4` and see what works best for your needs.***
 
------
+---
 
 </details>
 
@@ -183,9 +188,10 @@ This will ensure you get the highest available quality while still producing a `
 ```shell
 yt-dlp -x "URL"
 ```
+
 This will download the highest-quality audio available.
 
------
+---
 
 </details>
 
@@ -201,9 +207,10 @@ This will download the highest-quality audio available.
 ```shell
 yt-dlp -t mp3 "URL"
 ```
-**NOTE:** This will download the best audio quality available and re-encode it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`.m4a`). 
 
------
+**NOTE:** This will download the best audio quality available and re-encode it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`.m4a`).
+
+---
 
 </details>
 
@@ -219,9 +226,10 @@ yt-dlp -t mp3 "URL"
 ```shell
 yt-dlp -t aac "URL"
 ```
+
 **NOTE:** This should be used only on devices where `.opus` audio is not playable through any available audio player.
 
------
+---
 
 </details>
 
@@ -244,7 +252,7 @@ yt-dlp --embed-thumbnail "URL"
 yt-dlp --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+ffmpeg_o:-vf crop=ih" "URL"
 ```
 
------
+---
 
 </details>
 
@@ -261,7 +269,7 @@ yt-dlp --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+ffm
 yt-dlp --embed-metadata "URL"
 ```
 
------
+---
 
 </details>
 
@@ -282,7 +290,7 @@ Replace `X` with your desired resolution (e.g. 144, 240, 360, 480, 720, 1080, 14
 
 **NOTE:** If there isn't a video stream at your specified resolution, yt-dlp will download the next lower-resolution video.
 
------
+---
 
 </details>
 
@@ -302,12 +310,14 @@ yt-dlp --download-sections "*START-FINISH" "URL"
 Replace `START` and `FINISH` with your desired timestamps in `HH:MM:SS.MS` (or `MM:SS`) format. You can also use `inf` to indicate the end of the video. For example, to download from the 10-second mark to the end, execute `yt-dlp --download-sections "*00:10-inf" "URL"`.
 
 **NOTE:** If the downloaded video has issues (e.g. desynchronized audio/video, frozen/black frames at the start and/or end, or a few extra seconds at the start and/or end), you can try adding the `--force-keyframes-at-cut` parameter:
+
 ```shell
 yt-dlp --download-sections "*START-FINISH" --force-keyframes-at-cut "URL"
 ```
+
 This may take awhile depending on your system's specifications, and the duration and resolution of the video. This also re-encodes the video, which will result in quality loss.
 
------
+---
 
 </details>
 
@@ -327,13 +337,14 @@ yt-dlp -t sleep "URL"
 Remember to quote your URL (surround it with `"`) to prevent [unexpected behaviors](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#video-url-contains-an-ampersand--and-im-getting-some-strange-output-1-2839-or-v-is-not-recognized-as-an-internal-or-external-command). `-t sleep` helps prevent temporary restrictions on sites like YouTube.
 
 If you're going to download the playlist/channel again, use `--download-archive` to avoid unnecessary network requests of already-downloaded videos in the future:
+
 ```shell
 yt-dlp -t sleep --download-archive archive.txt "URL"
 ```
 
 The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `-I ::-1`.
 
------
+---
 
 </details>
 
@@ -353,24 +364,30 @@ yt-dlp -I POSITION "URL"
 Replace `POSITION` with the video's position in the playlist/channel.
 
 Download several videos by separating their positions with `,`:
+
 ```shell
 yt-dlp -I 3,6 "URL"
 ```
+
 This will download the 3rd and 6th video of the playlist.
 
 Download a range of videos with `:`:
+
 ```shell
 yt-dlp -I 3:7 "URL"
 ```
-This will download from the 3rd to 7th video (3rd, 4th, 5th, 6th and 7th). 
+
+This will download from the 3rd to 7th video (3rd, 4th, 5th, 6th and 7th).
 
 Download backwards with `-` and another `:`:
+
 ```shell
 yt-dlp -I -3:-7:-1 "URL"
 ```
+
 This will download from the third-to-last video to the seventh-to-last video, and the trailing `-1` means stepping backwards by 1.
 
------
+---
 
 </details>
 
@@ -389,7 +406,7 @@ yt-dlp --cookies-from-browser BROWSER "URL"
 
 **CAUTION:** You shouldn't always use your account's cookies, but only in specific scenarios:
 
-1. The video is age-restricted (and you can watch age-restricted videos with your account). 
+1. The video is age-restricted (and you can watch age-restricted videos with your account).
 1. The video is paywalled/members-only (and you have a membership in that channel with your account).
 1. Your account has a premium subscription (e.g. YouTube Premium or Soundcloud Go) and you want to download premium formats.
 1. You have been IP restricted and you want to continue downloading without changing your IP (YouTube rate limits explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors)).
@@ -415,9 +432,9 @@ In cases where you need to use your account's cookies, avoid using an important 
    - If you're on a Firefox-based browser, click on the extension's icon, click on "Current Container and Site", and ensure you're saving the file prenamed `cookies.firefox-private.txt`.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
    - For example, if you've saved the cookies file to your Downloads folder on Windows:
-      ```shell
-      yt-dlp --cookies "%USERPROFILE%\Downloads\cookies.txt" "URL"
-      ```
+     ```shell
+     yt-dlp --cookies "%USERPROFILE%\Downloads\cookies.txt" "URL"
+     ```
 
 **CAUTION:** Overdownloading with your YouTube account may result in YouTube being [unplayable](https://github.com/yt-dlp/yt-dlp/issues/10085) with that account.
 
@@ -442,7 +459,7 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 </details>
 
------
+---
 
 </details>
 
@@ -462,11 +479,13 @@ yt-dlp --embed-subs "URL"
 This will download the video's original language subtitles and embed them into the video file.
 
 To download the subtitle files to your disk instead:
+
 ```shell
 yt-dlp --write-subs "URL"
 ```
 
 You can embed and write subs together:
+
 ```shell
 yt-dlp --write-subs --embed-subs "URL"
 ```
@@ -486,9 +505,10 @@ yt-dlp --embed-subs --sub-langs LANGUAGECODE "URL"
 Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp --embed-subs --sub-langs en,es "URL"` will download English and Spanish subtitles.
 
 **TIP:** To view the entire list of downloadable subtitles' language codes:
+
 ```shell
 yt-dlp --list-subs "URL"
-``` 
+```
 
 </details>
 
@@ -505,9 +525,11 @@ yt-dlp --embed-subs --sub-langs all "URL"
 ```
 
 Use `-` before a language code to exclude language(s). For example:
+
 ```shell
 yt-dlp --embed-subs --sub-langs all,-live_chat "URL"
 ```
+
 This will to download all available manual subtitles, except for YouTube's live chat replay.
 
 </details>
@@ -525,9 +547,11 @@ yt-dlp --embed-subs --sub-langs "BASICLANGUAGECODE.*" "URL"
 ```
 
 For example:
+
 ```
 yt-dlp --embed-subs --sub-langs "en.*" "URL"
 ```
+
 This will download all the English variants' subtitles (en, en-US, en-GB, etc.) using regex.
 
 </details>
@@ -543,13 +567,14 @@ This will download all the English variants' subtitles (en, en-US, en-GB, etc.) 
 ```shell
 yt-dlp --write-auto-subs "URL"
 ```
+
 You can use this option with `--embed-subs` to embed the auto-generated subtitles into the video file.
 
 **NOTE:** On YouTube, auto-generated subtitles are highly restricted, likely due to AI-scrapers mass downloading. You may encounter HTTP 429 errors despite using `-t sleep` or other sleep-related parameters. See [https://github.com/yt-dlp/yt-dlp/issues/13831](https://github.com/yt-dlp/yt-dlp/issues/13831) for more information.
 
 </details>
 
------
+---
 
 </details>
 
@@ -566,7 +591,7 @@ You can use this option with `--embed-subs` to embed the auto-generated subtitle
 yt-dlp -f bv+ba[language=LANGUAGECODE]/b[language=LANGUAGECODE] --embed-metadata "URL"
 ```
 
-Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp -f bv+ba[language=es]/b[language=es] --embed-metadata "URL"` will download Spanish audio. 
+Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp -f bv+ba[language=es]/b[language=es] --embed-metadata "URL"` will download Spanish audio.
 
 `--embed-metadata` is required in order to ensure the appropriate language code is tagged with its respective audio track. Otherwise, all audio tracks may be incorrectly marked as English.
 
@@ -580,7 +605,7 @@ Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en
 
 ```shell
 yt-dlp -f bv+ba[language=LANGUAGECODE1]+ba[language=LANGUAGECODE2] --audio-multistreams --embed-metadata "URL".
-``` 
+```
 
 For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --audio-multistreams --embed-metadata "URL"` would download the video with Spanish, English, and French audio.
 
@@ -595,13 +620,14 @@ For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --aud
 </summary>
 
 There is no universal way to download all the audio languages without downloading all formats (which may include lower-quality duplicates for sites like YouTube). However, on YouTube, this can be achieved with:
+
 ```shell
 yt-dlp -f "bv+mergeall[format_id^=251][format_id!*=drc]" --audio-multistreams "URL"
 ```
 
 </details>
 
------
+---
 
 </details>
 
@@ -636,7 +662,7 @@ If you're on **iOS/iPadOS**:
    1. Press 🔼 above the keyboard and `x` to quit, then press `y` to confirm saving.
    1. Press `return` on your keyboard to confirm saving the file as `yt-dlp.conf`.
 
------
+---
 
 </details>
 
