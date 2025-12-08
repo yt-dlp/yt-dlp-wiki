@@ -19,6 +19,10 @@ On Android, we recommend installing yt-dlp through Termux.
    ```shell
    pip install --pre -U "yt-dlp[default]"
    ```
+1. Create a config file and instruct yt-dlp to use your downloads folder by executing:
+   ```shell
+   echo '-P "~/storage/downloads"' > ~/yt-dlp.conf
+   ```
 1. Download a video by executing:
    ```shell
    yt-dlp "URL"
