@@ -49,7 +49,7 @@ You can manually download and install `yt-dlp.exe`, `ffmpeg.exe` and `ffprobe.ex
    1. Put `yt-dlp.exe`, `ffmpeg.exe` and `ffprobe.exe` (extracted from the bin folder inside the [ffmpeg-master-latest-win64-gpl.zip](https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip) file downloaded in step 1ii), and `deno.exe` (extracted from the [deno-x86\_64-pc-windows-msvc.zip](https://github.com/denoland/deno/releases/latest/download/deno-x86_64-pc-windows-msvc.zip) file in step 1iii) inside the yt-dlp folder.
       1. After extraction, you can delete the all remaining files, including the `.zip` files.
 1. Add yt-dlp to your PATH.
-   1. Press the Windows key, type "environment variables for your account" and click the top result.
+   1. Press the Windows key, type "environment variables for your account", and click the top result.
    1. Double click on the "Path" variable under "User variables for \[your PC username\]".
    1. Click on "New".
    1. Type `C:\yt-dlp` (or the location of your yt-dlp folder, if you chose to create it somewhere else) and click "OK" on every window.  
