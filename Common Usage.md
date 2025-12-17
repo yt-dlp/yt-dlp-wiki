@@ -238,7 +238,7 @@ yt-dlp -t aac "URL"
 <details>
 <summary>
 
-## How to download the thumbnail (cover art) of a video or audio
+## How to embed the thumbnail (cover art) to a video or audio
 
 </summary>
 
@@ -261,7 +261,7 @@ yt-dlp --embed-thumbnail --convert-thumbnails jpg --ppa "ThumbnailsConvertor+ffm
 <details>
 <summary>
 
-## How to download the metadata (uploader, album, etc.) of a video or audio
+## How to embed metadata (uploader, album, etc.) to a video or audio
 
 </summary>
 
@@ -341,6 +341,8 @@ If you're going to download the playlist/channel again, use `--download-archive`
 ```shell
 yt-dlp -t sleep --download-archive archive.txt "URL"
 ```
+
+Use `--download-archive archive.txt` again the next time you download the playlist/channel.
 
 The order is the same as it appears in the site (e.g. YouTube sorts videos from newest to oldest). To flip the order (e.g. oldest to newest for YouTube), add `-I ::-1`.
 
@@ -494,7 +496,7 @@ yt-dlp --write-subs --embed-subs "URL"
 <details>
 <summary>
 
-### How to download subtitles in specific language(s)
+### How to download user-uploaded subtitles in specific language(s)
 
 </summary>
 
@@ -516,7 +518,7 @@ yt-dlp --list-subs "URL"
 <details>
 <summary>
 
-### How to download subtitles in all available languages
+### How to download user-uploaded subtitles in all available languages
 
 </summary>
 
@@ -538,7 +540,7 @@ This will to download all available manual subtitles, except for YouTube's live 
 <details>
 <summary>
 
-### How to download subtitles in all variants of a language
+### How to download user-uploaded subtitles in all variants of a language
 
 </summary>
 
