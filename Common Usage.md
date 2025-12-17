@@ -562,7 +562,7 @@ This will download all the English variants' subtitles (en, en-US, en-GB, etc.) 
 <details>
 <summary>
 
-### How to download auto-generated subtitles
+### How to download auto-generated/auto-translated subtitles
 
 </summary>
 
@@ -572,7 +572,7 @@ yt-dlp --write-auto-subs "URL"
 
 You can use this option with `--embed-subs` to embed the auto-generated subtitles into the video file.
 
-**NOTE:** On YouTube, auto-generated subtitles are highly restricted, likely due to AI-scrapers mass downloading. You may encounter HTTP 429 errors despite using `-t sleep` or other sleep-related parameters. See [https://github.com/yt-dlp/yt-dlp/issues/13831](https://github.com/yt-dlp/yt-dlp/issues/13831) for more information.
+**NOTE:** On YouTube, auto-translated subtitles are highly restricted, likely due to AI-scrapers mass downloading. You may encounter HTTP 429 errors despite using `-t sleep` or other sleep-related parameters. See [https://github.com/yt-dlp/yt-dlp/issues/13831](https://github.com/yt-dlp/yt-dlp/issues/13831) for more information.
 
 </details>
 
