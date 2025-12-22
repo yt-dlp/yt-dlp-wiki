@@ -229,9 +229,9 @@ If you're downloading from YouTube, this is **not recommended** unless you are u
 yt-dlp -t aac "URL"
 ```
 
-**NOTE:** This will download the `.aac` given directly by the site if available (e.g. YouTube); if `.aac` is not available, this will download the highest-quality audio stream available and re-encode it to `.aac`, which will reduce audio quality.
+**NOTE:** This will download the `.aac` given directly by the site if available (e.g. on YouTube); if `.aac` is not available, this will download the highest-quality audio stream available and re-encode it to `.aac`, which will reduce audio quality.
 
-If you're downloading from YouTube, this should be used only on devices where `.opus` audio is not playable through any available audio player.
+If you're downloading from YouTube, this should be used only on devices where `.opus` audio is not playable through any available audio player. YouTube's `.opus` audio provides better audio quality than its `.aac` audio. 
 
 ---
 
