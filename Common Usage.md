@@ -334,7 +334,7 @@ This may take awhile depending on your system's specifications, and the duration
 yt-dlp -t sleep "URL"
 ```
 
-Remember to quote your URL (surround it with `"`) to prevent [unexpected behaviors](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#video-url-contains-an-ampersand--and-im-getting-some-strange-output-1-2839-or-v-is-not-recognized-as-an-internal-or-external-command). `-t sleep` helps prevent temporary restrictions on sites like YouTube.
+Remember to quote your URL (surround it with `"`) to prevent [unexpected behaviors](https://github.com/yt-dlp/yt-dlp/wiki/FAQ#video-url-contains-an-ampersand--and-im-getting-some-strange-output-1-2839-or-v-is-not-recognized-as-an-internal-or-external-command). `-t sleep` helps prevent yt-dlp from exceeding rate limits on sites like [YouTube](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors).
 
 If you're going to download the playlist/channel again, use `--download-archive` to avoid unnecessary network requests of already-downloaded videos in the future:
 
@@ -408,10 +408,10 @@ yt-dlp --cookies-from-browser BROWSER "URL"
 
 **CAUTION:** You shouldn't always use your account's cookies, but only in specific scenarios:
 
-1. The video is age-restricted (and you can watch age-restricted videos with your account).
-1. The video is paywalled/members-only (and you have a membership in that channel with your account).
+1. The content is age-restricted (and you can watch the age-restricted content with your account).
+1. The content is paywalled/members-only (and you have paid access to the content).
 1. Your account has a premium subscription (e.g. YouTube Premium or Soundcloud Go) and you want to download premium formats.
-1. You have been IP restricted and you want to continue downloading without changing your IP (YouTube rate limits explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors)).
+1. You have been IP-restricted and you want to continue downloading without changing your IP (YouTube rate limits explained [here](https://github.com/yt-dlp/yt-dlp/wiki/Extractors#common-youtube-errors)).
 
 In cases where you need to use your account's cookies, avoid using an important account's cookies, as this may result in the account being restricted. DO NOT log in to Instagram/Facebook, as they can detect yt-dlp downloads with your account and may ban your account after a few downloads.
 
@@ -424,14 +424,13 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 </summary>
 
-1. Install Get cookies.txt LOCALLY ([Chrome](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/get-cookies-txt-locally/)).
+1. Install "Get cookies.txt LOCALLY" ([Chrome](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/get-cookies-txt-locally/)).
 1. In a tab, go to `chrome://extensions/?id=cclelndahbckbenkjhflpdbgdldlbecc` and enable "Allow in incognito".
-   - If you're on a Firefox-based browser, go to `about:addons`, enter the `cookies.txt` extension's settings, and allow "Run in Private Windows".
+   - If you're on a Firefox-based browser, go to `about:addons`, enter the "Get cookies.txt LOCALLY" extension's settings, and allow "Run in Private Windows".
 1. Open an ***incognito window*** and log into YouTube.
 1. Open [https://youtube.com/robots.txt](https://youtube.com/robots.txt) in a new incognito tab and ***close all other incognito YouTube tabs***.
    - Open [https://www.tiktok.com/robots.txt](https://www.tiktok.com/robots.txt) instead to export TikTok cookies.
 1. Click on the extension's icon in the top right, click on "Export As", and save as `cookies.txt`. Then ***close all incognito windows*** (so the cookies will never rotate).
-   - If you're on a Firefox-based browser, click on the extension's icon, click on "Current Container and Site", and ensure you're saving the file prenamed `cookies.firefox-private.txt`.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
    - For example, if you've saved the cookies file to your Downloads folder on Windows:
      ```shell
@@ -450,7 +449,7 @@ In cases where you need to use your account's cookies, avoid using an important 
 
 </summary>
 
-1. Install Get cookies.txt LOCALLY ([Chrome](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/get-cookies-txt-locally/)).
+1. Install "Get cookies.txt LOCALLY" ([Chrome](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/get-cookies-txt-locally/)).
 1. Go to the website and ensure you're logged in.
 1. Click on the extension icon in the top right, click on "Export As", and save them as `cookies.txt`.
 1. Pass the cookies to yt-dlp using `--cookies "PATHTOCOOKIES"`.
@@ -593,7 +592,7 @@ You can use this option with `--embed-subs` to embed the auto-generated subtitle
 yt-dlp -f bv+ba[language=LANGUAGECODE]/b[language=LANGUAGECODE] --embed-metadata "URL"
 ```
 
-Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp -f bv+ba[language=es]/b[language=es] --embed-metadata "URL"` will download Spanish audio.
+Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes) (Set 1). For example, `yt-dlp -f bv+ba[language=es]/b[language=es] --embed-metadata "URL"` will download Spanish audio.
 
 `--embed-metadata` is required in order to ensure the appropriate language code is tagged with its respective audio track. Otherwise, all audio tracks may be incorrectly marked as English.
 
