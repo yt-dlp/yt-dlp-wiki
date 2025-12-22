@@ -208,7 +208,9 @@ This will download the highest-quality audio available.
 yt-dlp -t mp3 "URL"
 ```
 
-**NOTE:** This will download the best audio quality available and re-encode it to `.mp3`, a process that loses quality. This is **not recommended** unless you are using a device that does not support playingback `.opus` or `.aac` (`.m4a`).
+**NOTE:** This will download the `.mp3` given directly by the site if available; if `.mp3` is not available (e.g. on YouTube), this will download the highest-quality audio stream available and re-encode it to `.mp3`, which will reduce audio quality.
+
+If you're downloading from YouTube, this is **not recommended** unless you are using a device where `.opus` or `.aac` (`.m4a`) audio is not playable through any available audio player.
 
 ---
 
@@ -227,7 +229,9 @@ yt-dlp -t mp3 "URL"
 yt-dlp -t aac "URL"
 ```
 
-**NOTE:** This should be used only on devices where `.opus` audio is not playable through any available audio player.
+**NOTE:** This will download the `.aac` given directly by the site if available (e.g. YouTube); if `.aac` is not available, this will download the highest-quality audio stream available and re-encode it to `.aac`, which will reduce audio quality.
+
+If you're downloading from YouTube, this should be used only on devices where `.opus` audio is not playable through any available audio player.
 
 ---
 
