@@ -60,7 +60,7 @@ python3 -m pip install -U --pre "yt-dlp[default]"
 If you want to be on the bleeding edge, you can also install the master branch with:
 ```bash
 python3 -m pip install -U pip hatchling wheel
-python3 -m pip install --force-reinstall "yt-dlp[default] @ https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz"
+python3 -m pip install "yt-dlp[default] @ https://github.com/yt-dlp/yt-dlp-master-builds/releases/latest/download/yt-dlp.tar.gz"
 ```
 
 On some systems, you may need to use `py` or `python` instead of `python3`
