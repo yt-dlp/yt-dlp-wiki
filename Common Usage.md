@@ -156,7 +156,7 @@ yt-dlp -o "%(title)s.%(ext)s" "URL"
 yt-dlp -t mp4 "URL"
 ```
 
-**NOTE:** On YouTube, this will limit the maximum possible quality to 1080p. You may also end up downloading **formats with inferior quality** and/or formats with a **higher filesize**. This happens because you are specifying a combination of codecs (H.264, aka. AVC, for video and AAC for audio) that may serve inferior quality. Because of this, it's not recommended to "download mp4" unless it's truly necessary.
+**NOTE:** On YouTube, this will limit the maximum possible quality to 1080p. This happens because you are specifying a combination of codecs (H.264/AVC for video and AAC for audio) that may serve **formats with inferior quality** and/or **higher filesizes**. Because of this, it's not recommended to "download mp4" unless it's truly necessary.
 
 Valid reasons include importing videos to use in video editors (like Premiere Pro), but generally not because "my media player doesn't support webm files". We recommend players like [VLC](https://www.videolan.org/vlc/) or [MPV](https://mpv.io/installation/).
 
