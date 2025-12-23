@@ -200,7 +200,7 @@ This will download the highest-quality audio available.
 <details>
 <summary>
 
-## How to download `.mp3`
+## How to download MP3
 
 </summary>
 
@@ -208,9 +208,9 @@ This will download the highest-quality audio available.
 yt-dlp -t mp3 "URL"
 ```
 
-**NOTE:** This will download the `.mp3` given directly by the site if available; if `.mp3` is not available (e.g. on YouTube), this will download the highest-quality audio stream available and re-encode it to `.mp3`, which will reduce audio quality.
+**NOTE:** This will download the MP3 given directly by the site if available; if MP3 is not available (e.g. on YouTube), this will download the highest-quality audio stream available and re-encode it to MP3, which will reduce audio quality.
 
-If you're downloading from YouTube, this is **not recommended** unless you are using a device where `.opus` or `.aac` (`.m4a`) audio is not playable through any available audio player.
+If you're downloading from YouTube, this is **not recommended** unless you are using a device where Opus or AAC (`.aac`/`.m4a`) audio is not playable through any available audio player.
 
 ---
 
@@ -221,7 +221,7 @@ If you're downloading from YouTube, this is **not recommended** unless you are u
 <details>
 <summary>
 
-## How to download `.aac` (`.m4a`)
+## How to download AAC (`.aac`/`.m4a`)
 
 </summary>
 
@@ -229,9 +229,9 @@ If you're downloading from YouTube, this is **not recommended** unless you are u
 yt-dlp -t aac "URL"
 ```
 
-**NOTE:** This will download the `.aac` given directly by the site if available (e.g. on YouTube); if `.aac` is not available, this will download the highest-quality audio stream available and re-encode it to `.aac`, which will reduce audio quality.
+**NOTE:** This will download the AAC audio given directly by the site if available (e.g. on YouTube); if AAC is not available, this will download the highest-quality audio stream available and re-encode it to AAC, which will reduce audio quality.
 
-If you're downloading from YouTube, this should be used only on devices where `.opus` audio is not playable through any available audio player. YouTube's `.opus` audio provides better audio quality than its `.aac` audio. 
+If you're downloading from YouTube, this should be used only on devices where Opus audio is not playable through any available audio player. YouTube's Opus audio provides better audio quality than its AAC counterpart.
 
 ---
 
@@ -509,7 +509,7 @@ yt-dlp --embed-subs --sub-langs LANGUAGECODE "URL"
 
 Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp --embed-subs --sub-langs en,es "URL"` will download English and Spanish subtitles.
 
-**TIP:** To view the entire list of downloadable subtitles' language codes:
+**Tip:** To view the entire list of downloadable subtitles' language codes, execute:
 
 ```shell
 yt-dlp --list-subs "URL"
@@ -627,7 +627,7 @@ For example, `yt-dlp -f bv+ba[language=es]+ba[language=en]+ba[language=fr] --aud
 There is no universal way to download all the audio languages without downloading all formats (which may include lower-quality duplicates for sites like YouTube). However, on YouTube, this can be achieved with:
 
 ```shell
-yt-dlp -f "bv+mergeall[format_id^=251][format_id!*=drc]" --audio-multistreams "URL"
+yt-dlp -f "bv+mergeall[format_id^=251][format_id!*=drc]" --audio-multistreams --embed-metadata "URL"
 ```
 
 </details>
@@ -649,7 +649,10 @@ If you want to always use certain parameters with yt-dlp without writing them ev
 
 If you're on **Windows**:
    1. Open a terminal (`cmd` or PowerShell).
-   1. Execute `notepad "%USERPROFILE%\yt-dlp.conf"` and press Enter.
+   1. Execute:
+      ```shell
+      notepad "%USERPROFILE%\yt-dlp.conf"
+      ```
    1. Notepad will open with a warning saying the file doesn't exist. Press "Yes" to create it.
    1. Add your parameters. Don't forget to save the file.
 
@@ -657,12 +660,18 @@ If you're on **macOS or Linux**:
    1. Create a file named `yt-dlp.conf` (not `yt-dlp.conf.txt`, but `yt-dlp.conf`) inside your home directory and add your parameters inside using a text editor. Don't forget to save the file.
 
 If you're on **Android**:  
-   1. Execute `nano yt-dlp.conf` to create a `yt-dlp.conf` file in your home directory (where your terminal opens).
+   1. Execute the following to create a `yt-dlp.conf` file in your home directory (where your terminal opens):
+      ```shell
+      nano yt-dlp.conf
+      ```
    1. Add your parameters.
    1. Use `CTRL + O`, press enter, and use `CTRL + X`.
 
 If you're on **iOS/iPadOS**:
-   1. Execute `pico yt-dlp.conf`.
+   1. Execute:
+      ```shell
+      pico yt-dlp.conf
+      ```
    1. Add your parameters.
    1. Press 🔼 above the keyboard and `x` to quit, then press `y` to confirm saving.
    1. Press `return` on your keyboard to confirm saving the file as `yt-dlp.conf`.
