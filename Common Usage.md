@@ -481,9 +481,9 @@ In cases where you need to use your account's cookies, avoid using an important 
 yt-dlp --embed-subs "URL"
 ```
 
-This will download the video's original language subtitles and embed them into the video file.
+This will download English subtitles and embed them into the video file.
 
-To download the subtitle files to your disk instead:
+To write subtitle files to your disk instead:
 
 ```shell
 yt-dlp --write-subs "URL"
@@ -499,7 +499,7 @@ yt-dlp --write-subs --embed-subs "URL"
 <details>
 <summary>
 
-### How to download user-uploaded subtitles in specific language(s)
+### How to embed user-uploaded subtitles in specific language(s)
 
 </summary>
 
@@ -507,7 +507,7 @@ yt-dlp --write-subs --embed-subs "URL"
 yt-dlp --embed-subs --sub-langs LANGUAGECODE "URL"
 ```
 
-Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp --embed-subs --sub-langs en,es "URL"` will download English and Spanish subtitles.
+Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes)(s) (Set 1). For example, `yt-dlp --embed-subs --sub-langs en,es "URL"` will embed English and Spanish subtitles.
 
 **Tip:** To view the entire list of downloadable subtitles' language codes, execute:
 
@@ -521,7 +521,7 @@ yt-dlp --list-subs "URL"
 <details>
 <summary>
 
-### How to download user-uploaded subtitles in all available languages
+### How to embed user-uploaded subtitles in all available languages
 
 </summary>
 
@@ -535,7 +535,7 @@ Use `-` before a language code to exclude language(s). For example:
 yt-dlp --embed-subs --sub-langs all,-live_chat "URL"
 ```
 
-This will to download all available manual subtitles, except for YouTube's live chat replay.
+This will to embed all manual subtitles, except for YouTube's live chat replay, into the video file.
 
 </details>
 
@@ -543,7 +543,7 @@ This will to download all available manual subtitles, except for YouTube's live 
 <details>
 <summary>
 
-### How to download user-uploaded subtitles in all variants of a language
+### How to embed user-uploaded subtitles in all variants of a language
 
 </summary>
 
@@ -557,7 +557,7 @@ For example:
 yt-dlp --embed-subs --sub-langs "en.*" "URL"
 ```
 
-This will download all the English variants' subtitles (en, en-US, en-GB, etc.) using regex.
+This will embed all the English variants' subtitles (e.g. `en`, `en-US`, `en-GB`, etc.) using regex into the video file.
 
 </details>
 
@@ -572,6 +572,8 @@ This will download all the English variants' subtitles (en, en-US, en-GB, etc.) 
 ```shell
 yt-dlp --write-auto-subs "URL"
 ```
+
+This will download English auto-generated subtitles; if these aren't available, English auto-translated subtitles will be downloaded instead. You can use `--sub-langs ".*orig"` to only download auto-generated subtitles.
 
 You can use this option with `--embed-subs` to embed the auto-generated subtitles into the video file.
 
