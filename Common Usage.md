@@ -34,11 +34,11 @@ To update, execute the following command for your operating system (assuming you
      ```
 1. iOS/iPadOS:
    ```shell
-   pip install -U yt-dlp[default] yt-dlp-apple-webkit-jsi
+   pip install -U --pre yt-dlp[default] yt-dlp-apple-webkit-jsi
    ```
 1. Android:
    ```shell
-   pip install -U yt-dlp[default]
+   pip install -U --pre yt-dlp[default]
    ```
 
 
