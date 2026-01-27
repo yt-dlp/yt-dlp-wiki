@@ -650,7 +650,7 @@ yt-dlp -f "bv+mergeall[format_id^=251][format_id!*=drc]" --audio-multistreams --
 If you want to always use certain parameters with yt-dlp without writing them every single time, create a configuration file. The file's stored parameters are automatically applied whenever you run yt-dlp. This is useful for setting a [default download directory](#how-to-download-files-to-a-specific-folder) or [defining a specific naming format for your downloads](#how-to-download-files-without-the-numbers-and-letters-video-id-at-the-end).
 
 If you're on **Windows**:
-   1. Open a terminal (`cmd` or PowerShell).
+   1. Open a `cmd` terminal.
    1. Execute:
       ```shell
       notepad "%USERPROFILE%\yt-dlp.conf"
