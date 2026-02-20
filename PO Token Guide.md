@@ -50,7 +50,6 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 | `mweb`         | GVS                   |                                                                                                                   |
 | `tv`           | Not required          | All formats may have DRM if you request too much. Requires an account. Only SABR formats available in some cases. |
 | `tv_simply`    | GVS                   | Account cookies not supported                                                                                     |
-| `tv_embedded`  | Not required          | Requires account cookies                                                                                          |
 | `web_embedded` | Not required          | Only embeddable videos available                                                                                  |
 | `web_music`    | GVS                   |                                                                                                                   |
 | `web_creator`  | GVS                   | Requires account cookies                                                                                          |
