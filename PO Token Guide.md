@@ -54,7 +54,7 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 | `web_music`    | GVS                   |                                                                                                                   |
 | `web_creator`  | GVS                   | Requires account cookies                                                                                          |
 | `android`      | GVS or Player         | Account cookies not supported                                                                                     |
-| `android_vr`   | Not required          | YouTube Kids videos are not available                                                                             |
+| `android_vr`   | Not required          | "Made for kids" videos are not available                                                                             |
 | `ios`          | GVS or Player         | Account cookies not supported                                                                                     |
 
 For all clients:
