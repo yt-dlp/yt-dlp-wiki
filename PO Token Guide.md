@@ -48,7 +48,7 @@ YouTube is at present rolling out changes to enforce PO Tokens for video playbac
 | `web`          | Subs, GVS             | Only SABR formats available                                                                                       |
 | `web_safari`   | GVS*                  | Same as `web`. *Provides HLS (m3u8) formats which do not require PO Token for GVS at this time.                   |
 | `mweb`         | GVS                   |                                                                                                                   |
-| `tv`           | Not required          | All formats will have DRM if cookies (logged in or active guest sessions) are not passed. Only SABR formats available in some cases. |
+| `tv`           | Not required          | All formats DRM'd if cookies (logged-in or active guest) aren't passed. Only SABR formats available in some cases. |
 | `tv_simply`    | GVS                   | Account cookies not supported                                                                                     |
 | `web_embedded` | Not required          | Only embeddable videos available                                                                                  |
 | `web_music`    | GVS                   |                                                                                                                   |
