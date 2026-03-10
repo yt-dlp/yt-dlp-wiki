@@ -2,7 +2,7 @@
 
 To download from YouTube, yt-dlp needs to solve JavaScript challenges presented by YouTube using an external JavaScript runtime. 
 
-This involves running challenge solver scripts maintained at [yt-dlp-ejs](https://github.com/yt-dlp/ejs). Depending on your yt-dlp installation method, you may need to set up and enable these components manually.
+This involves running challenge solver scripts maintained at [yt-dlp-ejs](https://github.com/yt-dlp/ejs). Depending on your yt-dlp installation method, you may need to set up and enable these components manually. You will also have to install a supported JavaScript Runtime. 
 
 This guide will help you set up and enable the necessary components based on your yt-dlp installation method.
 
@@ -12,7 +12,7 @@ This guide will help you set up and enable the necessary components based on you
 ## Setup steps
 
 1. [Install a supported JavaScript runtime](#step-1-install-a-supported-javascript-runtime)
-2. [Install EJS challenge solver scripts](#step-2-install-ejs-challenge-solver-scripts)
+2. [Install EJS challenge solver scripts (yt-dlp-ejs)](#step-2-install-ejs-challenge-solver-scripts)
 
 ## Step 1: Install a supported JavaScript Runtime
 
@@ -46,7 +46,7 @@ Deno is enabled by default. To supply an optional path, use `--js-runtimes deno:
 #### Notes
 
 - Code is run with restricted permissions (e.g, no file system or network access)
-- Supports downloading EJS script dependencies from [npm](https://www.npmjs.com/) (`--remote-components ejs:npm`).
+- Supports downloading EJS script dependencies (yt-dlp-ejs) from [npm](https://www.npmjs.com/) (`--remote-components ejs:npm`).
 
 ---
 
@@ -91,7 +91,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 #### Notes
 
 - No permission restrictions available. Scripts have full file system and network access.
-- Supports downloading EJS script dependencies from [npm](https://www.npmjs.com/) (`--remote-components ejs:npm`).
+- Supports downloading EJS script dependencies (yt-dlp-ejs) from [npm](https://www.npmjs.com/) (`--remote-components ejs:npm`).
 - No support for SOCKS proxies when downloading EJS script dependencies from npm.
 
 ---
@@ -121,14 +121,14 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 - Both QuickJS and QuickJS-NG do not fully allow executing files from stdin, so yt-dlp will create temporary files for each EJS script execution. This can theoretically lead to time-of-check to time-of-use (TOCTOU) vulnerabilities.
 
 
-## Step 2: Install EJS challenge solver scripts
+## Step 2: Install EJS challenge solver scripts (yt-dlp-ejs)
 
 | yt-dlp distribution                                                                              | EJS scripts installation options                                                                                                                                                                                                                                                                                                                                           |
 |--------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Official PyInstaller-bundled executable (e.g. `yt-dlp.exe`, `yt-dlp_macos`, `yt-dlp_linux`, etc) | No additional action required. All the necessary JavaScript components will be bundled with these executables.                                                                                                                                                                                                                                                             |
+| Official PyInstaller-bundled executable (e.g. `yt-dlp.exe`, `yt-dlp_macos`, `yt-dlp_linux`, etc) | No additional action required. Yt-dlp-ejs is bundled with these executables.                                                                                                                                                                                                                                                             |
 | PyPI package (e.g. installed with pip, pipx, etc):                                               | - [Install and upgrade yt-dlp with `default` dependency group](#option-1-install-the-yt-dlp-ejs-python-package)<br/>- or [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only)<br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/>                                                |
-| Official zipimport binary (the `yt-dlp` Unix executable)                                         | No additional action required. All the necessary JavaScript components will be bundled with these executables.                                                                                                                                                                                                                                                             |
-| Third-party package users (e.g. installed with pacman, brew, etc)                                | The will depend on if your third-party package repository ships or bundles the EJS script package with yt-dlp.<br/> <br/>If it does not (or it is out of date): <br/>- [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/> |
+| Official zipimport binary (the `yt-dlp` Unix executable)                                         | No additional action required. Yt-dlp-ejs is bundled with these executables.                                                                                                                                                                                                                                                             |
+| Third-party package users (e.g. installed with pacman, brew, etc)                                | The will depend on if your third-party package repository ships or bundles the EJS script package (yt-dlp-ejs) with yt-dlp.<br/> <br/>If it does not (or it is out of date): <br/>- [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/> |
 
 
 ### Option 1: Install the yt-dlp-ejs python package
@@ -167,7 +167,7 @@ To enable this, supply `--remote-components ejs:github` to yt-dlp. It is recomme
 
 ## Plugins
 
-You can install alternatives to the built-in JS challenge solvers through plugins.
+You can install alternatives to yt-dlp-ejs through plugins.
 
 ### Featured Plugins:
 - [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi) by [grqz](https://github.com/grqz)
