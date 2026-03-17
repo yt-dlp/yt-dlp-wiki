@@ -4,7 +4,7 @@
    - FFmpeg and Deno can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
      - Debian-based (e.g. Debian, Ubuntu, or Mint):
        ```shell
-       sudo apt update && sudo apt install ffmpeg deno
+       sudo apt update && sudo apt install ffmpeg
        ```
        If your package manager doesn't have Deno, install Node.js instead:
        ```shell
