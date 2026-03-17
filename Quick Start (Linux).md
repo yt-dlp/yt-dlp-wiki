@@ -30,7 +30,4 @@
       ```
       Replace `URL` with the actual video URL you want to download. Your video will start downloading. See [How to download files to a specific folder](Common&#x20;Usage.md#how-to-download-files-to-a-specific-folder) to learn more about the `-P` parameter.
 
-> [!IMPORTANT]
-> If you needed to install Node.js, add `--js-runtimes node` to your command. Consider adding this parameter to your config, so you don't have to manually add it to each yt-dlp invocation. To learn more, see [How to create a config](Common&#x20;Usage.md#how-to-create-a-config).
-
 For common usage commands, move on to [Common Usage](Common&#x20;Usage.md).
