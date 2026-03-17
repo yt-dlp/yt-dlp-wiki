@@ -10,6 +10,7 @@
        ```shell
        sudo apt install nodejs
        ```
+       - You will need to add `--js-runtimes node` to your [config](Common&#x20;Usage.md#How-to-create-a-config)
      - Arch-based (e.g. Arch or Manjaro):
        ```shell
        sudo pacman -Syu ffmpeg deno
