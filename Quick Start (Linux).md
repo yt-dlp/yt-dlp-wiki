@@ -1,21 +1,16 @@
 # Linux
 
-1. Download FFmpeg and Deno.  
-   - FFmpeg and Deno can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
+1. Download FFmpeg.  
+   - FFmpeg can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
      - Debian-based (e.g. Debian, Ubuntu, or Mint):
        ```shell
        sudo apt update && sudo apt install ffmpeg
        ```
-       If your package manager doesn't have Deno, install Node.js instead:
-       ```shell
-       sudo apt install nodejs
-       ```
-       - You will need to add `--js-runtimes node` to your [config](Common&#x20;Usage.md#How-to-create-a-config)
      - Arch-based (e.g. Arch or Manjaro):
        ```shell
-       sudo pacman -Syu ffmpeg deno
+       sudo pacman -Syu ffmpeg
        ```
-1. Download yt-dlp.
+1. Download yt-dlp and deno.
    - If you are using an Arch-based distribution, you can install yt-dlp-git from the AUR: [https://aur.archlinux.org/packages/yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git)
    - For all other users (e.g. Ubuntu and Debian), we recommend installing yt-dlp via `uv`:
      1. Download `uv` from [https://github.com/astral-sh/uv/releases](https://github.com/astral-sh/uv/releases)
@@ -26,7 +21,7 @@
         ```
      1. Execute:
         ```shell
-        uv tool install --pre "yt-dlp[default]"
+        uv tool install --pre "yt-dlp[default,deno]"
         ```
 1. Download a video.
    1. Execute:
