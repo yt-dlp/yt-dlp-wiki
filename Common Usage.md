@@ -24,13 +24,8 @@ To update, execute the following command for your operating system (assuming you
    brew upgrade yt-dlp
    ```
 1. Linux (deno will also be updated):
-   - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
      uv tool upgrade yt-dlp
-     ```
-   - Arch:
-     ```shell
-     sudo pacman -Syu yt-dlp-git
      ```
 1. iOS/iPadOS:
    ```shell
