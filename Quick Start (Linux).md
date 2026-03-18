@@ -19,7 +19,7 @@
          ```shell
          tar -xf ~/Downloads/uv-x86_64-unknown-linux-gnu.tar.gz -C ~/Downloads/
          ```
-      1. Change your terminal's current working directory into the extracted folder:
+      1. Change your terminal's current working directory to the extracted folder:
          ```shell
          cd ~/Downloads/uv-x86_64-unknown-linux-gnu/
          ```
