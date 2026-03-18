@@ -594,6 +594,19 @@ Replace `LANGUAGECODE` with the [ISO 639 two-character language code](https://en
 
 `--embed-metadata` is required in order to ensure the appropriate language code is tagged with its respective audio track. Otherwise, all audio tracks may be incorrectly marked as English.
 
+**Tip:** To view the entire list of downloadable audio tracks, execute:
+
+```shell
+yt-dlp -F "URL"
+```
+
+**NOTE:** Some audio tracks may specify a language variant.
+
+```
+251-9   webm  audio only      2 │   28.61MiB  133k dash  │ audio only          opus       133k 48k [zh-Hans] Chinese (Simplified), medium, webm_dash
+```
+
+For example, to download the Chinese (Simplified) audio track, replace `LANGUAGECODE` with `zh-Hans`. 
 
 <details>
 <summary>
