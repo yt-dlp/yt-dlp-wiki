@@ -23,10 +23,10 @@ To update, execute the following command for your operating system (assuming you
    ```shell
    brew upgrade yt-dlp
    ```
-1. Linux (deno will also be updated):
-     ```shell
-     uv tool upgrade yt-dlp
-     ```
+1. Linux:
+   ```shell
+   uv tool upgrade yt-dlp
+   ```
 1. iOS/iPadOS:
    ```shell
    pip install -U --pre yt-dlp[default] yt-dlp-apple-webkit-jsi
@@ -66,6 +66,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
      ```shell
      sudo apt update && sudo apt install ffmpeg
      ```
+     Deno will also be updated with the `uv tool upgrade yt-dlp` command above.
     
    - Arch-based (e.g. Arch or Manjaro):
    ```shell
