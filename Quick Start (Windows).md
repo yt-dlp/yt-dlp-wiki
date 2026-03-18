@@ -25,7 +25,7 @@ On Windows, we recommend installing yt-dlp through WinGet. WinGet **will also au
 > [!NOTE]
 > WinGet is preinstalled on Windows 11 and newer versions of Windows 10 (after build 1709). If you don't have WinGet (if your terminal says `'winget' is not recognized[...]`), follow these instructions to install WinGet:
 1. Open PowerShell with administrator permissions.
-   1. Press the Windows key, type "powershell", right click "Windows PowerShell", and click "Run as Administrator".
+   1. Press the Windows key \> type "powershell" \> right click "Windows PowerShell" \> click "Run as Administrator".
 1. Execute:
    ```powershell
    Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
