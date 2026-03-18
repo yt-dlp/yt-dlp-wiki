@@ -32,7 +32,7 @@
          ./uv tool update-shell
          ```
          Close and reopen your terminal. After this point, you can delete the downloaded `.tar.gz` file and all extracted files.
-   1. Install yt-dlp by executing:
+   1. Install yt-dlp and Deno (required for YouTube downloads) by executing:
       ```shell
       uv tool install --prerelease allow "yt-dlp[default,deno]"
       ```
