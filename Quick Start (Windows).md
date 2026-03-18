@@ -5,7 +5,7 @@ On Windows, we recommend installing yt-dlp through WinGet. WinGet **will also au
 1. Install yt-dlp.
    1. Open a terminal.
       1. Press the Windows key, type "cmd" and click on "Command Prompt".
-   1. Execute the following command by copy-pasting it into your Terminal and hitting Enter:
+   1. Execute the following command by copy-pasting it into your terminal and hitting Enter:
       ```shell
       winget install -e --id yt-dlp.yt-dlp.nightly --source winget
       ```
