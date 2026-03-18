@@ -23,14 +23,14 @@ To update, execute the following command for your operating system (assuming you
    ```shell
    brew upgrade yt-dlp
    ```
-1. Linux:
+1. Linux (deno will also be updated):
    - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
      uv tool upgrade yt-dlp
      ```
    - Arch:
      ```shell
-     yay
+     sudo pacman -Syu yt-dlp-git
      ```
 1. iOS/iPadOS:
    ```shell
@@ -69,20 +69,17 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
 1. Linux:
    - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
-     sudo apt update && sudo apt upgrade && sudo apt install ffmpeg deno
+     sudo apt update && sudo apt install ffmpeg
      ```
-     - If you've installed Node.js:
-       ```shell
-       sudo apt update && sudo apt upgrade && sudo apt install ffmpeg nodejs
-       ```
+    
    - Arch-based (e.g. Arch or Manjaro):
    ```shell
-   sudo pacman -Syu
+   sudo pacman -Syu ffmpeg
    ```
 1. iOS/iPadOS: FFmpeg is updated when a-Shell updates. Instead of Deno, you're using [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi), which is updated with the yt-dlp update command above.
 1. Android:
    ```shell
-   pkg update && pkg upgrade && pkg upgrade ffmpeg deno
+   pkg update && pkg upgrade ffmpeg deno
    ```
 
 </details>
