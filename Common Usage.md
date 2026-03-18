@@ -69,9 +69,9 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
      Deno will also be updated with the `uv tool upgrade yt-dlp` command above.
     
    - Arch-based (e.g. Arch or Manjaro):
-   ```shell
-   sudo pacman -Syu ffmpeg
-   ```
+     ```shell
+     sudo pacman -Syu ffmpeg
+     ```
 1. iOS/iPadOS: FFmpeg is updated when a-Shell updates. Instead of Deno, you're using [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi), which is updated with the yt-dlp update command above.
 1. Android:
    ```shell
