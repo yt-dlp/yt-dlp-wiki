@@ -12,8 +12,8 @@
        ```
 > [!NOTE]
 > For Arch Linux users, it is recommended to install the [yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git) package from the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository). However, instructions for installing from the AUR are outside the scope of this guide. If you don't already know how (or don't want to) install from the AUR, then follow the general Linux instructions below.
-2. Install yt-dlp and deno.
-   1. Install uv from [https://github.com/astral-sh/uv/releases](https://github.com/astral-sh/uv/releases). You'll likely need to download [the x64 binary](https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz).
+2. Install `uv`.
+   1. Install `uv` from [https://github.com/astral-sh/uv/releases](https://github.com/astral-sh/uv/releases). You'll likely need to download [the x64 binary](https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz).
       1. Extract the tarball. You can do this by executing:
          ```shell
          tar -xf ~/Downloads/uv-x86_64-unknown-linux-gnu.tar.gz -C ~/Downloads/
