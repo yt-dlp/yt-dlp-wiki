@@ -97,7 +97,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
 yt-dlp -P "PATH" "URL"
 ```
 
-Replace `PATH` with the absolute path to your folder.
+Replace `PATH` with the path to your folder.
 
 For example, to download to a folder named Videos inside your yt-dlp folder on Windows, execute:
 
