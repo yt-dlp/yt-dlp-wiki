@@ -25,7 +25,7 @@ To update, execute the following command for your operating system (assuming you
    ```
 1. Linux:
    ```shell
-   uv tool upgrade yt-dlp
+   pipx upgrade --pip-args=--pre yt-dlp
    ```
 1. iOS/iPadOS:
    ```shell

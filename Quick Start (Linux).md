@@ -1,41 +1,48 @@
 # Linux
 
-1. Install FFmpeg.  
+On Linux, we recommend installing yt-dlp through `pipx`.
+
+Before starting, ensure you have removed any pre-existing yt-dlp installations from your system's package manager:
+- Debian-based (e.g. Debian, Ubuntu, or Mint):
+  ```shell
+  sudo apt remove yt-dlp
+  ```
+- Arch-based (e.g. Arch or Manjaro):
+  ```shell
+  sudo pacman -Rs yt-dlp
+  ```
+
+---
+
+1. Install FFmpeg.
    - FFmpeg can be installed from your distribution's package manager. Outdated versions served by package managers are generally okay to use.  
-     - Debian-based (e.g. Debian, Ubuntu, or Mint):
+     - Debian-based:
        ```shell
        sudo apt update && sudo apt install ffmpeg
        ```
-     - Arch-based (e.g. Arch or Manjaro):
+     - Arch-based:
        ```shell
        sudo pacman -Syu ffmpeg
        ```
 > [!NOTE]
 > For Arch Linux users, it is recommended to install the [yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git) package from the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository). However, instructions for installing from the AUR are outside the scope of this guide. If you don't already know how (or don't want to) install from the AUR, then follow the general Linux instructions below.
-2. Install `uv`.
-   1. Install `uv` from [https://github.com/astral-sh/uv/releases](https://github.com/astral-sh/uv/releases). You'll likely need to download [the x64 binary](https://github.com/astral-sh/uv/releases/latest/download/uv-x86_64-unknown-linux-gnu.tar.gz).
-      1. Extract the tarball. You can do this by executing:
-         ```shell
-         tar -xf ~/Downloads/uv-x86_64-unknown-linux-gnu.tar.gz -C ~/Downloads/
-         ```
-      1. Change your terminal's current working directory to the extracted folder:
-         ```shell
-         cd ~/Downloads/uv-x86_64-unknown-linux-gnu/
-         ```
-      1. Install `uv` onto your local system:
-         ```shell
-         ./uv tool install uv
-         ```
-      1. Ensure `uv` is in your PATH, so you can execute your local system's `uv` and tools installed via `uv` later:
-         ```shell
-         ./uv tool update-shell
-         ```
-         Close and reopen your terminal. After this point, you can delete the downloaded `.tar.gz` file and all extracted files.
-   1. Install yt-dlp and Deno (required for YouTube downloads) by executing:
-      ```shell
-      uv tool install --prerelease allow "yt-dlp[default,deno]"
-      ```
-3. Download a video.
+1. Install `pipx` from your distribution's package manager.
+     - Debian-based:
+       ```shell
+       sudo apt install pipx
+       pipx ensurepath
+       ```
+     - Arch-based:
+       ```shell
+       sudo pacman -Syu python-pipx
+       pipx ensurepath
+       ```
+   Restart your terminal after installing `pipx`.
+1. Install yt-dlp and Deno (required for YouTube downloads) by executing:
+   ```shell
+   pipx install --pip-args=--pre "yt-dlp[default,deno]"
+   ```
+1. Download a video.
    1. Execute:
       ```shell
       yt-dlp -P PATH "URL"
