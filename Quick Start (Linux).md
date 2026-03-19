@@ -26,7 +26,7 @@ Before starting, ensure you have removed any pre-existing yt-dlp installations f
        ```
 > [!NOTE]
 > For Arch Linux users, it is recommended to install the [yt-dlp-git](https://aur.archlinux.org/packages/yt-dlp-git) package from the [AUR](https://wiki.archlinux.org/title/Arch_User_Repository). However, instructions for installing from the AUR are outside the scope of this guide. If you don't already know how (or don't want to) install from the AUR, then follow the general Linux instructions below.
-1. Install `pipx` from your distribution's package manager.
+2. Install `pipx` from your distribution's package manager.
      - Debian-based:
        ```shell
        sudo apt install pipx
@@ -38,11 +38,11 @@ Before starting, ensure you have removed any pre-existing yt-dlp installations f
        pipx ensurepath
        ```
    Restart your terminal after installing `pipx`.
-1. Install yt-dlp and Deno (required for YouTube downloads) by executing:
+3. Install yt-dlp and Deno (required for YouTube downloads) by executing:
    ```shell
    pipx install --pip-args=--pre "yt-dlp[default,deno]"
    ```
-1. Download a video.
+4. Download a video.
    1. Execute:
       ```shell
       yt-dlp -P PATH "URL"
