@@ -42,7 +42,7 @@ Before starting, ensure you have removed any pre-existing yt-dlp installations f
    ```shell
    pipx install --pip-args=--pre "yt-dlp[default,curl-cffi,deno]"
    ```
-   - If you encounter errors with the above installation command, try installing without [curl-cffi](https://github.com/yt-dlp/yt-dlp#impersonation):
+   - If you encounter errors with the installation command above, try installing yt-dlp without [curl-cffi](https://github.com/yt-dlp/yt-dlp#impersonation):
      ```shell
      pipx install --pip-args=--pre "yt-dlp[default,deno]"
      ```
