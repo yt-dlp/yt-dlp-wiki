@@ -23,9 +23,9 @@ To update, execute the following command for your operating system (assuming you
    ```shell
    brew upgrade yt-dlp
    ```
-1. Linux (deno will also be updated):
+1. Linux:
    ```shell
-   pipx upgrade --pip-args=--pre "yt-dlp[default,curl-cffi,deno]"
+   pipx upgrade --pip-args=--pre yt-dlp
    ```
 1. iOS/iPadOS:
    ```shell
@@ -61,17 +61,16 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    ```shell
    brew upgrade ffmpeg deno
    ```
-1. Linux (deno is already updated after running the `pipx` command used to update yt-dlp):
+1. Linux (Deno is updated after running the `pipx` yt-dlp upgrade command above):
    - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
      sudo apt update && sudo apt install ffmpeg
      ```
-    
    - Arch-based (e.g. Arch or Manjaro):
      ```shell
      sudo pacman -Syu ffmpeg
      ```
-1. iOS/iPadOS: FFmpeg is updated when a-Shell updates. Instead of Deno, you're using [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi), which is updated with the yt-dlp update command above.
+1. iOS/iPadOS: FFmpeg is updated when a-Shell updates. Instead of Deno, you're using [yt-dlp-apple-webkit-jsi](https://github.com/grqz/yt-dlp-apple-webkit-jsi), which is updated with the `pip` yt-dlp update command above.
 1. Android:
    ```shell
    pkg update && pkg upgrade ffmpeg deno
