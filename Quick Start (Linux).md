@@ -2,7 +2,7 @@
 
 On Linux, we recommend installing yt-dlp through `pipx`.
 
-Before starting, ensure you have removed any pre-existing yt-dlp installations from your system's package manager:
+Before starting, ensure you have removed any pre-existing yt-dlp installations from your system's package manager. Keep in mind that this wil also uninstall other pre-installed software like [Hypnotix](https://github.com/linuxmint/hypnotix):
 - Debian-based (e.g. Debian, Ubuntu, or Mint):
   ```shell
   sudo apt remove yt-dlp
