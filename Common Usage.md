@@ -25,7 +25,7 @@ To update, execute the following command for your operating system (assuming you
    ```
 1. Linux:
    ```shell
-   pipx upgrade --pip-args=--pre yt-dlp
+   pipx reinstall yt-dlp
    ```
 1. iOS/iPadOS:
    ```shell
@@ -61,7 +61,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    ```shell
    brew upgrade ffmpeg deno
    ```
-1. Linux (Deno is updated after running the `pipx` yt-dlp upgrade command above):
+1. Linux (Deno is updated after running the `pipx` yt-dlp reinstall command above):
    - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
      sudo apt update && sudo apt install ffmpeg
