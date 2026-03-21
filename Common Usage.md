@@ -61,7 +61,7 @@ Although not as important or urgent as updating yt-dlp itself, it's good practic
    ```shell
    brew upgrade ffmpeg deno
    ```
-1. Linux (Deno is updated after running the `pipx` yt-dlp reinstall command above):
+1. Linux (Deno is updated after running the `pipx reinstall yt-dlp` command above):
    - Debian-based (e.g. Debian, Ubuntu, or Mint):
      ```shell
      sudo apt update && sudo apt install ffmpeg
