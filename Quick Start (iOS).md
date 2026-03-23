@@ -16,5 +16,7 @@ On iOS/iPadOS, we recommend installing yt-dlp through a-Shell.
       ```
       Replace `URL` with the actual video URL you want to download. Your video will start downloading.
    1. You can find the downloaded video in the Files app \> On My iPhone/iPad \> a-Shell \> your downloaded video.
+   1. If you want to automatically open the "share sheet" after downloading each video, add `--exec open` to the end of your command (or run `echo --exec open >> yt-dlp.conf` to create a [config file](Common&#x20;Usage.md#how-to-create-a-config) and enable it permanently).
+   1. iOS' default video player has very limited video support. We recommend playing downloaded media using [VLC](https://apps.apple.com/us/app/vlc-media-player/id650377962).
 
 For common usage commands, move on to [Common Usage](Common&#x20;Usage.md).
