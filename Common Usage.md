@@ -44,7 +44,7 @@ To update, execute the following command for your operating system (assuming you
 
 </summary>
 
-Although not as important or urgent as updating yt-dlp itself, it's good practice to update its external dependencies (FFmpeg and Deno) **as older versions may become unsupported by yt-dlp**. Internal dependencies, like yt-dlp-ejs, are updated with every yt-dlp update.
+Although not as important or urgent as updating yt-dlp itself, it's good practice to update its external dependencies (FFmpeg and Deno) **as older versions may have security issues and may become unsupported by yt-dlp**. Internal dependencies, like yt-dlp-ejs, are updated with every yt-dlp update.
 
 1. Windows:
    1. `winget` installation:
