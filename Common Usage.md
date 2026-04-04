@@ -33,8 +33,12 @@ To update, execute the following command for your operating system (assuming you
    ```
 1. Android:
    ```shell
-   pip install -U --pre yt-dlp[default]
+   pip install -U --pre "yt-dlp[default,curl-cffi]"
    ```
+   - If you were not able to install [curl-cffi](https://github.com/yt-dlp/yt-dlp#impersonation) with yt-dlp, you will have to use:
+     ```shell
+     pip install -U --pre "yt-dlp[default]"
+     ```
 
 
 <details>
