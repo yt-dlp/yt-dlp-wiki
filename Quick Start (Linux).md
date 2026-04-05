@@ -40,7 +40,7 @@ Before starting, ensure you have removed any pre-existing yt-dlp installations f
    Restart your terminal after installing `pipx`.
 3. Install yt-dlp and Deno (required for YouTube downloads) by executing:
    ```shell
-   pipx install --pip-args="--pre" "yt-dlp[default,curl-cffi,deno,secretstorage]"
+   pipx install --pip-args=--pre "yt-dlp[default,curl-cffi,deno,secretstorage]"
    ```
    - If you encounter errors with the installation command above, try installing yt-dlp without [curl-cffi](https://github.com/yt-dlp/yt-dlp#impersonation):
      ```shell

@@ -21,7 +21,7 @@ On Android, we recommend installing yt-dlp through Termux.
    ```
    - If you encounter errors with the installation command above, try installing yt-dlp without [curl-cffi](https://github.com/yt-dlp/yt-dlp#impersonation):
      ```shell
-      pip install --pre -U "yt-dlp[default]"
+     pip install --pre -U "yt-dlp[default]"
      ```
 1. Create a config file and instruct yt-dlp to use your downloads folder by executing:
    ```shell
