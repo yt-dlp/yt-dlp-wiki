@@ -117,7 +117,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 #### Notes
 
 - QuickJS versions prior to `2025-4-26` are missing optimizations which can lead to execution times of several minutes.
-- All QuickJS-NG versions are missing optimizations which can lead to execution times of several minutes.
+- QuickJS-NG versions prior to `0.12.0 `are missing optimizations which can lead to execution times of several minutes.
 - Both QuickJS and QuickJS-NG do not fully allow executing files from stdin, so yt-dlp will create temporary files for each EJS script execution. This can theoretically lead to time-of-check to time-of-use (TOCTOU) vulnerabilities.
 
 
