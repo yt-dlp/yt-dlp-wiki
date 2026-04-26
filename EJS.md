@@ -16,12 +16,6 @@ This guide will help you set up and enable the necessary components based on you
 
 ## Step 1: Install a supported JavaScript Runtime
 
-The JavaScript runtime executable should be located within your `PATH` (or located in the same folder as your `yt-dlp.exe` if you are on Windows). Otherwise, you'll need to specify the path to the JS runtime executable (or its containing folder) in your `--js-runtimes` argument, e.g.:
-
-```
---js-runtimes "deno:/path/to/deno"
-```
-
 | JS Runtime                      | Summary                              |
 |---------------------------------|--------------------------------------|
 | [Deno](#deno) (recommended)     | Enabled by default.                  |
@@ -29,6 +23,11 @@ The JavaScript runtime executable should be located within your `PATH` (or locat
 | [Bun](#bun)                     | Enable with `--js-runtimes bun`      |
 | [QuickJS](#quickjs--quickjs-ng) | Enable with `--js-runtimes quickjs`  |
 
+The JavaScript runtime executable should be located within your `PATH` (or located in the same folder as your `yt-dlp.exe` if you are on Windows). Otherwise, you'll need to specify the path to the JS runtime executable (or its containing folder) in your `--js-runtimes` argument, e.g.:
+
+```
+--js-runtimes "deno:/path/to/deno"
+```
 
 ### deno
 
