@@ -23,6 +23,11 @@ This guide will help you set up and enable the necessary components based on you
 | [Bun](#bun)                     | Enable with `--js-runtimes bun`      |
 | [QuickJS](#quickjs--quickjs-ng) | Enable with `--js-runtimes quickjs`  |
 
+The JavaScript runtime executable should be located within your `PATH` (or located in the same folder as your `yt-dlp.exe` if you are on Windows). Otherwise, you'll need to specify the path to the JS runtime executable (or its containing folder) in your `--js-runtimes` argument, e.g.:
+
+```
+--js-runtimes "deno:/path/to/deno"
+```
 
 ### deno
 
@@ -119,6 +124,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 - QuickJS versions prior to `2025-4-26` are missing optimizations which can lead to execution times of several minutes.
 - QuickJS-NG versions prior to `0.12.0 `are missing optimizations which can lead to execution times of several minutes.
 - Both QuickJS and QuickJS-NG do not fully allow executing files from stdin, so yt-dlp will create temporary files for each EJS script execution. This can theoretically lead to time-of-check to time-of-use (TOCTOU) vulnerabilities.
+- The filename of the executable must be `qjs` (or `qjs.exe` on Windows), or else the path to *the executable file* must be specified in the `--js-runtimes` argument.
 
 
 ## Step 2: Install EJS challenge solver scripts (yt-dlp-ejs)
