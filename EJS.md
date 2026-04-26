@@ -16,7 +16,11 @@ This guide will help you set up and enable the necessary components based on you
 
 ## Step 1: Install a supported JavaScript Runtime
 
-For yt-dlp to recognize your JavaScript Runtime, you need to have it inside a folder in your PATH, or, if on Windows, in the same folder as ``yt-dlp.exe``. If you don't, you will have to add the path to the directory containing it.
+The JavaScript runtime executable should be located within your `PATH` (or located in the same folder as your `yt-dlp.exe` if you are on Windows). Otherwise, you'll need to specify the path to the JS runtime executable (or its containing folder) in your `--js-runtimes` argument, e.g.:
+
+```
+--js-runtimes "deno:/path/to/deno"
+```
 
 | JS Runtime                      | Summary                              |
 |---------------------------------|--------------------------------------|
