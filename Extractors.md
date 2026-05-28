@@ -9,20 +9,20 @@
 ## Clients information
 
 
-| Client         |  Cookies  | JS Runtime | Po tokens required for | SABR  |   Notes             |
-|--------------- |---------- | ---------- | ---------------------- | ----- | ------------------- | 
-| `web`          |  Yes      | Required   | GVS, Subs*             | Only  | Po tokens are needed for some subtitle languages and for all formats but vtt.                                                  |
+| Client         |  Cookies  | JS Runtime | Po tokens required for | SABR  |                                                           Notes                                                                    |
+|--------------- |---------- | ---------- | ---------------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------- | 
+| `web`          |  Yes      | Required   | GVS, Subs*             | Only  | Po tokens are needed for some subtitle languages and for all formats but vtt.                                                      |
 | `web_safari`   |  Yes      | Required   | GVS, Subs*             | Yes   | Only https formats need po tokens and SABR support. Po tokens are needed for some subtitle languages and for all formats but vtt.  |
-| `web_embedded` |  Yes      | Required   |                        | No    | Only available for embeddable videos.                                                                                          |
+| `web_embedded` |  Yes      | Required   |                        | No    | Only available for embeddable videos.                                                                                              |
 | `web_music`    |  Yes      | Required   | GVS                    | No    | Only available for videos present in https://music.youtube.com                                                                     |
-| `web_creator`  | Required  | Required   | GVS                    | No    |                     |  
-| `mweb`         | Yes       | Required   | GVS                    | No    | Has "low" and "ultralow" qualities for audio.                                                                                       |
-| `tv`           | Required* | Required   |                        | Only* | Cookies are required to get not DRM formats, and there are experiments that make it so you only get SABR formats.                |
-| `tv_downgraded`| Required  | Required   |                        | No    |                     |
-| `tv_simply`    | No        | Required   | GVS                    | Yes   |                     |
-| `android`      | No        | No         | GVS                    | Only  |                     |
-| `android_vr`   | No        | No         |                        | No    | "Made for kids" videos are not available. Poor audio language support.                                                          |
-| `ios`          | No        | No         | GVS                    | No    |                     | 
+| `web_creator`  | Required  | Required   | GVS                    | No    |                                                                                                                                    |  
+| `mweb`         | Yes       | Required   | GVS                    | No    | Has "low" and "ultralow" qualities for audio.                                                                                      |
+| `tv`           | Required* | Required   |                        | Only* | Cookies are required to get not DRM formats, and there are experiments that make it so you only get SABR formats.                  |
+| `tv_downgraded`| Required  | Required   |                        | No    |                                                                                                                                    |
+| `tv_simply`    | No        | Required   | GVS                    | Yes   |                                                                                                                                    |
+| `android`      | No        | No         | GVS                    | Only  |                                                                                                                                    |
+| `android_vr`   | No        | No         |                        | No    | "Made for kids" videos are not available. Poor audio language support.                                                             |
+| `ios`          | No        | No         | GVS                    | No    |                                                                                                                                    | 
 
 ## Exporting YouTube cookies
 
