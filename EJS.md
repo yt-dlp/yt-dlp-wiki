@@ -133,6 +133,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 - Both QuickJS and QuickJS-NG do not fully allow executing files from stdin, so yt-dlp will create temporary files for each EJS script execution. This can theoretically lead to time-of-check to time-of-use (TOCTOU) vulnerabilities.
 - The filename of the executable must be `qjs` (or `qjs.exe` on Windows), or else the path to *the executable file* must be specified in the `--js-runtimes` argument.
 
+
 ## Step 2: Install EJS challenge solver scripts (yt-dlp-ejs)
 
 | yt-dlp distribution                                                                              | EJS scripts installation options                                                                                                                                                                                                                                                                                                                                           |
