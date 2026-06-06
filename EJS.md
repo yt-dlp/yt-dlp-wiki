@@ -12,7 +12,7 @@ This guide will help you set up and enable the necessary components based on you
 ## Setup steps
 
 1. [Install a supported JavaScript runtime](#step-1-install-a-supported-javascript-runtime)
-2. [Install EJS challenge solver scripts (yt-dlp-ejs)](#step-2-install-ejs-challenge-solver-scripts)
+2. [Install EJS challenge solver scripts (yt-dlp-ejs)](#step-2-install-ejs-challenge-solver-scripts-yt-dlp-ejs)
 
 ## Step 1: Install a supported JavaScript Runtime
 
@@ -129,7 +129,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 #### Notes
 
 - QuickJS versions prior to `2025-4-26` are missing optimizations which can lead to execution times of several minutes.
-- QuickJS-NG versions prior to `0.12.0 `are missing optimizations which can lead to execution times of several minutes.
+- QuickJS-NG versions prior to `0.12.0` are missing optimizations which can lead to execution times of several minutes.
 - Both QuickJS and QuickJS-NG do not fully allow executing files from stdin, so yt-dlp will create temporary files for each EJS script execution. This can theoretically lead to time-of-check to time-of-use (TOCTOU) vulnerabilities.
 - The filename of the executable must be `qjs` (or `qjs.exe` on Windows), or else the path to *the executable file* must be specified in the `--js-runtimes` argument.
 
@@ -141,7 +141,7 @@ It is recommended to add this to your [yt-dlp configuration file](https://github
 | Official PyInstaller-bundled executable (e.g. `yt-dlp.exe`, `yt-dlp_macos`, `yt-dlp_linux`, etc) | No additional action required. `yt-dlp-ejs` is bundled with these executables.                                                                                                                                                                                                                                                             |
 | PyPI package (e.g. installed with pip, pipx, etc):                                               | - [Install and upgrade yt-dlp with `default` dependency group](#option-1-install-the-yt-dlp-ejs-python-package)<br/>- or [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only)<br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/>                                                |
 | Official zipimport binary (the `yt-dlp` Unix executable)                                         | No additional action required. `yt-dlp-ejs` is bundled with these executables.                                                                                                                                                                                                                                                             |
-| Third-party package users (e.g. installed with pacman, brew, etc)                                | The will depend on if your third-party package repository ships or bundles the EJS script package (`yt-dlp-ejs`) with yt-dlp.<br/> <br/>If it does not (or it is out of date): <br/>- [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/> |
+| Third-party package users (e.g. installed with pacman, brew, etc)                                | This will depend on if your third-party package repository ships or bundles the EJS script package (`yt-dlp-ejs`) with yt-dlp.<br/> <br/>If it does not (or it is out of date): <br/>- [enable npm downloads](#option-2-enable-ejs-script-downloads-from-npm) ([deno](#deno)/[bun](#bun) only) <br/>- or [enable GitHub downloads](#option-3-enable-ejs-script-downloads-from-github)<br/> |
 
 
 ### Option 1: Install the yt-dlp-ejs python package
@@ -176,7 +176,7 @@ To enable this, supply `--remote-components ejs:github` to yt-dlp. It is recomme
 
 
 > [!NOTE]
-> This method may not work if GitHub and GitHub release assets are not accessible from your network. This includes if you are using yt-dlp with a IPv6 IP-only (e.g., `--force-ipv6`)
+> This method may not work if GitHub and GitHub release assets are not accessible from your network. This includes if you are using yt-dlp with an IPv6 IP-only (e.g., `--force-ipv6`)
 
 ## Plugins
 
