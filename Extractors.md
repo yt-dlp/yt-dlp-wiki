@@ -31,6 +31,8 @@ SABR = **S**erver **A**daptive **B**it**r**ate, YouTube's proprietary streaming 
 
 Note: PO tokens for GVS are not required for YouTube Premium subscribers.
 
+Note: Information about what clients are used by default and when can be found at [the part of the README that documents the `youtube:player_client` extractor argument](https://github.com/yt-dlp/yt-dlp/#youtube).
+
 ## Exporting YouTube cookies
 
 > [!CAUTION]
