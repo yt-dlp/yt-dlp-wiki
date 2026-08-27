@@ -105,20 +105,6 @@ pacman will now automatically download the correct dependencies and keep the pac
 sudo pacman -Syu
 ```
 
-### [APT](https://en.wikipedia.org/wiki/APT_(software))
-
-You can download and install yt-dlp for recent Ubuntu and other related Debian-based distributions by adding [this PPA](https://launchpad.net/~tomtomtom/+archive/ubuntu/yt-dlp)
-```bash
-sudo add-apt-repository ppa:tomtomtom/yt-dlp    # Add ppa repo to apt
-sudo apt update                                 # Update package list
-sudo apt install yt-dlp                         # Install yt-dlp
-```
-Your system's package manager will now automatically download the correct dependencies and keep the package updated with the rest of your system whenever you run:
-```bash
-sudo apt update
-sudo apt install yt-dlp
-```
-
 ### [Snap](https://snapcraft.io/yt-dlp)
 
 You can install yt-dlp on Linux using Snap:
