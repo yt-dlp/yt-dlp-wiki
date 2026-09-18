@@ -200,4 +200,77 @@ However, common grounds for exclusion from yt-dlp are:
 - The site's operators are completely anonymous or unknown
 
 Any of these reasons are enough for a site to be excluded from yt-dlp.
-This list is not exhaustive. It is up to the discretion of the maintainers as to whether or not a site will be included in yt-dlp.
+
+### How do I find out if a video is DRM-protected?
+
+Step 1: Start by checking whether the video can be played in your web browser, after disabling DRM technologies on it:
+
+<details>
+<summary>Firefox instructions</summary>
+
+1. Visit `about:addons`.
+2. Click "Plugins" on the left-hand side.
+3. On the right-hand side, click the 3 dots next to "Widevine Content Decryption Module provided by Google Inc." and click "never activate". If you don't see Widevine in that list, then it is already disabled.
+4. Visit the website and attempt to play the video.
+5. If the video doesn't play **and** a message appears at the top of your browser saying that "You must enable DRM to play some audio or video on this page", then the video is most likely DRM-protected.
+
+</details>
+
+<details>
+<summary>Brave Browser instructions</summary>
+
+1. Visit `brave://settings/?search=widevine` and disable "Widevine".
+2. Restart your browser.
+3. Visit the website and attempt to play the video.
+4. If the video doesn't play **and** Brave prompts you to install Widevine, then the video is most likely DRM- protected.
+
+</details>
+
+<details>
+<summary>Microsoft Edge instructions</summary>
+
+1. Open `edge://flags/#edge-playready-drm-win10` and change its value from `default` to `disabled`.
+2. Open `edge://flags/#edge-widevine-drm` and change its value from `default` to `disabled`.
+3. Restart your browser.
+4. Visit the website and attempt to play the video.
+5. If the video doesn't play, then the video is most likely DRM-protected.
+
+</details>
+
+<details>
+<summary>Vivaldi instructions</summary>
+
+1. Visit `vivaldi://settings` and search `widevine`.
+2. Disable `Enable widevine plugin`.
+3. Visit the website and attempt to play the video.
+4. If the video doesn't play, then the video is most likely DRM-protected.
+
+</details>
+
+If the video can be played with DRM disabled, feel free to open a site-support request for the website. Also, remember to undo any settings changes you did because to the above instructions.
+
+If the video could not be played, move on to step 2:
+
+<details>
+<summary>The website has an mobile app available</summary>
+
+If a website has an equivalent android app available, it is possible that videos in the app won't be DRM-protected. You can check if the videos are DRM-protected by installing the app on [Bluestacks emulator](https://www.bluestacks.com/). If the video plays in the app on Bluestacks, feel free to open a site-support request for that website, but make sure to mention that it works in Bluestacks. However, if the video doesn't play in Bluestacks, then you're most likely out of luck, and the website is very unlikely to be supported by yt-dlp.
+
+<details>
+<summary>Can I use a different emulator?</summary>
+
+Sure, but please first make sure it's DRM-free. You can do this by installing [DRM info](https://play.google.com/store/apps/details?id=com.androidfung.drminfo) on the emulator. If the only DRM technology it shows is "ClearKey CDM", then the emulator is DRM-free. If so please open a pull request to add that information to this FAQ entry.
+
+</details>
+
+</details>
+
+<details>
+<summary>The website doesn't have any mobile apps</summary>
+
+Unfortunately, the video is most likely DRM-protected. It is unlikely to be supported by yt-dlp. Please do **not** open any site support requests related to that video.
+
+</details>
+
+Please also keep in mind that testing *one* video isn't necessarily an indication of whether *all* videos on a website are DRM-protected.
+
