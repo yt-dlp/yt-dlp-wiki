@@ -208,11 +208,10 @@ Step 1: Start by checking whether the video can be played in your web browser, a
 <details>
 <summary>Firefox instructions</summary>
 
-1. Visit `about:addons`.
-2. Click "Plugins" on the left-hand side.
-3. On the right-hand side, click the 3 dots next to "Widevine Content Decryption Module provided by Google Inc." and click "never activate". If you don't see Widevine in that list, then it is already disabled.
-4. Visit the website and attempt to play the video.
-5. If the video doesn't play **and** a message appears at the top of your browser saying that "You must enable DRM to play some audio or video on this page", then the video is most likely DRM-protected.
+1. Visit `about:settings` and search `DRM`.
+2. Disable `Play DRM-controlled content`.
+3. Visit the website and attempt to play the video.
+4. If the video doesn't play **and** a message appears at the top of your browser saying that "You must enable DRM to play some audio or video on this page", then the video is most likely DRM-protected.
 
 </details>
 
@@ -273,4 +272,3 @@ Unfortunately, the video is most likely DRM-protected. It is unlikely to be supp
 </details>
 
 Please also keep in mind that testing *one* video isn't necessarily an indication of whether *all* videos on a website are DRM-protected.
-
