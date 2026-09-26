@@ -201,7 +201,7 @@ winget install --source winget --id yt-dlp.yt-dlp
 
 To update, run:
 ```powershell
-winget upgrade yt-dlp --source winget
+winget upgrade --source winget --id yt-dlp.yt-dlp
 ```
 You can also update using the yt-dlp executable's built-in updater:
 ```
