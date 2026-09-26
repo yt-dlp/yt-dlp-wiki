@@ -79,4 +79,4 @@ You can see a model implementation of a plugin bundle in Grub4K's `yt-dont-lock-
 - [Dependency handling](https://github.com/Grub4K/yt-dont-lock-p/blob/ff3b6e1d42ce8584153ae27544d2c05b50ab5954/yt_dlp_plugins/postprocessor/yt_dont_lock_p/__init__.py#L23-L46)
 - [Build script](https://github.com/Grub4K/yt-dont-lock-p/blob/0b71dad39566fca756c51f22c51a780de26401d8/.github/workflows/release.yml#L19-L35)
 
-Then you can hook up your big fat download button to point to that `.zip`, tell pip users the pip command, and everything is happy and lovely.
+Then you can hook up your download button to point to that `.zip`, tell pip users the pip command, and everyone is happy.
