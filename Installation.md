@@ -196,7 +196,7 @@ choco upgrade yt-dlp
 ### [winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
 
 ```powershell
-winget install yt-dlp --source winget
+winget install --source winget --id yt-dlp.yt-dlp
 ```
 
 To update, run:
