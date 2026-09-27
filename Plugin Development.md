@@ -29,6 +29,8 @@ A template plugin package repository is available at [yt-dlp/yt-dlp-sample-plugi
 3. Add `yt-dlp-plugins` to the repository tags for discoverability.
 4. Be sure to remove any of the sample extractors/post-processors.
 
+You should NOT set `yt-dlp` as a dependency, because then users who installed yt-dlp with a method other than pip will end up with two `yt-dlp`s after installing your plugin.
+
 ## Run and debug configuration
 1. Set your IDE's run configuration to point to the `yt_dlp` Python module.
 2. Add your project's root directory containing `yt_dlp_plugins` to `PYTHONPATH` environment variable (this may not be necessary with some IDE run configurations).
@@ -59,3 +61,22 @@ packages = [{ include = "yt_dlp_plugins" }]
 ```
 
 See the [Poetry documentation](https://python-poetry.org/docs/pyproject/#packages) for more details.
+
+## Distributing your plugin as a single file
+
+You can put a pip command in your README, but that doesn't serve `yt-dlp.exe` users very well.
+In this case, it's more user friendly to package your plugin up into a single file. That way you can tell people to "drop this one file in the right place and it'll sort itself", the same way dependencies like ffmpeg and deno are handled. You can still let pip users install with pip, of course.
+
+> `.zip`, `.egg` and `.whl` archives containing a `yt_dlp_plugins` namespace folder in their root are also supported as plugin packages.
+
+The easiest option is to distribute the `.whl` you get when you build the plugin package. Then you can say "download the .whl and put it in [such-and-such directory](https://github.com/yt-dlp/yt-dlp#installing-plugins)".
+
+HOWEVER, this may come back to haunt you if you ever decide to add a third-party dependency. (`.whl`s are handled no differently from plain `.zip` files, yt-dlp will not install any dependencies.)
+
+A solution to this is to build a `.zip` file with third-party dependencies bundled in. This needs some custom import handling to get yt-dlp to import the dependencies from the `.zip`.
+
+You can see a model implementation of a plugin bundle in Grub4K's `yt-dont-lock-p` plugin:
+- [Dependency handling](https://github.com/Grub4K/yt-dont-lock-p/blob/ff3b6e1d42ce8584153ae27544d2c05b50ab5954/yt_dlp_plugins/postprocessor/yt_dont_lock_p/__init__.py#L23-L46)
+- [Build script](https://github.com/Grub4K/yt-dont-lock-p/blob/0b71dad39566fca756c51f22c51a780de26401d8/.github/workflows/release.yml#L19-L35)
+
+Then you can hook up your download button to point to that `.zip`, tell pip users the pip command, and everyone is happy.
