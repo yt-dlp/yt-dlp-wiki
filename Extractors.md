@@ -44,13 +44,22 @@ You can do this with:
 ## Common YouTube Errors
 
 #### `This content isn't available, try again later`
-
 This error is caused by your YouTube guest session or account exceeding the YouTube video request rate limit. 
 
 It is recommended to add a delay of around 5-10 seconds between downloads with `-t sleep` or [with the sleep options](https://github.com/yt-dlp/yt-dlp#workarounds).
 
 With the default yt-dlp settings, the rate limit for guest sessions is ~300 videos/hour (~1000 webpage/player requests per hour). For accounts, it is ~2000 videos/hour (~4000 webpage/player requests per hour).
 
+#### `Video unavailable. This content isn't available`
+This is a slightly more severe variant of the previous error, and is displayed when the YouTube (googlevideo) CDN returns an HTTP status 403 (Forbidden) to your YouTube client after attempting to load a video. This error is triggered in response to a policy violation, such as exceeding the YouTube video request rate limit, or the API request rate limit.
+
+If **cookies** were in use when the error was triggered, this violation will be associated with the constituent YouTube account. Attempting to watch any video content using the affected account will trigger this error, regardless of the device, IP address, or location.
+
+YouTube has acknowledged this error as being an '_enforcement_' of the YouTube Terms of Service, or in effect, a temporary ban. User reports suggest these bans may last anywhere from a few minutes, to hours, days, and in some cases, even months. The median duration of user reported bans is typically around a week.
+
+There is significant discussion regarding this error ([reddit thread](https://www.reddit.com/r/youtube/comments/1f4n18h/video_unavailable_this_content_isnt_available/), [google forum](https://support.google.com/youtube/thread/294302773/video-unavailable-this-content-isn-t-available-cannot-watch-anything-on-pc-browsers)), with much speculation into potential workarounds of varying legitimacy. Users have observed that the error does not occur when logged in to other YouTube channel accounts (even within the same Google account), as well as when logged out. There is also some speculation that creating a support request asking for the ban to be lifted may yield some success, though this has not been conclusively proven.
+
+The recommendations for preventing this error are the same, particularly the use of a 5-10 second delay between downloads with `-t sleep` or [with the sleep options](https://github.com/yt-dlp/yt-dlp#workarounds). Furthermore, using cookies should be avoided unless absolutely necessary, such as when a 'Liked Videos' or 'Favorites' playlist needs to be downloaded. For other playlists, changing the playlist visibility to 'unlisted' and downloading as a guest is the safer alternative to reduce the risk of the above errors / bans.
 
 ## PO Token Guide
 
