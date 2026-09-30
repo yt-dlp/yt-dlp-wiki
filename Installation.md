@@ -70,6 +70,23 @@ To update, run:
 python3 -m pip install -U "yt-dlp[default]"
 ```
 
+# With [pipx](https://pypi.org/project/pipx/)
+pipx ensures yt-dlp is installed in an isolated environment, avoiding conflicts with system packages.
+
+You can install the [PyPI package](https://pypi.org/project/yt-dlp) with:
+```bash
+pipx install "yt-dlp[default]"
+```
+You can install without any of the optional dependencies using:
+```bash
+pipx install yt-dlp
+```
+To upgrade use:
+```bash
+
+pipx upgrade yt-dlp
+```
+Note: pipx may not be able to handle upgrading with extras like pip. To do so, reinstall the package with desired options.
 
 # Third-party package managers
 
